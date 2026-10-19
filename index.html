@@ -235,13 +235,44 @@ button{font:inherit;cursor:pointer;border:0}
 .wish-page-container .page-text{font-size:0.95rem;line-height:1.75;color:var(--ink);margin:0 0 14px;padding:0 4px;white-space:pre-line}
 .highlight-quote{background:linear-gradient(135deg,#fff0f5,#ffe4ee);border-left:4px solid #ff6f9f;border-radius:14px;padding:12px 14px;margin:12px 0;font-weight:700;color:#923d66;line-height:1.65;font-size:0.92rem}
 
-.quick-nav{border-top:2px dashed #ffb3c9;padding-top:12px;margin-top:10px;text-align:left}
-.quick-nav-title{font-size:0.78rem;font-weight:700;color:#b0527c;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px}
-.quick-nav-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
-.quick-nav-btn{background:#fff0f5;border:1px solid #ffb3c9;border-radius:12px;padding:8px;text-align:center;font-size:0.82rem;font-weight:700;color:#a64f7b;cursor:pointer;transition:.2s}
-.quick-nav-btn:hover{background:#ffe3ec;transform:translateY(-2px)}
-.quick-nav-btn.special-btn{grid-column:span 2;background:linear-gradient(135deg,#ffe0eb,#f4d9f7);color:#8e3f68;border-color:#ff9ec3}
-.home-btn-big{display:block;width:100%;background:linear-gradient(135deg,#ff699b,#bd7ad7);color:white;border-radius:999px;padding:10px;font-weight:800;font-size:0.9rem;text-align:center;margin-top:10px;box-shadow:0 6px 15px rgba(219,126,168,0.3);transition:.2s}
+/* THANH ĐIỀU HƯỚNG TRÁI TIM TO BÊN DƯỚI */
+.quick-nav{border-top:2px dashed #ffb3c9;padding-top:15px;margin-top:10px;text-align:left}
+.quick-nav-title{font-size:0.82rem;font-weight:700;color:#b0527c;margin-bottom:12px;text-transform:uppercase;letter-spacing:1px;text-align:center}
+.quick-nav-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;justify-items:center;padding-bottom:10px}
+
+/* Ô trái tim điều hướng nhỏ nhưng dạng thẻ tim giống trang chủ */
+.quick-nav-card{
+  width: 100%;
+  max-width: 220px;
+  background: linear-gradient(135deg, #ffffff, #fff0f5);
+  border: 2px solid #ffb3c9;
+  border-radius: 35px 35px 14px 14px;
+  padding: 12px 10px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(255, 111, 159, 0.15);
+  cursor: pointer;
+  transition: all 0.25s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+}
+.quick-nav-card:hover{
+  transform: translateY(-4px);
+  border-color: #ff6f9f;
+  background: linear-gradient(135deg, #ffffff, #ffe4ee);
+}
+.quick-nav-card.special-card{
+  grid-column: span 2;
+  max-width: 300px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #ffe0eb, #f4d9f7);
+  border-color: #ff85b3;
+}
+.quick-nav-card span { font-size: 1.4rem; }
+.quick-nav-card strong { font-size: 0.9rem; color: #a64f7b; font-weight: 700; }
+
+.home-btn-big{display:block;width:100%;background:linear-gradient(135deg,#ff699b,#bd7ad7);color:white;border-radius:999px;padding:12px;font-weight:800;font-size:0.95rem;text-align:center;margin-top:12px;box-shadow:0 6px 15px rgba(219,126,168,0.3);transition:.2s}
 .home-btn-big:hover{transform:translateY(-2px)}
 
 /* HIỆU ỨNG TRÁI TIM BÙNG NỔ KHI CLICK */
@@ -357,13 +388,15 @@ footer{font-size:0.78rem;color:#b58ca7;padding:20px 10px;text-align:center;trans
       <div class="scroll-hint">Út vuốt xuống để đọc tiếp tâm sự của con nha 👇</div>
       <div class="page-text" id="pageWishText"></div>
       <div class="highlight-quote hidden" id="pageQuote"></div>
+      
+      <!-- THANH ĐIỀU HƯỚC TRÁI TIM TO BÊN DƯỚI -->
+      <div class="quick-nav">
+        <div class="quick-nav-title">🌸 Khám phá các điều ước khác:</div>
+        <div class="quick-nav-grid" id="quickNavGrid"></div>
+      </div>
     </div>
     
-    <div class="quick-nav">
-      <div class="quick-nav-title">🌸 Chọn tiếp trái tim điều ước khác:</div>
-      <div class="quick-nav-grid" id="quickNavGrid"></div>
-      <button class="home-btn-big" id="homeBtn">💖 Quay về danh sách Trái Tim Điều ƯỚC</button>
-    </div>
+    <button class="home-btn-big" id="homeBtn">💖 Quay về danh sách Trái Tim Điều Ước</button>
   </div>
 </div>
 
@@ -483,7 +516,7 @@ document.addEventListener('click', function(e) {
 function openSecretFamilyGift(){
   fillText('pageWishTitle','Món Quà Bí Mật Từ Gia Đình 🏡❤️');
   fillText('pageWishText', `Út ơi, Út đã mở hết tất cả những điều ước và đọc những dòng tâm sự từ đáy lòng của con rồi.\n\nTấm hình này là món quà đặc biệt nhất con dành tặng Út. Dù khoảng cách địa lý có xa xôi đến đâu, hình bóng của Út, Dượng Út và Minh Thiện vẫn luôn ngập tràn trong tim gia đình mình.\n\nChúc Út luôn vững chãi, bình an và hạnh phúc trọn vẹn trên hành trình phía trước! 🌸✨`);
-  $('pageWishPhoto').src = 'family.jpg'; // Ảnh gia đình Út, Dượng Út và Minh Thiện
+  $('pageWishPhoto').src = 'family.jpg'; 
   $('pageQuote').classList.add('hidden');$('wishPageScreen').classList.remove('hidden');
   const scrollContainer = $('scrollContainer');
   if(scrollContainer) scrollContainer.scrollTop = 0;
@@ -491,21 +524,23 @@ function openSecretFamilyGift(){
   fireworks(10);
 }
 
-// Điều hướng nhanh trong trang chi tiết
+// Tạo thanh điều hướng trái tim to ở dưới mỗi trang chi tiết
 const quickNavGrid = $('quickNavGrid');
 CONFIG.wishes.forEach(w=>{
-  const btn = document.createElement('div');
-  btn.className = 'quick-nav-btn' + (w.isSpecial ? ' special-btn' : '');
-  btn.textContent = w.icon + ' ' + w.cardTitle;
-  btn.addEventListener('click', () => openWishPage(w.id));
-  quickNavGrid.appendChild(btn);
+  const card = document.createElement('div');
+  card.className = 'quick-nav-card' + (w.isSpecial ? ' special-card' : '');
+  card.innerHTML = `<span>${w.icon}</span><strong>${w.cardTitle}</strong>`;
+  card.addEventListener('click', (e) => {
+    triggerHeartBurst(e);
+    setTimeout(() => openWishPage(w.id), 250);
+  });
+  quickNavGrid.appendChild(card);
 });
 
 function openWishPage(id){
   const w=CONFIG.wishes.find(x=>x.id===id);
   if(!w)return;
 
-  // Đánh dấu đã đọc để đổi màu thẻ trái tim sang mạ vàng
   readWishes.add(w.id);
   renderHeartGrid();
 
@@ -578,7 +613,7 @@ $('blowBtn').addEventListener('click',()=>{
   fillText('cakeNote', CONFIG.cakeNoteAfter);
   
   $('actionText').textContent = 'Tuổi 46 rực rỡ và đong đầy yêu thương! 🎉';
-  $('blowBtn').classList.add('hidden');$('wishesBtn').classList.remove('hidden'); // HIỂN THỊ NÚT BẤM "Giờ đến các điều ước nha Út ✨"
+  $('blowBtn').classList.add('hidden');$('wishesBtn').classList.remove('hidden'); 
   
   document.body.classList.remove('dark-mode');
   
