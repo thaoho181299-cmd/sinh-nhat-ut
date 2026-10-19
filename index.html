@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap" rel="stylesheet">
 <style>
-:root{--pink:#ff6f9f;--rose:#ffb3c9;--cream:#fff8f1;--purple:#8d6ac8;--ink:#4a2e4a}
+:root{--pink:#ff6f9f;--rose:#ffb3c9;--cream:#fff8f1;--purple:#8d6ac8;--ink:#2d152b}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
 body{
   margin:0;
@@ -27,12 +27,10 @@ body.dark-mode {
   color: #ffe6f0;
 }
 body.dark-mode .wrap h2, 
-body.dark-mode .bouquet-title,
 body.dark-mode .cake-note {
   color: #ffb3d1;
 }
 body.dark-mode .sub,
-body.dark-mode .bouquet-desc,
 body.dark-mode footer {
   color: #e0b0cc;
 }
@@ -62,7 +60,7 @@ button{font:inherit;cursor:pointer;border:0}
 .wrap h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4.5vw,2.8rem);margin:8px 0;color:#a64f7b;transition:color 0.8s ease}
 .sub{max-width:600px;margin:0 auto 18px;line-height:1.6;font-size:0.95rem;transition:color 0.8s ease}
 
-.cake-area{position:relative;margin:15px auto 20px;width:min(340px,90vw);height:300px;display:flex;align-items:flex-end;justify-content:center}
+.cake-area{position:relative;margin:40px auto 25px;width:min(340px,90vw);height:280px;display:flex;align-items:flex-end;justify-content:center}
 .cake-base{position:relative;width:240px;height:140px;background:linear-gradient(135deg,#ffd1dc,#ff9ebd 50%,#ff7b9f);border-radius:20px 20px 25px 25px;box-shadow:inset -12px 0 rgba(199,84,120,0.25),0 18px 30px rgba(168,92,129,0.25)}
 .cake-layer-top{position:absolute;top:-25px;left:-6px;width:252px;height:55px;border-radius:50%;background:#ffffff;border-bottom:8px solid #ffb7d0;box-shadow:0 5px 10px rgba(0,0,0,0.05)}
 .cake-drip{position:absolute;top:6px;left:15px;width:26px;height:36px;background:#ffffff;border-radius:0 0 14px 14px;box-shadow:45px 5px #ffffff,95px -2px #ffffff,145px 8px #ffffff,185px 3px #ffffff}
@@ -73,35 +71,44 @@ button{font:inherit;cursor:pointer;border:0}
 .candle{width:50px;height:65px;border-radius:10px;background:linear-gradient(135deg,#fff,#ffb7d0);position:relative;display:flex;justify-content:center;align-items:center;color:#a64f7b;font-weight:900;font-size:1.4rem;box-shadow:0 4px 10px rgba(158,69,99,0.25);border:2px solid #ff6f9f;font-family:'Playfair Display',serif;}
 .flame{position:absolute;top:-22px;width:18px;height:24px;background:radial-gradient(ellipse at 50% 70%,#fffad1 0 25%,#ffb037 55%,#ff523d 80%);border-radius:60% 40% 55% 45%;transform:rotate(5deg);animation:flicker .6s infinite alternate;transition:all 0.3s;filter:drop-shadow(0 0 16px #ffcb57);}
 
-.cake-note{font-family:'Playfair Display',serif;font-style:italic;font-size:1.1rem;margin:15px 0;color:#8c4a6b;transition:color 0.8s ease}
-.action-box{background:#fff0f6;border:2px dashed #ff94b8;border-radius:18px;padding:15px;max-width:380px;margin:0 auto 20px;transition:all 0.8s ease}
-.action-text{font-size:0.98rem;font-weight:700;color:#b0527c;margin-bottom:10px;transition:color 0.8s ease}
+.cake-note{font-family:'Playfair Display',serif;font-style:italic;font-size:1.1rem;margin:20px 0;color:#8c4a6b;transition:color 0.8s ease}
+.action-box{background:#fff0f6;border:2px dashed #ff94b8;border-radius:18px;padding:18px;max-width:380px;margin:0 auto 20px;transition:all 0.8s ease}
+.action-text{font-size:1rem;font-weight:700;color:#b0527c;margin-bottom:12px;transition:color 0.8s ease}
 
-/* BÓ HOA GIF RỰC RỠ TỎA ÁNH SÁNG */
-.bouquet-box-clean{
-  margin: 15px auto 25px;
-  max-width: 450px;
-  text-align: center;
-}
-.bouquet-gif-clean { 
-  width: 100%; 
-  max-width: 280px; 
-  margin: 0 auto 10px; 
-  filter: drop-shadow(0 0 25px rgba(255, 111, 159, 0.75)) brightness(1.08); 
-  animation: pulseGlow 2.5s infinite alternate;
-}
-.bouquet-gif-clean img { 
-  width: 100%; 
-  height: auto; 
-  display: block; 
-}
-.bouquet-title{font-family:'Playfair Display',serif;font-size:1.35rem;color:#ff85b3;font-weight:bold;margin-bottom:6px;text-shadow:0 2px 8px rgba(0,0,0,0.3);}
-.bouquet-desc{font-size:0.95rem;color:#e0b0cc;line-height:1.5}
+/* TRANG 3: TRÁI TIM ĐIỀU ƯỚC & BÓ HOA TỆP MÀU NỀN */
+.wishes-screen{padding:30px 15px;text-align:center;max-width:680px;margin:0 auto;animation:fadeIn 0.5s ease}
 
-/* TRANG 3: TRÁI TIM ĐIỀU ƯỚC */
-.wishes-screen{padding:40px 15px;text-align:center;max-width:650px;margin:0 auto;animation:fadeIn 0.5s ease}
-.wishes-screen h2{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,2.8rem);color:#a64f7b;margin:0 0 8px}
-.wishes-screen p{font-size:1rem;color:#7a5270;margin-bottom:25px}
+/* BÓ HOA TỆP VÀO NỀN, NỔI BẬT */
+.bouquet-header-container {
+  width: 100%;
+  max-width: 270px;
+  margin: 0 auto 10px;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+}
+.bouquet-header-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  mix-blend-mode: multiply; /* Hòa màu trắng vào nền */
+  filter: drop-shadow(0 6px 20px rgba(255, 105, 180, 0.45));
+}
+
+.wishes-screen h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2rem,5vw,2.6rem);
+  color:#8a2b53; /* Chữ đậm nổi bật hơn */
+  font-weight: 800;
+  margin:10px 0 6px;
+}
+.wishes-screen p.sub-wish-desc{
+  font-size:1rem;
+  color:#5a2343; /* Đậm màu hơn không bị chìm */
+  font-weight: 600;
+  margin-bottom:25px;
+  line-height: 1.5;
+}
 
 .heart-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:25px 20px;justify-items:center;padding:10px 0}
 
@@ -110,11 +117,11 @@ button{font:inherit;cursor:pointer;border:0}
   max-width: 240px;
   aspect-ratio: 1 / 1;
   background: linear-gradient(135deg, #ffffff, #fff0f5);
-  border: 2px solid #ffb3c9;
+  border: 2px solid #ff85b3;
   border-radius: 50% 50% 20% 20%;
   padding: 25px 10px 15px;
   text-align: center;
-  box-shadow: 0 10px 25px rgba(255, 111, 159, 0.18);
+  box-shadow: 0 10px 25px rgba(255, 111, 159, 0.22);
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   display: flex;
@@ -124,22 +131,22 @@ button{font:inherit;cursor:pointer;border:0}
 }
 .heart-card:hover{
   transform: translateY(-6px) scale(1.04);
-  border-color: #ff6f9f;
+  border-color: #ff3377;
   background: linear-gradient(135deg, #ffffff, #ffe4ee);
-  box-shadow: 0 15px 30px rgba(255, 111, 159, 0.3);
+  box-shadow: 0 15px 30px rgba(255, 111, 159, 0.35);
 }
 
 .heart-card.read-card {
   background: linear-gradient(135deg, #fffdf0, #ffeaa7) !important;
   border-color: #f1c40f !important;
-  box-shadow: 0 10px 25px rgba(241, 196, 15, 0.4) !important;
+  box-shadow: 0 10px 25px rgba(241, 196, 15, 0.45) !important;
 }
 .heart-card.read-card strong {
-  color: #b7950b !important;
+  color: #9a7d0a !important;
 }
 
 .heart-shape-icon{
-  font-size: 2.3rem;
+  font-size: 2.4rem;
   display: block;
   margin-bottom: 4px;
   filter: drop-shadow(0 4px 8px rgba(255, 111, 159, 0.3));
@@ -147,15 +154,16 @@ button{font:inherit;cursor:pointer;border:0}
 }
 .heart-card strong{
   display: block;
-  font-size: 0.98rem;
-  color: #a64f7b;
-  font-weight: 700;
-  margin-bottom: 2px;
+  font-size: 1.05rem;
+  color: #8a2b53; /* Màu chữ đậm rõ ràng */
+  font-weight: 800;
+  margin-bottom: 3px;
 }
 .heart-card small{
   display: block;
-  font-size: 0.78rem;
-  color: #926b88;
+  font-size: 0.82rem;
+  color: #632d4e;
+  font-weight: 600;
   line-height: 1.2;
 }
 
@@ -166,16 +174,16 @@ button{font:inherit;cursor:pointer;border:0}
   border-radius: 35px 35px 20px 20px;
   padding: 18px;
   background: linear-gradient(135deg, #ffe0eb, #f3d7f7);
-  border-color: #ff85b3;
+  border-color: #ff6599;
 }
 
 /* TRANG CHI TIẾT TỪNG ĐIỀU ƯỚC */
 .wish-page-screen{position:fixed;inset:0;background:linear-gradient(145deg,#fff5f7,#fff8ec 55%,#f4eaff);z-index:50;display:flex;align-items:center;justify-content:center;padding:15px;overflow-y:auto}
-.wish-page-container{max-width:580px;width:100%;background:#fffffffa;backdrop-filter:blur(10px);border:2px solid #ffb3c9;border-radius:28px;padding:20px;text-align:center;box-shadow:0 15px 45px rgba(183,108,142,0.2);animation:slideUp .35s ease;margin:auto;}
-.wish-page-container h3{font-family:'Playfair Display',serif;font-size:1.4rem;color:#a64f7b;margin:0 0 10px;line-height:1.3}
+.wish-page-container{max-width:580px;width:100%;background:#fffffffa;backdrop-filter:blur(10px);border:2px solid #ff85b3;border-radius:28px;padding:22px;text-align:center;box-shadow:0 15px 45px rgba(183,108,142,0.25);animation:slideUp .35s ease;margin:auto;}
+.wish-page-container h3{font-family:'Playfair Display',serif;font-size:1.45rem;color:#8a2b53;margin:0 0 12px;line-height:1.3;font-weight:800}
 
 .page-scroll-content{
-  max-height: 52vh;
+  max-height: 54vh;
   overflow-y: auto;
   padding-right: 8px;
   text-align: left;
@@ -183,7 +191,7 @@ button{font:inherit;cursor:pointer;border:0}
   scroll-behavior: smooth;
 }
 .page-scroll-content::-webkit-scrollbar { width: 6px; }
-.page-scroll-content::-webkit-scrollbar-thumb { background: #ffb3c9; border-radius: 10px; }
+.page-scroll-content::-webkit-scrollbar-thumb { background: #ff85b3; border-radius: 10px; }
 
 .page-photo-box{
   width: 100%;
@@ -191,8 +199,8 @@ button{font:inherit;cursor:pointer;border:0}
   aspect-ratio: 1 / 1;
   border-radius: 18px;
   overflow: hidden;
-  margin: 0 auto 8px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  margin: 0 auto 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
   background: #ffe0ea;
   display: flex;
   align-items: center;
@@ -206,20 +214,20 @@ button{font:inherit;cursor:pointer;border:0}
 }
 
 .scroll-hint{
-  font-size: 0.82rem;
-  font-weight: 700;
-  color: #c16b94;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #a8386a;
   margin-bottom: 12px;
   text-align: center;
   animation: bounceHint 1.8s infinite ease-in-out;
 }
 
-.wish-page-container .page-text{font-size:0.95rem;line-height:1.75;color:var(--ink);margin:0 0 14px;padding:0 4px;white-space:pre-line}
-.highlight-quote{background:linear-gradient(135deg,#fff0f5,#ffe4ee);border-left:4px solid #ff6f9f;border-radius:14px;padding:12px 14px;margin:12px 0;font-weight:700;color:#923d66;line-height:1.65;font-size:0.92rem}
+.wish-page-container .page-text{font-size:0.98rem;line-height:1.75;color:#2d152b;margin:0 0 14px;padding:0 4px;white-space:pre-line;font-weight:500;}
+.highlight-quote{background:linear-gradient(135deg,#fff0f5,#ffe4ee);border-left:4px solid #ff3377;border-radius:14px;padding:12px 14px;margin:12px 0;font-weight:700;color:#7a1d47;line-height:1.65;font-size:0.95rem}
 
 /* THANH TRÁI TIM NÓNG CHỌN TIẾP */
-.quick-nav{border-top:2px dashed #ffb3c9;padding-top:15px;margin-top:10px;text-align:left}
-.quick-nav-title{font-size:0.82rem;font-weight:700;color:#b0527c;margin-bottom:12px;text-transform:uppercase;letter-spacing:1px;text-align:center}
+.quick-nav{border-top:2px dashed #ff85b3;padding-top:15px;margin-top:10px;text-align:left}
+.quick-nav-title{font-size:0.85rem;font-weight:800;color:#8a2b53;margin-bottom:12px;text-transform:uppercase;letter-spacing:1px;text-align:center}
 .quick-nav-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;justify-items:center;padding-bottom:10px}
 
 .quick-nav-card{
@@ -227,7 +235,7 @@ button{font:inherit;cursor:pointer;border:0}
   max-width: 200px;
   aspect-ratio: 1 / 0.85;
   background: linear-gradient(135deg, #ffffff, #fff0f5);
-  border: 2px solid #ffb3c9;
+  border: 2px solid #ff85b3;
   border-radius: 50% 50% 15px 15px;
   padding: 10px;
   text-align: center;
@@ -244,7 +252,7 @@ button{font:inherit;cursor:pointer;border:0}
   background: linear-gradient(135deg, #fffdf0, #ffeaa7) !important;
   border-color: #f1c40f !important;
 }
-.quick-nav-card.read-card strong { color: #b7950b !important; }
+.quick-nav-card.read-card strong { color: #9a7d0a !important; }
 
 .quick-nav-card.special-card{
   grid-column: span 2;
@@ -252,30 +260,30 @@ button{font:inherit;cursor:pointer;border:0}
   aspect-ratio: auto;
   border-radius: 20px;
   background: linear-gradient(135deg, #ffe0eb, #f4d9f7);
-  border-color: #ff85b3;
+  border-color: #ff6599;
   padding: 12px;
 }
 .quick-nav-card span { font-size: 1.2rem; }
-.quick-nav-card strong { font-size: 0.82rem; color: #a64f7b; font-weight: 700; }
+.quick-nav-card strong { font-size: 0.85rem; color: #8a2b53; font-weight: 800; }
 
-.home-btn-big{display:block;width:100%;background:linear-gradient(135deg,#ff699b,#bd7ad7);color:white;border-radius:999px;padding:12px;font-weight:800;font-size:0.95rem;text-align:center;margin-top:12px;box-shadow:0 6px 15px rgba(219,126,168,0.3);transition:.2s}
+.home-btn-big{display:block;width:100%;background:linear-gradient(135deg,#ff4d88,#a855d8);color:white;border-radius:999px;padding:12px;font-weight:800;font-size:0.95rem;text-align:center;margin-top:12px;box-shadow:0 6px 15px rgba(219,126,168,0.3);transition:.2s}
 
-/* POPUP HỘP QUÀ BÍ MẬT */
+/* POPUP HỘP QUÀ BÍ MẬT XUẤT HIỆN TỰ ĐỘNG CHÍNH GIỮA MÀN HÌNH */
 .popup-overlay {
-  position: fixed; inset: 0; background: rgba(0,0,0,0.68);
+  position: fixed; inset: 0; background: rgba(0,0,0,0.72);
   backdrop-filter: blur(6px); z-index: 999;
   display: flex; align-items: center; justify-content: center; padding: 20px;
   animation: fadeIn 0.4s ease;
 }
 .gift-trigger-box {
   background: linear-gradient(135deg, #ffffff, #fff5f8);
-  border: 3px solid #ff6f9f; border-radius: 30px;
+  border: 3px solid #ff3377; border-radius: 30px;
   padding: 30px 20px; text-align: center; max-width: 380px; width: 100%;
-  box-shadow: 0 20px 50px rgba(255, 111, 159, 0.4);
+  box-shadow: 0 20px 50px rgba(255, 111, 159, 0.5);
   animation: bounceHint 2s infinite ease-in-out;
 }
 .gift-icon-big {
-  font-size: 4.8rem; margin-bottom: 10px; cursor: pointer;
+  font-size: 5rem; margin-bottom: 10px; cursor: pointer;
   filter: drop-shadow(0 10px 15px rgba(231, 76, 60, 0.4));
   transition: transform 0.3s;
 }
@@ -284,11 +292,6 @@ button{font:inherit;cursor:pointer;border:0}
 .heart-burst{
   position: fixed; pointer-events: none; font-size: 1.5rem; z-index: 99;
   animation: floatHeart 0.8s ease-out forwards;
-}
-
-@keyframes pulseGlow {
-  0% { filter: drop-shadow(0 0 15px rgba(255, 111, 159, 0.6)) brightness(1); }
-  100% { filter: drop-shadow(0 0 30px rgba(255, 111, 159, 0.95)) brightness(1.1); }
 }
 
 @keyframes floatHeart {
@@ -318,7 +321,7 @@ footer{font-size:0.78rem;color:#b58ca7;padding:20px 10px;text-align:center;trans
 </audio>
 <button class="music-control" id="musicToggle">🎵 <span id="musicStatus">Bật nhạc</span></button>
 
-<!-- TRANG 1: MỞ QUÀ (ĐÃ LỜI NÓI VỀ BÓ HOA VÀ BỎ LỜI NHẮC NHỞ) -->
+<!-- TRANG 1: MỞ QUÀ -->
 <section class="screen" id="intro">
   <div class="intro">
     <div class="eyebrow" id="introEyebrow"></div>
@@ -329,21 +332,12 @@ footer{font-size:0.78rem;color:#b58ca7;padding:20px 10px;text-align:center;trans
   </div>
 </section>
 
-<!-- TRANG 2: BÁNH KEM & NẾN SỐ 46 -->
+<!-- TRANG 2: BÁNH KEM & NẾN SỐ 46 (ĐÃ BỎ BÓ HOA VÀ BỎ LỜI TẶNG HOÀN TOÀN) -->
 <section class="screen celebration hidden" id="celebration">
   <div class="wrap">
     <div class="section-tag" id="birthdayDate"></div>
     <h2 id="birthdayTitle"></h2>
     <p class="sub" id="birthdayIntro"></p>
-
-    <!-- BÓ HOA GIF RỰC RỠ TỎA ÁNH SÁNG, KHÔNG CÓ KHUNG BAO BAN ĐẦU -->
-    <div class="bouquet-box-clean">
-      <div class="bouquet-gif-clean">
-        <img src="z9fE49K7yvjDtbnlu6g_Kpf3xcBBg4pK_zpsd5eafefe.gif" alt="Bó hoa hồng lấp lánh">
-      </div>
-      <div class="bouquet-title">Bó Hoa 999 Đóa Hồng Dành Riêng Cho Út 🌹</div>
-      <div class="bouquet-desc">Gửi tặng Út bó hồng rực rỡ và thắm thiết nhất, chúc Út tuổi mới luôn ngập tràn yêu thương và hạnh phúc! 💖</div>
-    </div>
 
     <div class="cake-area">
       <div class="cake-base">
@@ -366,11 +360,16 @@ footer{font-size:0.78rem;color:#b58ca7;padding:20px 10px;text-align:center;trans
   </div>
 </section>
 
-<!-- TRANG 3: TRÁI TIM ĐIỀU ƯỚC -->
+<!-- TRANG 3: TRÁI TIM ĐIỀU ƯỚC & BÓ HOA 999 ĐÓA HỒNG TỆP MÀU NỀN -->
 <section class="screen hidden" id="wishesScreen">
   <div class="wishes-screen">
+    <!-- BÓ HOA GIF HIỂN THỊ TỆP MÀU NỀN TRÊN CÙNG -->
+    <div class="bouquet-header-container">
+      <img src="z9fE49K7yvjDtbnlu6g_Kpf3xcBBg4pK_zpsd5eafefe.gif" alt="Bó hoa hồng lấp lánh">
+    </div>
+
     <h2>Trái Tim Điều Ước 💖</h2>
-    <p>Út bấm vào từng trái tim bên dưới để mở ra từng Lời chúc & Tâm sự riêng nha!</p>
+    <p class="sub-wish-desc">Bó hoa 999 đóa hồng thắm thiết gửi tặng Út! Út bấm vào từng trái tim bên dưới để mở ra Lời chúc & Tâm sự riêng nha! 🌹✨</p>
     
     <div class="heart-grid" id="heartGrid"></div>
     
@@ -405,12 +404,12 @@ footer{font-size:0.78rem;color:#b58ca7;padding:20px 10px;text-align:center;trans
   </div>
 </div>
 
-<!-- POPUP HỘP QUÀ BÍ MẬT -->
+<!-- POPUP HỘP QUÀ BÍ MẬT NỔI LÊN TỰ ĐỘNG KHI ĐỌC XONG BÀI VIẾT CUỐI CÙNG -->
 <div class="popup-overlay hidden" id="giftPopup">
   <div class="gift-trigger-box">
     <div class="gift-icon-big" id="giftBoxIcon">🎁</div>
-    <h3 style="color:#a64f7b; font-family:'Playfair Display',serif; margin:0 0 10px;">Món Quà Bí Mật Đã Xuất Hiện!</h3>
-    <p style="font-size:0.92rem; color:#8c5c7d; line-height:1.5; margin-bottom:15px;">Út ơi! Út đã mở hết các điều ước rồi. Bấm vào hộp quà để mở Món Quà Bí Mật đặc biệt từ con nha! 🌸✨</p>
+    <h3 style="color:#a64f7b; font-family:'Playfair Display',serif; margin:0 0 10px; font-weight:800;">Món Quà Bí Mật Đã Xuất Hiện!</h3>
+    <p style="font-size:0.95rem; color:#632d4e; line-height:1.5; margin-bottom:15px; font-weight:600;">Út ơi! Út đã đọc hết tất cả các điều ước rồi. Bấm vào hộp quà để mở Món Quà Bí Mật đặc biệt từ con nha! 🌸✨</p>
     <button class="main-btn" id="openGiftBtn">Mở Hộp Quà Bí Mật 🎁</button>
   </div>
 </div>
@@ -425,7 +424,7 @@ const CONFIG = {
   birthdayIntro: 'Chúc Út tuổi mới luôn rực rỡ, bình an và hạnh phúc viên mãn. Bây giờ Út nhắm mắt, ước một điều ước rồi cùng thổi nến nha!',
   ageBefore: '45',
   ageAfter: '46',
-  cakeNoteBefore: 'Một điều ước thật đẹp cùng bó hoa ngập tràn yêu thương… 🌷',
+  cakeNoteBefore: 'Một điều ước thật đẹp cùng nhiều yêu thương… 🌷',
   cakeNoteAfter: 'Chúc mừng Út bước sang tuổi 46 rực rỡ — điều ước nào cũng thành hiện thực! ✨',
   footerText: 'Món quà nhỏ được làm bằng tất cả tình yêu dành cho Út.',
 
@@ -538,19 +537,34 @@ function openWishPage(id){
   roses(5);
 }
 
-$('homeBtn').addEventListener('click', () => {$('wishPageScreen').classList.add('hidden');
-  checkGiftCompletion();
+// BẮT SỰ KIỆN CUỘN XUỐNG DƯỚI CÙNG CỦA ĐIỀU ƯỚC CUỐI ĐỂ BẬT POPUP TỰ ĐỘNG
+const scrollContainer = $('scrollContainer');
+scrollContainer.addEventListener('scroll', () => {
+  if (readWishes.size === CONFIG.wishes.length) {
+    const isAtBottom = scrollContainer.scrollHeight - scrollContainer.scrollTop <= scrollContainer.clientHeight + 40;
+    if (isAtBottom) {
+      triggerGiftPopupAuto();
+    }
+  }
 });
 
-function checkGiftCompletion(){
-  if(readWishes.size === CONFIG.wishes.length){
-    setTimeout(() => {
-      $('giftPopup').classList.remove('hidden');
-      fireworks(12);
-      roses(15);
-    }, 450);
-  }
+let popupTriggered = false;
+function triggerGiftPopupAuto(){
+  if(popupTriggered) return;
+  popupTriggered = true;
+  
+  setTimeout(() => {
+    $('giftPopup').classList.remove('hidden');
+    fireworks(15);
+    roses(20);
+  }, 300);
 }
+
+$('homeBtn').addEventListener('click', () => {$('wishPageScreen').classList.add('hidden');
+  if(readWishes.size === CONFIG.wishes.length && !popupTriggered){
+    triggerGiftPopupAuto();
+  }
+});
 
 function openSecretFamilyGift(){
   $('giftPopup').classList.add('hidden');
@@ -559,7 +573,6 @@ function openSecretFamilyGift(){
   fillText('pageWishText', `Út ơi, Út đã xem hết tất cả những điều ước và đọc những dòng tâm sự từ đáy lòng của con rồi.\n\nTấm hình này là món quà đặc biệt nhất con dành tặng Út. Dù khoảng cách địa lý có xa xôi đến đâu, hình bóng của Út, Dượng Út và Minh Thiện vẫn luôn ngập tràn trong tim gia đình mình.\n\nChúc Út luôn vững chãi, bình an và hạnh phúc trọn vẹn trên hành trình phía trước! 🌸✨`);
   $('pageWishPhoto').src = 'family.jpg'; 
   $('pageQuote').classList.add('hidden');$('wishPageScreen').classList.remove('hidden');
-  const scrollContainer = $('scrollContainer');
   if(scrollContainer) scrollContainer.scrollTop = 0;
   
   roses(20);
