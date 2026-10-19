@@ -118,6 +118,16 @@ button{font:inherit;cursor:pointer;border:0}
   background: linear-gradient(135deg, #ffffff, #ffe4ee);
   box-shadow: 0 18px 35px rgba(255, 111, 159, 0.35);
 }
+/* Hiệu ứng mạ vàng lấp lánh khi đã đọc */
+.heart-card.read-card {
+  background: linear-gradient(135deg, #fffdf0, #ffeaa7);
+  border-color: #f1c40f;
+  box-shadow: 0 10px 25px rgba(241, 196, 15, 0.3);
+}
+.heart-card.read-card strong {
+  color: #b7950b;
+}
+
 .heart-shape-icon{
   font-size: 2.8rem;
   display: block;
@@ -148,6 +158,32 @@ button{font:inherit;cursor:pointer;border:0}
   background: linear-gradient(135deg, #ffe0eb, #f3d7f7);
   border-color: #ff85b3;
   box-shadow: 0 12px 30px rgba(255, 111, 159, 0.28);
+}
+.heart-card.special-heart.read-card {
+  background: linear-gradient(135deg, #fff9e6, #fce38a);
+  border-color: #f39c12;
+}
+
+/* NÚT HỘP QUÀ BÍ MẬT THỨ 6 */
+.secret-box-container {
+  grid-column: span 2;
+  margin-top: 15px;
+  text-align: center;
+  animation: bounceHint 2s infinite ease-in-out;
+}
+.secret-gift-btn {
+  background: linear-gradient(135deg, #f39c12, #e74c3c);
+  color: white;
+  border-radius: 999px;
+  padding: 16px 32px;
+  font-size: 1.05rem;
+  font-weight: 800;
+  box-shadow: 0 10px 25px rgba(231, 76, 60, 0.4);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.secret-gift-btn:hover {
+  transform: scale(1.05);
 }
 
 /* TRANG CHI TIẾT TỪNG ĐIỀU ƯỚC */
@@ -288,7 +324,6 @@ footer{font-size:0.78rem;color:#b58ca7;padding:20px 10px;text-align:center;trans
     <div class="action-box">
       <div class="action-text" id="actionText">🎂 Út thổi nến sang tuổi mới đi út!</div>
       <button class="main-btn" id="blowBtn">Thổi nến ngay ✨</button>
-      <!-- NÚT BẤM DỪNG TẠI SỐ 46 TUỔI ĐỂ ÚT BẤM QUA TRANG ĐIỀU ƯỚC -->
       <button class="main-btn hidden" id="wishesBtn" style="background:linear-gradient(135deg,#ff6599,#a855d8); padding:16px 30px; font-size:1.05rem;">Giờ đến các điều ước nha Út ✨</button>
     </div>
     <footer id="footerText1"></footer>
@@ -327,7 +362,7 @@ footer{font-size:0.78rem;color:#b58ca7;padding:20px 10px;text-align:center;trans
     <div class="quick-nav">
       <div class="quick-nav-title">🌸 Chọn tiếp trái tim điều ước khác:</div>
       <div class="quick-nav-grid" id="quickNavGrid"></div>
-      <button class="home-btn-big" id="homeBtn">💖 Quay về danh sách Trái Tim Điều Ước</button>
+      <button class="home-btn-big" id="homeBtn">💖 Quay về danh sách Trái Tim Điều ƯỚC</button>
     </div>
   </div>
 </div>
@@ -386,6 +421,9 @@ Con mong Út biết rằng Út đã hy sinh và lo lắng cho gia đình mình n
   ]
 };
 
+// Theo dõi các điều ước Út đã đọc
+const readWishes = new Set();
+
 const $ = id => document.getElementById(id);
 const intro=$('intro'), celebration=$('celebration'), wishesScreen=$('wishesScreen');
 
@@ -404,20 +442,54 @@ fillText('footerText2',CONFIG.footerText);
 
 // Tạo danh sách thẻ Trái Tim ở Trang 3
 const heartGrid=$('heartGrid');
-CONFIG.wishes.forEach(w=>{
-  const b=document.createElement('div');
-  b.className='heart-card' + (w.isSpecial ? ' special-heart' : '');
-  b.innerHTML='<span class="heart-shape-icon"></span><strong></strong><small></small>';
-  b.querySelector('.heart-shape-icon').textContent=w.icon;
-  b.querySelector('strong').textContent=w.cardTitle;
-  b.querySelector('small').textContent=w.short;
-  
-  b.addEventListener('click',(e)=>{
-    triggerHeartBurst(e);
-    setTimeout(() => openWishPage(w.id), 300);
+const secretBoxDiv = document.createElement('div');
+secretBoxDiv.className = 'secret-box-container hidden';
+secretBoxDiv.innerHTML = `<button class="secret-gift-btn" id="secretGiftBtn">🎁 Mở hộp quà gia đình mình từ con</button>`;
+
+function renderHeartGrid(){
+  heartGrid.innerHTML = '';
+  CONFIG.wishes.forEach(w=>{
+    const b=document.createElement('div');
+    b.id = 'card-' + w.id;
+    b.className='heart-card' + (w.isSpecial ? ' special-heart' : '') + (readWishes.has(w.id) ? ' read-card' : '');
+    b.innerHTML='<span class="heart-shape-icon"></span><strong></strong><small></small>';
+    b.querySelector('.heart-shape-icon').textContent = readWishes.has(w.id) ? '🌟' : w.icon;
+    b.querySelector('strong').textContent=w.cardTitle;
+    b.querySelector('small').textContent=w.short;
+    
+    b.addEventListener('click',(e)=>{
+      triggerHeartBurst(e);
+      setTimeout(() => openWishPage(w.id), 300);
+    });
+    heartGrid.appendChild(b);
   });
-  heartGrid.appendChild(b);
+
+  // Nếu đã đọc đủ 5 điều ước, hiển thị nút Hộp quà bí mật thứ 6
+  if(readWishes.size === CONFIG.wishes.length){
+    heartGrid.appendChild(secretBoxDiv);
+    secretBoxDiv.classList.remove('hidden');
+  }
+}
+
+renderHeartGrid();
+
+// Sự kiện mở hộp quà bí mật thứ 6
+document.addEventListener('click', function(e) {
+  if (e.target && e.target.id === 'secretGiftBtn') {
+    openSecretFamilyGift();
+  }
 });
+
+function openSecretFamilyGift(){
+  fillText('pageWishTitle','Món Quà Bí Mật Từ Gia Đình 🏡❤️');
+  fillText('pageWishText', `Út ơi, Út đã mở hết tất cả những điều ước và đọc những dòng tâm sự từ đáy lòng của con rồi.\n\nTấm hình này là món quà đặc biệt nhất con dành tặng Út. Dù khoảng cách địa lý có xa xôi đến đâu, hình bóng của Út, Dượng Út và Minh Thiện vẫn luôn ngập tràn trong tim gia đình mình.\n\nChúc Út luôn vững chãi, bình an và hạnh phúc trọn vẹn trên hành trình phía trước! 🌸✨`);
+  $('pageWishPhoto').src = 'family.jpg'; // Ảnh gia đình Út, Dượng Út và Minh Thiện
+  $('pageQuote').classList.add('hidden');$('wishPageScreen').classList.remove('hidden');
+  const scrollContainer = $('scrollContainer');
+  if(scrollContainer) scrollContainer.scrollTop = 0;
+  roses(15);
+  fireworks(10);
+}
 
 // Điều hướng nhanh trong trang chi tiết
 const quickNavGrid = $('quickNavGrid');
@@ -432,6 +504,11 @@ CONFIG.wishes.forEach(w=>{
 function openWishPage(id){
   const w=CONFIG.wishes.find(x=>x.id===id);
   if(!w)return;
+
+  // Đánh dấu đã đọc để đổi màu thẻ trái tim sang mạ vàng
+  readWishes.add(w.id);
+  renderHeartGrid();
+
   fillText('pageWishTitle',w.title);
   fillText('pageWishText',w.text);
   $('pageWishPhoto').src = w.image;
