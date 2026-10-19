@@ -504,4 +504,155 @@ const observer = new IntersectionObserver((entries) => {
       const icon = $('icon-' + id);
       if (card) {
         card.classList.add('read-card');
-        if (icon) icon.textContent
+        if (icon) icon.textContent = '🌟';
+      }
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.wish-block').forEach(block => {
+  observer.observe(block);
+});
+
+// Sự kiện mở món quà bí mật
+$('secretGiftBtn').addEventListener('click', (e) => {
+  triggerHeartBurst(e);
+  $('secretModal').classList.remove('hidden');
+  roses(15);
+  fireworks(10);
+});
+
+$('closeSecretBtn').addEventListener('click', () => {$('secretModal').classList.add('hidden');
+});
+
+$('backToCakeBtn').addEventListener('click',()=>{
+  wishesScreen.classList.add('hidden');
+  celebration.classList.remove('hidden');
+  document.body.classList.add('dark-mode');
+  window.scrollTo({top:0,behavior:'smooth'});
+});
+
+const bgMusic = $('bgMusic');
+const musicToggle = $('musicToggle');
+const musicStatus = $('musicStatus');
+let isMusicPlaying = false;
+
+musicToggle.addEventListener('click', () => {
+  if (isMusicPlaying) {
+    bgMusic.pause();
+    musicStatus.textContent = 'Bật nhạc';
+    musicToggle.style.borderColor = '#ffb3c9';
+  } else {
+    bgMusic.play().then(() => {
+      isMusicPlaying = true;
+      musicStatus.textContent = 'Tắt nhạc';
+      musicToggle.style.borderColor = '#ff6f9f';
+    }).catch(e => console.log("Audio error:", e));
+  }
+  isMusicPlaying = !isMusicPlaying;
+});
+
+$('openBtn').addEventListener('click',()=>{
+  intro.classList.add('hidden');
+  celebration.classList.remove('hidden');
+  document.body.classList.add('dark-mode');
+  window.scrollTo({top:0,behavior:'smooth'});
+  startRoses();
+  fireworks(6);
+  bgMusic.play().then(() => {
+    isMusicPlaying = true;
+    musicStatus.textContent = 'Tắt nhạc';
+  }).catch(e => console.log("Autoplay blocked"));
+});
+
+$('blowBtn').addEventListener('click',()=>{
+  if($('mainFlame'))$('mainFlame').style.opacity = '0';
+  fillText('candleAge', CONFIG.ageAfter);
+  fillText('cakeNote', CONFIG.cakeNoteAfter);
+  
+  $('actionText').textContent = 'Tuổi 46 rực rỡ và đong đầy yêu thương! 🎉';
+  $('blowBtn').classList.add('hidden');$('wishesBtn').classList.remove('hidden'); 
+  
+  document.body.classList.remove('dark-mode');
+  
+  fireworks(25);
+  roses(35);
+});
+
+$('wishesBtn').addEventListener('click', ()=>{
+  celebration.classList.add('hidden');
+  wishesScreen.classList.remove('hidden');
+  window.scrollTo({top:0,behavior:'smooth'});
+});
+
+function triggerHeartBurst(e){
+  const hearts = ['💖', '💗', '💕', '✨', '🌸'];
+  const rect = e.currentTarget.getBoundingClientRect();
+  const centerX = rect.left + rect.width / 2;
+  const centerY = rect.top + rect.height / 2;
+
+  for(let i = 0; i < 10; i++){
+    const el = document.createElement('div');
+    el.className = 'heart-burst';
+    el.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+    el.style.left = centerX + 'px';
+    el.style.top = centerY + 'px';
+    
+    const angle = (Math.PI * 2 / 10) * i;
+    const dist = 60 + Math.random() * 50;
+    el.style.setProperty('--dx', Math.cos(angle) * dist + 'px');
+    el.style.setProperty('--dy', Math.sin(angle) * dist + 'px');
+    
+    document.body.appendChild(el);
+    setTimeout(() => el.remove(), 800);
+  }
+}
+
+function startRoses(){
+  setInterval(()=>{
+    const r=document.createElement('div');
+    r.className='rose-fall';
+    r.textContent=['🌹', '🥀', '✨', '💖'][Math.floor(Math.random()*4)];
+    r.style.left=Math.random()*100+'vw';
+    r.style.fontSize=(18+Math.random()*24)+'px';
+    r.style.animationDuration=(4+Math.random()*5)+'s';
+    document.body.appendChild(r);
+    setTimeout(()=>r.remove(),9000);
+  }, 300);
+}
+
+function roses(n){
+  for(let i=0;i<n;i++){
+    const r=document.createElement('div');
+    r.className='rose-fall';
+    r.textContent=['🌹', '💖', '✨', '💐'][Math.floor(Math.random()*4)];
+    r.style.left=Math.random()*100+'vw';
+    r.style.fontSize=(20+Math.random()*24)+'px';
+    r.style.animationDuration=(3+Math.random()*4)+'s';
+    document.body.appendChild(r);
+    setTimeout(()=>r.remove(),7000);
+  }
+}
+
+function fireworks(n){
+  for(let k=0;k<n;k++){
+    setTimeout(()=>{
+      const x=10+Math.random()*80,y=12+Math.random()*45;
+      for(let i=0;i<28;i++){
+        const p=document.createElement('i');
+        p.className='firework';
+        p.style.left=x+'vw';
+        p.style.top=y+'vh';
+        p.style.color=['#ff6f9f','#ffca68','#ff4d6d','#ff758f'][Math.floor(Math.random()*4)];
+        const a=(Math.PI*2*i)/28,r=45+Math.random()*85;
+        p.style.setProperty('--x',Math.cos(a)*r+'px');
+        p.style.setProperty('--y',Math.sin(a)*r+'px');
+        document.body.appendChild(p);
+        setTimeout(()=>p.remove(),1200);
+      }
+    },k*250);
+  }
+}
+</script>
+</body>
+</html>
