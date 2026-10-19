@@ -58,7 +58,7 @@ button{font:inherit;cursor:pointer;border:0}
 .gift{font-size:clamp(3.5rem,12vw,6rem);animation:bob 2s ease-in-out infinite;filter:drop-shadow(0 10px 12px #d98ca355)}
 .main-btn{background:linear-gradient(135deg,#ff699b,#bd7ad7);color:white;border-radius:999px;padding:14px 28px;box-shadow:0 8px 20px rgba(219,126,168,0.35);font-weight:800;transition:.2s;font-size:1rem}
 .main-btn:hover{transform:translateY(-3px);box-shadow:0 12px 25px rgba(219,126,168,0.5)}
-.tiny{font-size:.8rem;color:#9e7796;margin-top:12px}
+.tiny{font-size:.82rem;color:#9e7796;margin-top:12px;font-weight:600}
 .hidden{display:none!important}
 
 /* TRANG BÁNH KEM */
@@ -77,7 +77,7 @@ button{font:inherit;cursor:pointer;border:0}
 /* CÂY NẾN ĐỔI SỐ 45 SANG 46 */
 .candle-row{position:absolute;top:-95px;left:0;width:100%;display:flex;justify-content:center;gap:14px;z-index:3}
 .candle{width:50px;height:65px;border-radius:10px;background:linear-gradient(135deg,#fff,#ffb7d0);position:relative;display:flex;justify-content:center;align-items:center;color:#a64f7b;font-weight:900;font-size:1.4rem;box-shadow:0 4px 10px rgba(158,69,99,0.25);border:2px solid #ff6f9f;font-family:'Playfair Display',serif;}
-.flame{position:absolute;top:-22px;width:18px;height:24px;background:radial-gradient(ellipse at 50% 70%,#fffad1 0 25%,#ffb037 55%,#ff523d 80%);border-radius:60% 40% 55% 45%;transform:rotate(5deg);animation:flicker .6s infinite alternate;transition:all 0.3s;filter:drop-shadow(0 0 12px #ffc107);}
+.flame{position:absolute;top:-22px;width:18px;height:24px;background:radial-gradient(ellipse at 50% 70%,#fffad1 0 25%,#ffb037 55%,#ff523d 80%);border-radius:60% 40% 55% 45%;transform:rotate(5deg);animation:flicker .6s infinite alternate;transition:all 0.3s;filter:drop-shadow(0 0 16px #ffcb57);}
 
 .cake-note{font-family:'Playfair Display',serif;font-style:italic;font-size:1.1rem;margin:15px 0;color:#8c4a6b;transition:color 0.8s ease}
 .action-box{background:#fff0f6;border:2px dashed #ff94b8;border-radius:18px;padding:15px;max-width:360px;margin:0 auto 20px;transition:all 0.8s ease}
@@ -173,7 +173,7 @@ button{font:inherit;cursor:pointer;border:0}
   aspect-ratio: 1 / 1;
   border-radius: 18px;
   overflow: hidden;
-  margin: 0 auto 14px;
+  margin: 0 auto 8px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.1);
   background: #ffe0ea;
   display: flex;
@@ -185,6 +185,16 @@ button{font:inherit;cursor:pointer;border:0}
   height: 100%;
   object-fit: contain;
   border-radius: 18px;
+}
+
+/* CHỈ DẪN VUỐT XUỐNG DỄ THƯƠNG */
+.scroll-hint{
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #c16b94;
+  margin-bottom: 12px;
+  text-align: center;
+  animation: bounceHint 1.8s infinite ease-in-out;
 }
 
 .wish-page-container .page-text{font-size:0.95rem;line-height:1.75;color:var(--ink);margin:0 0 14px;padding:0 4px;white-space:pre-line}
@@ -211,6 +221,11 @@ button{font:inherit;cursor:pointer;border:0}
 @keyframes floatHeart {
   0% { transform: translate(0, 0) scale(0.5); opacity: 1; }
   100% { transform: translate(var(--dx), var(--dy)) scale(1.4); opacity: 0; }
+}
+
+@keyframes bounceHint {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(5px); }
 }
 
 @keyframes bob{50%{transform:translateY(-10px) rotate(2deg)}}
@@ -242,7 +257,7 @@ footer{font-size:0.78rem;color:#b58ca7;padding:20px 10px;text-align:center;trans
     <h1 id="introTitle"></h1>
     <p id="introText"></p>
     <button class="main-btn" id="openBtn">Mở quà nè, Út ơi ✨</button>
-    <div class="tiny" id="introTiny"></div>
+    <div class="tiny" id="introTiny">🎵 Út nhớ bật âm thanh điện thoại để nghe bản nhạc con dành riêng cho Út nha!</div>
   </div>
 </section>
 
@@ -303,6 +318,8 @@ footer{font-size:0.78rem;color:#b58ca7;padding:20px 10px;text-align:center;trans
       <div class="page-photo-box">
         <img id="pageWishPhoto" alt="Ảnh kỷ niệm Út">
       </div>
+      <!-- DÒNG CHỈ DẪN VUỐT XUỐNG -->
+      <div class="scroll-hint">Út vuốt xuống để đọc tiếp tâm sự của con nha 👇</div>
       <div class="page-text" id="pageWishText"></div>
       <div class="highlight-quote hidden" id="pageQuote"></div>
     </div>
@@ -320,7 +337,7 @@ const CONFIG = {
   introEyebrow: 'Một món quà nhỏ, ngập tràn hoa hồng và yêu thương',
   introTitle: 'ÚT ƠI CON CÓ\nMÓN QUÀ TẶNG CHO ÚT',
   introText: 'Hôm nay là ngày đặc biệt của Út. Con gửi tặng Út bó hoa 999 đóa hồng thắm thiết và những lời chúc ngọt ngào nhất — mình cùng mở nha! 🌹💗',
-  introTiny: 'Dành riêng cho Út trong ngày sinh nhật tuổi 46',
+  introTiny: 'Dành riêng cho Út trong ngày sinh nhật tuổi 46 · 🎵 Út nhớ bật âm thanh điện thoại nha!',
   birthdayDate: 'Happy Birthday · 22 tháng 10',
   birthdayTitle: 'Chúc mừng sinh nhật Út! 🌹',
   birthdayIntro: 'Chúc Út tuổi mới luôn rực rỡ, bình an và hạnh phúc viên mãn. Bây giờ Út nhắm mắt, ước một điều ước rồi cùng thổi nến nha!',
@@ -331,53 +348,29 @@ const CONFIG = {
   footerText: 'Món quà nhỏ được làm bằng tất cả tình yêu dành cho Út.',
 
   wishes: [
+    { id:'family', icon:'💖', cardTitle:'Gia đình', short:'Luôn sum vầy, bình an', title:'Điều ước về gia đình 🏡', text:'Con mong gia đình mình luôn bình an, thương yêu nhau và có thật nhiều dịp quây quần bên nhau. Mong nhà mình lúc nào cũng đầy ắp tiếng cười, hạnh phúc đong đầy. ❤️', image:'giadinh.jpg' },
     { 
-      id: 'family', 
-      icon: '💖', 
-      cardTitle: 'Gia đình', 
-      short: 'Luôn sum vầy, bình an', 
-      title: 'Điều ước về gia đình 🏡', 
-      text: 'Con mong gia đình mình luôn bình an, thương yêu nhau và có thật nhiều dịp quây quần bên nhau. Mong nhà mình lúc nào cũng đầy ắp tiếng cười, hạnh phúc đong đầy. ❤️', 
-      image: 'giadinh.jpg' 
-    },
-    { 
-      id: 'love', 
-      icon: '💖', 
-      cardTitle: 'Tình yêu', 
-      short: 'Luôn được yêu thương', 
-      title: 'Điều ước về tình yêu 💗', 
-      text: `Con mong Út sẽ luôn được yêu thương, trân trọng và quan tâm bằng những điều chân thành nhất.
+      id:'love', 
+      icon:'💖', 
+      cardTitle:'Tình yêu', 
+      short:'Luôn được yêu thương', 
+      title:'Điều ước về tình yêu 💗', 
+      text:`Con mong Út sẽ luôn được yêu thương, trân trọng và quan tâm bằng những điều chân thành nhất.
 Mong rằng những ngày tháng phía trước, Út sẽ gặp được một người thật lòng thương Út, sẵn sàng ở bên, chở che và cùng Út đi qua những vui buồn của cuộc sống.
 Con tặng Út và Dượng Út tấm hình này. Con biết đó chỉ là một hình ảnh thôi, nhưng con vẫn mong rằng, ít nhất trong thế giới nhỏ bé ấy, Út và Dượng Út có thể được hạnh phúc bên nhau, được ôm nhau thật gần và lưu giữ một khoảnh khắc thật đẹp.
 Mong rằng một ngày nào đó, Út sẽ thật sự có được tình yêu như vậy, một người ôm Út bằng tất cả sự dịu dàng, khiến Út cảm thấy mình được yêu thương, được trân trọng và không còn phải cô đơn.
 Con chỉ mong Út được hạnh phúc, thật lòng hạnh phúc, Út nhé! ❤️ ❤️ 💞`, 
-      image: 'tinhyeu.png' 
+      image:'tinhyeu.png' 
     },
+    { id:'health', icon:'💖', cardTitle:'Sức khỏe - Tiền Tài', short:'Khỏe mạnh, phú quý', title:'Điều ước về sức khỏe 🌿', text:'Tuổi mới, con chỉ mong Út luôn khỏe mạnh, an nhiên, mỗi ngày thức dậy đều thấy lòng nhẹ nhàng và tận hưởng trọn vẹn niềm vui cuộc sống. Có thật nhiều tiền, để có tiền về Việt Nam thăm gia đình. 🌷', image:'suc-khoe.jpg' },
+    { id:'children', icon:'💖', cardTitle:'Con cái', short:'Thuận hòa, hạnh phúc', title:'Điều ước về con cái 👨‍👩‍👧‍👦', text:'Con mong Minh Thiện sẽ ngày càng phát triển, thông minh, lanh lợi có thể tự chăm sóc cho bản thân để sống cuộc đời bình an bên Út.. 🫶', image:'minhthien.jpg' },
     { 
-      id: 'health', 
-      icon: '💖', 
-      cardTitle: 'Sức khỏe - Tiền Tài', 
-      short: 'Khỏe mạnh, phú quý', 
-      title: 'Điều ước về sức khỏe 🌿', 
-      text: 'Tuổi mới, con chỉ mong Út luôn khỏe mạnh, an nhiên, mỗi ngày thức dậy đều thấy lòng nhẹ nhàng và tận hưởng trọn vẹn niềm vui cuộc sống. Có thật nhiều tiền, để có tiền về Việt Nam thăm gia đình. 🌷', 
-      image: 'suc-khoe.jpg' 
-    },
-    { 
-      id: 'children', 
-      icon: '💖', 
-      cardTitle: 'Con cái', 
-      short: 'Thuận hòa, hạnh phúc', 
-      title: 'Điều ước về con cái 👨‍👩‍👧‍👦', 
-      text: 'Con mong Minh Thiện sẽ ngày càng phát triển, thông minh, lanh lợi có thể tự chăm sóc cho bản thân để sống cuộc đời bình an bên Út.. 🫶', 
-      image: 'minhthien.jpg' 
-    },
-    { 
-      id: 'letter', 
-      icon: '💌', 
-      cardTitle: 'Lời con gửi Út', 
-      short: 'Những dòng tâm sự từ đáy lòng', 
-      title: 'Út ơi, con có một vài điều muốn gửi đến Út… ❤️', 
-      text: `Vậy là đã 13 năm rồi Út chưa được trở về quê hương. Gia đình mình ai cũng nhớ thương Út nhiều lắm.
+      id:'letter', 
+      icon:'💌', 
+      cardTitle:'Lời con gửi Út', 
+      short:'Những dòng tâm sự từ đáy lòng', 
+      title:'Út ơi, con có một vài điều muốn gửi đến Út… ❤️', 
+      text:`Vậy là đã 13 năm rồi Út chưa được trở về quê hương. Gia đình mình ai cũng nhớ thương Út nhiều lắm.
 
 Nhìn Út tần tảo, sớm hôm đi làm, chẳng dám cho mình nghỉ ngơi ngày nào, con thấy thương Út vô cùng. Con thương cả những lúc Út vui vẻ, hạnh phúc khi Minh Thiện nói được những lời đầu tiên. Và con càng thương Út hơn khi những lúc ngoại bệnh, một mình Út lo toan mọi thứ trong ngoài. Nếu không có Út, con cũng không biết gia đình mình sẽ như thế nào nữa.
 
@@ -387,7 +380,7 @@ Thấy bạn bè tổ chức sinh nhật cho Út, con vui lắm. Con vui vì dù
 
 Con mong Út biết rằng Út đã hy sinh và lo lắng cho gia đình mình nhiều đến nhường nào. Những điều Út làm, con luôn ghi nhớ trong lòng. Có thể bây giờ con chưa làm được gì nhiều cho Út, nhưng con thật lòng biết ơn và thương Út rất nhiều.`,
       quote: `✨ Chúc Út tuổi mới thật nhiều niềm vui, sức khỏe, bình an và hạnh phúc. Mong một ngày không xa, Út và Minh Thiện sẽ được trở về quê hương, được đoàn tụ với gia đình và nhận lại thật nhiều yêu thương sau những năm tháng vất vả nơi xứ người.\n\nCon thương Út nhiều lắm! ❤️`,
-      image: 'giau.jpg',
+      image:'giau.jpg',
       isSpecial: true
     }
   ]
