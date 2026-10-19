@@ -187,7 +187,6 @@ button{font:inherit;cursor:pointer;border:0}
   border-radius: 18px;
 }
 
-/* CHỈ DẪN VUỐT XUỐNG DỄ THƯƠNG */
 .scroll-hint{
   font-size: 0.82rem;
   font-weight: 700;
@@ -287,8 +286,9 @@ footer{font-size:0.78rem;color:#b58ca7;padding:20px 10px;text-align:center;trans
     <div class="cake-note" id="cakeNote"></div>
     
     <div class="action-box">
-      <div class="action-text">🎂 Út thổi nến sang tuổi mới đi út!</div>
+      <div class="action-text" id="actionText">🎂 Út thổi nến sang tuổi mới đi út!</div>
       <button class="main-btn" id="blowBtn">Thổi nến ngay ✨</button>
+      <button class="main-btn hidden" id="nextPageBtn" style="margin-top:10px; background:linear-gradient(135deg,#ff85b3,#a262d9);">Xem tiếp các Điều Ước 💖</button>
     </div>
     <footer id="footerText1"></footer>
   </div>
@@ -318,7 +318,6 @@ footer{font-size:0.78rem;color:#b58ca7;padding:20px 10px;text-align:center;trans
       <div class="page-photo-box">
         <img id="pageWishPhoto" alt="Ảnh kỷ niệm Út">
       </div>
-      <!-- DÒNG CHỈ DẪN VUỐT XUỐNG -->
       <div class="scroll-hint">Út vuốt xuống để đọc tiếp tâm sự của con nha 👇</div>
       <div class="page-text" id="pageWishText"></div>
       <div class="highlight-quote hidden" id="pageQuote"></div>
@@ -494,24 +493,34 @@ $('openBtn').addEventListener('click',()=>{
   }).catch(e => console.log("Autoplay blocked"));
 });
 
-// Thổi nến xong chuyển số 45 thành 46, sáng nền, nổ pháo hoa rồi mở trang điều ước
+let transitionTimer = null;
+
+function goToWishesPage(){
+  if(transitionTimer) clearTimeout(transitionTimer);
+  celebration.classList.add('hidden');
+  wishesScreen.classList.remove('hidden');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// Thổi nến xong chuyển số 45 thành 46, sáng nền, nổ pháo hoa và chờ 4 giây rồi mới mở trang điều ước
 $('blowBtn').addEventListener('click',()=>{
   if($('mainFlame'))$('mainFlame').style.opacity = '0';
   fillText('candleAge', CONFIG.ageAfter);
   fillText('cakeNote', CONFIG.cakeNoteAfter);
-  $('blowBtn').textContent = 'Tuổi mới rực rỡ nha Út! 🎉';
+  
+  $('actionText').textContent = 'Tuổi 46 rực rỡ và đong đầy yêu thương! 🎉';
+  $('blowBtn').classList.add('hidden');$('nextPageBtn').classList.remove('hidden');
   
   document.body.classList.remove('dark-mode');
   
-  fireworks(15);
+  fireworks(18);
   roses(25);
   
-  setTimeout(()=>{
-    celebration.classList.add('hidden');
-    wishesScreen.classList.remove('hidden');
-    window.scrollTo({top:0,behavior:'smooth'});
-  }, 1500);
+  // Tăng thời gian chờ lên 4.5 giây để Út đọc kịp
+  transitionTimer = setTimeout(goToWishesPage, 4500);
 });
+
+$('nextPageBtn').addEventListener('click', goToWishesPage);
 
 /* Hiệu ứng nổ trái tim xung quanh vị trí click */
 function triggerHeartBurst(e){
