@@ -74,7 +74,7 @@ button{font:inherit;cursor:pointer;border:0}
 .cake-drip{position:absolute;top:6px;left:15px;width:26px;height:36px;background:#ffffff;border-radius:0 0 14px 14px;box-shadow:45px 5px #ffffff,95px -2px #ffffff,145px 8px #ffffff,185px 3px #ffffff}
 .cake-berries{position:absolute;top:-35px;width:100%;display:flex;justify-content:center;gap:18px;font-size:1.2rem}
 
-/* CÂY NẾN ĐỔI SỐ 45 SANG 46 */
+/* CÂY NẾN SỐ 46 */
 .candle-row{position:absolute;top:-95px;left:0;width:100%;display:flex;justify-content:center;gap:14px;z-index:3}
 .candle{width:50px;height:65px;border-radius:10px;background:linear-gradient(135deg,#fff,#ffb7d0);position:relative;display:flex;justify-content:center;align-items:center;color:#a64f7b;font-weight:900;font-size:1.4rem;box-shadow:0 4px 10px rgba(158,69,99,0.25);border:2px solid #ff6f9f;font-family:'Playfair Display',serif;}
 .flame{position:absolute;top:-22px;width:18px;height:24px;background:radial-gradient(ellipse at 50% 70%,#fffad1 0 25%,#ffb037 55%,#ff523d 80%);border-radius:60% 40% 55% 45%;transform:rotate(5deg);animation:flicker .6s infinite alternate;transition:all 0.3s;filter:drop-shadow(0 0 16px #ffcb57);}
@@ -83,8 +83,10 @@ button{font:inherit;cursor:pointer;border:0}
 .action-box{background:#fff0f6;border:2px dashed #ff94b8;border-radius:18px;padding:15px;max-width:380px;margin:0 auto 20px;transition:all 0.8s ease}
 .action-text{font-size:0.98rem;font-weight:700;color:#b0527c;margin-bottom:10px;transition:color 0.8s ease}
 
+/* KHUNG HOA HỒNG GIF */
 .bouquet-box{background:linear-gradient(135deg,#fff0f3,#ffe4ec);border:2px solid #ffb3c9;border-radius:20px;padding:18px;max-width:450px;margin:20px auto;box-shadow:0 8px 25px rgba(255,111,159,0.15);text-align:center;transition:all 0.8s ease}
-.bouquet-icon{font-size:3.5rem;animation:bob 2.5s ease-in-out infinite;margin-bottom:6px}
+.bouquet-gif-container { width: 100%; max-width: 220px; margin: 0 auto 10px; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+.bouquet-gif-container img { width: 100%; height: auto; display: block; }
 .bouquet-title{font-family:'Playfair Display',serif;font-size:1.25rem;color:#a64f7b;font-weight:bold;margin-bottom:6px;transition:color 0.8s ease}
 .bouquet-desc{font-size:0.92rem;color:#8c5c7d;line-height:1.5;transition:color 0.8s ease}
 
@@ -93,9 +95,9 @@ button{font:inherit;cursor:pointer;border:0}
 .wishes-screen h2{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,2.8rem);color:#a64f7b;margin:0 0 8px}
 .wishes-screen p{font-size:1rem;color:#7a5270;margin-bottom:20px}
 
-.heart-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px 15px;justify-items:center;padding:10px 0;margin-bottom:30px}
+.heart-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px 15px;justify-items:center;padding:10px 0;margin-bottom:30px;position:sticky;top:10px;z-index:20;background:rgba(255,248,241,0.92);backdrop-filter:blur(8px);border-radius:25px;padding:12px;box-shadow:0 8px 20px rgba(0,0,0,0.06);}
 
-/* CÁC THẺ TRÁI TIM BỰ TẠO ĐIỂM NHẤN */
+/* CÁC THẺ TRÁI TIM CHUYỂN MÀU KHI ĐỌC QUA */
 .heart-card{
   width: 100%;
   max-width: 240px;
@@ -103,40 +105,45 @@ button{font:inherit;cursor:pointer;border:0}
   background: linear-gradient(135deg, #ffffff, #fff0f5);
   border: 2px solid #ffb3c9;
   border-radius: 50% 50% 20% 20%;
-  padding: 30px 12px 15px;
+  padding: 25px 10px 12px;
   text-align: center;
-  box-shadow: 0 10px 25px rgba(255, 111, 159, 0.18);
+  box-shadow: 0 8px 20px rgba(255, 111, 159, 0.15);
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.heart-card:hover{
-  transform: translateY(-6px) scale(1.04);
-  border-color: #ff6f9f;
-  background: linear-gradient(135deg, #ffffff, #ffe4ee);
-  box-shadow: 0 15px 30px rgba(255, 111, 159, 0.3);
+
+/* KHI ĐÃ ĐỌC HOẶC ĐANG TRUY CẬP ĐẾN MỤC ĐÓ -> CHUYỂN MÀU VÀNG KIM LẤP LÁNH */
+.heart-card.read-card {
+  background: linear-gradient(135deg, #fffdf0, #ffeaa7) !important;
+  border-color: #f1c40f !important;
+  box-shadow: 0 10px 25px rgba(241, 196, 15, 0.4) !important;
+  transform: scale(1.03);
+}
+.heart-card.read-card strong {
+  color: #b7950b !important;
 }
 
 .heart-shape-icon{
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   display: block;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
   filter: drop-shadow(0 4px 8px rgba(255, 111, 159, 0.3));
   animation: pulseHeart 2s infinite alternate;
 }
 .heart-card strong{
   display: block;
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: #a64f7b;
   font-weight: 700;
   margin-bottom: 2px;
 }
 .heart-card small{
   display: block;
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   color: #926b88;
   line-height: 1.2;
 }
@@ -144,15 +151,14 @@ button{font:inherit;cursor:pointer;border:0}
 .heart-card.special-heart{
   grid-column: span 2;
   max-width: 320px;
-  aspect-ratio: 1 / 0.65;
+  aspect-ratio: 1 / 0.6;
   border-radius: 35px 35px 20px 20px;
-  padding: 18px;
+  padding: 15px;
   background: linear-gradient(135deg, #ffe0eb, #f3d7f7);
   border-color: #ff85b3;
-  box-shadow: 0 12px 30px rgba(255, 111, 159, 0.28);
 }
 
-/* KHUNG HIỂN THỊ TRỰC TIẾP TỪNG ĐIỀU ƯỚC TRÊN TRANG MÀ KHÔNG CẦN CHUYỂN TRANG */
+/* DANH SÁCH NỘI DUNG */
 .wish-content-list {
   display: flex;
   flex-direction: column;
@@ -167,7 +173,7 @@ button{font:inherit;cursor:pointer;border:0}
   padding: 24px 18px;
   box-shadow: 0 12px 35px rgba(183, 108, 142, 0.15);
   text-align: center;
-  scroll-margin-top: 20px;
+  scroll-margin-top: 180px;
 }
 
 .wish-block h3 {
@@ -228,7 +234,6 @@ button{font:inherit;cursor:pointer;border:0}
   font-size: 0.92rem;
 }
 
-/* NÚT HỘP QUÀ BÍ MẬT TẠI CHÂN TRANG */
 .secret-box-container {
   margin-top: 25px;
   text-align: center;
@@ -306,9 +311,12 @@ footer{font-size:0.78rem;color:#b58ca7;padding:20px 10px;text-align:center;trans
     <h2 id="birthdayTitle"></h2>
     <p class="sub" id="birthdayIntro"></p>
 
+    <!-- BÓ HOA HỒNG GIF LẤP LÁNH -->
     <div class="bouquet-box">
-      <div class="bouquet-icon">💐🌹</div>
-      <div class="bouquet-title">Bó Hoa 999 Đóa Hồng Dành Riêng Cho Út</div>
+      <div class="bouquet-gif-container">
+        <img src="https://nhanvanblog.com/wp-content/uploads/2018/10/hoahong2.gif" alt="Bó hoa hồng lấp lánh">
+      </div>
+      <div class="bouquet-title">Bó Hoa 999 Đóa Hồng Dành Riêng Cho Út 🌹</div>
       <div class="bouquet-desc">Gửi tặng Út bó hồng rực rỡ và thắm thiết nhất, chúc Út tuổi mới luôn ngập tràn yêu thương và hạnh phúc! 💖</div>
     </div>
 
@@ -333,16 +341,16 @@ footer{font-size:0.78rem;color:#b58ca7;padding:20px 10px;text-align:center;trans
   </div>
 </section>
 
-<!-- TRANG 3: TRÁI TIM ĐIỀU ƯỚC & NỘI DUNG NỐI TIẾP -->
+<!-- TRANG 3: TRÁI TIM ĐIỀU ƯỚC -->
 <section class="screen hidden" id="wishesScreen">
   <div class="wishes-screen">
     <h2>Trái Tim Điều Ước 💖</h2>
     <p>Út bấm vào từng trái tim hoặc vuốt xuống bên dưới để đọc hết Lời chúc & Tâm sự nha!</p>
     
-    <!-- CÁC THẺ TRÁI TIM CHỌN NHANH -->
+    <!-- CÁC THẺ TRÁI TIM CHỌN NHANH DÍNH Ở ĐẦU MÀN HÌNH -->
     <div class="heart-grid" id="heartGrid"></div>
 
-    <!-- DANH SÁCH TẤT CẢ ĐIỀU ƯỚC VÀ TÂM SỰ HIỂN THỊ NỐI TIẾP -->
+    <!-- DANH SÁCH NỘI DUNG ĐIỀU ƯỚC BÊN DƯỚI -->
     <div class="wish-content-list" id="wishContentList"></div>
 
     <!-- NÚT HỘP QUÀ BÍ MẬT -->
@@ -357,10 +365,10 @@ footer{font-size:0.78rem;color:#b58ca7;padding:20px 10px;text-align:center;trans
   </div>
 </section>
 
-<!-- KHUNG HIỂN THỊ MÓN QUÀ BÍ MẬT KHI BẤM NÚT -->
+<!-- MÓN QUÀ BÍ MẬT MODAL -->
 <div class="screen hidden" id="secretModal" style="position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:999;backdrop-filter:blur(5px);padding:20px;">
   <div class="wish-block" style="max-width:500px;margin:auto;">
-    <h3 id="secretTitle">Món Quà Bí Mật Từ Gia Đình 🏡❤️</h3>
+    <h3>Món Quà Bí Mật Từ Gia Đình 🏡❤️</h3>
     <div class="page-photo-box">
       <img src="family.jpg" alt="Ảnh gia đình">
     </div>
@@ -430,6 +438,7 @@ Con mong Út biết rằng Út đã hy sinh và lo lắng cho gia đình mình n
 const $ = id => document.getElementById(id);
 const intro=$('intro'), celebration=$('celebration'), wishesScreen=$('wishesScreen');
 
+function fillText(id, value){ $(id).textContent=value ?? ''; }
 fillText('introEyebrow',CONFIG.introEyebrow); 
 fillText('introTitle',CONFIG.introTitle); $('introTitle').style.whiteSpace='pre-line';
 fillText('introText',CONFIG.introText); 
@@ -442,17 +451,15 @@ fillText('cakeNote',CONFIG.cakeNoteBefore);
 fillText('footerText1',CONFIG.footerText); 
 fillText('footerText2',CONFIG.footerText);
 
-function fillText(id, value){ $(id).textContent=value ?? ''; }
-
-// TỰ ĐỘNG TẠO CÁC THẺ TRÁI TIM & DANH SÁCH NỘI DUNG BÊN DƯỚI
 const heartGrid = $('heartGrid');
 const wishContentList = $('wishContentList');
 
 CONFIG.wishes.forEach(w => {
-  // 1. Tạo nút Trái Tim chọn nhanh
+  // 1. Nút Trái tim chọn nhanh
   const card = document.createElement('div');
   card.className = 'heart-card' + (w.isSpecial ? ' special-heart' : '');
-  card.innerHTML = `<span class="heart-shape-icon">${w.icon}</span><strong>${w.cardTitle}</strong><small>${w.short}</small>`;
+  card.id = 'card-' + w.id;
+  card.innerHTML = `<span class="heart-shape-icon" id="icon-${w.id}">${w.icon}</span><strong>${w.cardTitle}</strong><small>${w.short}</small>`;
   card.addEventListener('click', (e) => {
     triggerHeartBurst(e);
     const targetBlock = $('block-' + w.id);
@@ -462,10 +469,11 @@ CONFIG.wishes.forEach(w => {
   });
   heartGrid.appendChild(card);
 
-  // 2. Tạo khung nội dung hiển thị ngay trên trang
+  // 2. Khung bài viết nội dung nối tiếp
   const block = document.createElement('div');
   block.className = 'wish-block';
   block.id = 'block-' + w.id;
+  block.setAttribute('data-id', w.id);
   
   let html = `<h3>${w.title}</h3>`;
   if(w.image) {
@@ -481,145 +489,19 @@ CONFIG.wishes.forEach(w => {
   wishContentList.appendChild(block);
 });
 
-// Sự kiện mở món quà bí mật
-$('secretGiftBtn').addEventListener('click', (e) => {
-  triggerHeartBurst(e);
-  $('secretModal').classList.remove('hidden');
-  roses(15);
-  fireworks(10);
-});
+// THEO DÕI CUỘN MÀN HÌNH ĐỂ TỰ ĐỘNG ĐỔI MÀU TRÁI TIM TƯƠNG ỨNG
+const observerOptions = {
+  root: null,
+  rootMargin: '-20% 0px -50% 0px',
+  threshold: 0.1
+};
 
-$('closeSecretBtn').addEventListener('click', () => {$('secretModal').classList.add('hidden');
-});
-
-$('backToCakeBtn').addEventListener('click',()=>{
-  wishesScreen.classList.add('hidden');
-  celebration.classList.remove('hidden');
-  document.body.classList.add('dark-mode');
-  window.scrollTo({top:0,behavior:'smooth'});
-});
-
-const bgMusic = $('bgMusic');
-const musicToggle = $('musicToggle');
-const musicStatus = $('musicStatus');
-let isMusicPlaying = false;
-
-musicToggle.addEventListener('click', () => {
-  if (isMusicPlaying) {
-    bgMusic.pause();
-    musicStatus.textContent = 'Bật nhạc';
-    musicToggle.style.borderColor = '#ffb3c9';
-  } else {
-    bgMusic.play().then(() => {
-      isMusicPlaying = true;
-      musicStatus.textContent = 'Tắt nhạc';
-      musicToggle.style.borderColor = '#ff6f9f';
-    }).catch(e => console.log("Audio error:", e));
-  }
-  isMusicPlaying = !isMusicPlaying;
-});
-
-$('openBtn').addEventListener('click',()=>{
-  intro.classList.add('hidden');
-  celebration.classList.remove('hidden');
-  document.body.classList.add('dark-mode');
-  window.scrollTo({top:0,behavior:'smooth'});
-  startRoses();
-  fireworks(6);
-  bgMusic.play().then(() => {
-    isMusicPlaying = true;
-    musicStatus.textContent = 'Tắt nhạc';
-  }).catch(e => console.log("Autoplay blocked"));
-});
-
-$('blowBtn').addEventListener('click',()=>{
-  if($('mainFlame'))$('mainFlame').style.opacity = '0';
-  fillText('candleAge', CONFIG.ageAfter);
-  fillText('cakeNote', CONFIG.cakeNoteAfter);
-  
-  $('actionText').textContent = 'Tuổi 46 rực rỡ và đong đầy yêu thương! 🎉';
-  $('blowBtn').classList.add('hidden');$('wishesBtn').classList.remove('hidden'); 
-  
-  document.body.classList.remove('dark-mode');
-  
-  fireworks(25);
-  roses(35);
-});
-
-$('wishesBtn').addEventListener('click', ()=>{
-  celebration.classList.add('hidden');
-  wishesScreen.classList.remove('hidden');
-  window.scrollTo({top:0,behavior:'smooth'});
-});
-
-function triggerHeartBurst(e){
-  const hearts = ['💖', '💗', '💕', '✨', '🌸'];
-  const rect = e.currentTarget.getBoundingClientRect();
-  const centerX = rect.left + rect.width / 2;
-  const centerY = rect.top + rect.height / 2;
-
-  for(let i = 0; i < 10; i++){
-    const el = document.createElement('div');
-    el.className = 'heart-burst';
-    el.textContent = hearts[Math.floor(Math.random() * hearts.length)];
-    el.style.left = centerX + 'px';
-    el.style.top = centerY + 'px';
-    
-    const angle = (Math.PI * 2 / 10) * i;
-    const dist = 60 + Math.random() * 50;
-    el.style.setProperty('--dx', Math.cos(angle) * dist + 'px');
-    el.style.setProperty('--dy', Math.sin(angle) * dist + 'px');
-    
-    document.body.appendChild(el);
-    setTimeout(() => el.remove(), 800);
-  }
-}
-
-function startRoses(){
-  setInterval(()=>{
-    const r=document.createElement('div');
-    r.className='rose-fall';
-    r.textContent=['🌹', '🥀', '✨', '💖'][Math.floor(Math.random()*4)];
-    r.style.left=Math.random()*100+'vw';
-    r.style.fontSize=(18+Math.random()*24)+'px';
-    r.style.animationDuration=(4+Math.random()*5)+'s';
-    document.body.appendChild(r);
-    setTimeout(()=>r.remove(),9000);
-  }, 300);
-}
-
-function roses(n){
-  for(let i=0;i<n;i++){
-    const r=document.createElement('div');
-    r.className='rose-fall';
-    r.textContent=['🌹', '💖', '✨', '💐'][Math.floor(Math.random()*4)];
-    r.style.left=Math.random()*100+'vw';
-    r.style.fontSize=(20+Math.random()*24)+'px';
-    r.style.animationDuration=(3+Math.random()*4)+'s';
-    document.body.appendChild(r);
-    setTimeout(()=>r.remove(),7000);
-  }
-}
-
-function fireworks(n){
-  for(let k=0;k<n;k++){
-    setTimeout(()=>{
-      const x=10+Math.random()*80,y=12+Math.random()*45;
-      for(let i=0;i<28;i++){
-        const p=document.createElement('i');
-        p.className='firework';
-        p.style.left=x+'vw';
-        p.style.top=y+'vh';
-        p.style.color=['#ff6f9f','#ffca68','#ff4d6d','#ff758f'][Math.floor(Math.random()*4)];
-        const a=(Math.PI*2*i)/28,r=45+Math.random()*85;
-        p.style.setProperty('--x',Math.cos(a)*r+'px');
-        p.style.setProperty('--y',Math.sin(a)*r+'px');
-        document.body.appendChild(p);
-        setTimeout(()=>p.remove(),1200);
-      }
-    },k*250);
-  }
-}
-</script>
-</body>
-</html>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.getAttribute('data-id');
+      const card = $('card-' + id);
+      const icon = $('icon-' + id);
+      if (card) {
+        card.classList.add('read-card');
+        if (icon) icon.textContent
