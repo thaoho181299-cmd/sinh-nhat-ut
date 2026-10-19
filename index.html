@@ -83,10 +83,10 @@ button{font:inherit;cursor:pointer;border:0}
 .action-box{background:#fff0f6;border:2px dashed #ff94b8;border-radius:18px;padding:15px;max-width:380px;margin:0 auto 20px;transition:all 0.8s ease}
 .action-text{font-size:0.98rem;font-weight:700;color:#b0527c;margin-bottom:10px;transition:color 0.8s ease}
 
-/* KHUNG HOA HỒNG GIF */
+/* KHUNG BÓ HOA GIF CỦA BẠN */
 .bouquet-box{background:linear-gradient(135deg,#fff0f3,#ffe4ec);border:2px solid #ffb3c9;border-radius:20px;padding:18px;max-width:450px;margin:20px auto;box-shadow:0 8px 25px rgba(255,111,159,0.15);text-align:center;transition:all 0.8s ease}
-.bouquet-gif-container { width: 100%; max-width: 220px; margin: 0 auto 10px; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-.bouquet-gif-container img { width: 100%; height: auto; display: block; }
+.bouquet-gif-container { width: 100%; max-width: 250px; margin: 0 auto 12px; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 20px rgba(255,111,159,0.3); background: #fff; }
+.bouquet-gif-container img { width: 100%; height: auto; display: block; object-fit: cover; }
 .bouquet-title{font-family:'Playfair Display',serif;font-size:1.25rem;color:#a64f7b;font-weight:bold;margin-bottom:6px;transition:color 0.8s ease}
 .bouquet-desc{font-size:0.92rem;color:#8c5c7d;line-height:1.5;transition:color 0.8s ease}
 
@@ -116,7 +116,6 @@ button{font:inherit;cursor:pointer;border:0}
   justify-content: center;
 }
 
-/* KHI ĐÃ ĐỌC HOẶC ĐANG TRUY CẬP ĐẾN MỤC ĐÓ -> CHUYỂN MÀU VÀNG KIM LẤP LÁNH */
 .heart-card.read-card {
   background: linear-gradient(135deg, #fffdf0, #ffeaa7) !important;
   border-color: #f1c40f !important;
@@ -311,10 +310,10 @@ footer{font-size:0.78rem;color:#b58ca7;padding:20px 10px;text-align:center;trans
     <h2 id="birthdayTitle"></h2>
     <p class="sub" id="birthdayIntro"></p>
 
-    <!-- BÓ HOA HỒNG GIF LẤP LÁNH -->
+    <!-- BÓ HOA HỒNG GIF ĐÃ ĐƯỢC TÍCH HỢP TỪ FILE CỦA BẠN -->
     <div class="bouquet-box">
       <div class="bouquet-gif-container">
-        <img src="https://nhanvanblog.com/wp-content/uploads/2018/10/hoahong2.gif" alt="Bó hoa hồng lấp lánh">
+        <img src="z9fE49K7yvjDtbnlu6g_Kpf3xcBBg4pK_zpsd5eafefe.gif" alt="Bó hoa hồng lấp lánh">
       </div>
       <div class="bouquet-title">Bó Hoa 999 Đóa Hồng Dành Riêng Cho Út 🌹</div>
       <div class="bouquet-desc">Gửi tặng Út bó hồng rực rỡ và thắm thiết nhất, chúc Út tuổi mới luôn ngập tràn yêu thương và hạnh phúc! 💖</div>
@@ -455,7 +454,6 @@ const heartGrid = $('heartGrid');
 const wishContentList = $('wishContentList');
 
 CONFIG.wishes.forEach(w => {
-  // 1. Nút Trái tim chọn nhanh
   const card = document.createElement('div');
   card.className = 'heart-card' + (w.isSpecial ? ' special-heart' : '');
   card.id = 'card-' + w.id;
@@ -469,7 +467,6 @@ CONFIG.wishes.forEach(w => {
   });
   heartGrid.appendChild(card);
 
-  // 2. Khung bài viết nội dung nối tiếp
   const block = document.createElement('div');
   block.className = 'wish-block';
   block.id = 'block-' + w.id;
@@ -489,7 +486,6 @@ CONFIG.wishes.forEach(w => {
   wishContentList.appendChild(block);
 });
 
-// THEO DÕI CUỘN MÀN HÌNH ĐỂ TỰ ĐỘNG ĐỔI MÀU TRÁI TIM TƯƠNG ỨNG
 const observerOptions = {
   root: null,
   rootMargin: '-20% 0px -50% 0px',
@@ -514,7 +510,6 @@ document.querySelectorAll('.wish-block').forEach(block => {
   observer.observe(block);
 });
 
-// Sự kiện mở món quà bí mật
 $('secretGiftBtn').addEventListener('click', (e) => {
   triggerHeartBurst(e);
   $('secretModal').classList.remove('hidden');
