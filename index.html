@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Món quà sinh nhật lãng mạn dành cho Út 🌹💗</title>
-<!-- Google Fonts chống lỗi phông chữ tiếng Việt -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Món quà sinh nhật dành cho Út 🌹💗</title>
+<!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap" rel="stylesheet">
-
 <style>
 :root{--pink:#ff6f9f;--rose:#ffb3c9;--cream:#fff8f1;--purple:#8d6ac8;--ink:#4a2e4a}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;font-family:'Be Vietnam Pro',system-ui,sans-serif;color:var(--ink);background:linear-gradient(145deg,#fff5f7,#fff8ec 55%,#f4eaff);min-height:100vh;overflow-x:hidden}
 button{font:inherit;cursor:pointer;border:0}
 .screen{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px 15px;position:relative}
@@ -25,58 +24,65 @@ button{font:inherit;cursor:pointer;border:0}
 .tiny{font-size:.8rem;color:#9e7796;margin-top:12px}
 .hidden{display:none!important}
 
-/* TRANG BÁNH KEM VÀ BÓ HOA ĐẸP MẮT */
+/* TRANG BÁNH KEM */
 .celebration{display:block;padding:30px 12px}
 .wrap{max-width:800px;margin:auto;text-align:center;position:relative;z-index:1}
 .section-tag{font-size:.78rem;letter-spacing:2px;color:#c16b94;text-transform:uppercase;font-weight:700}
 .wrap h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4.5vw,2.8rem);margin:8px 0;color:#a64f7b}
 .sub{max-width:600px;margin:0 auto 18px;line-height:1.6;font-size:0.95rem}
 
-/* Bánh kem lộng lẫy, tinh tế hơn */
 .cake-area{position:relative;margin:15px auto 20px;width:min(340px,90vw);height:300px;display:flex;align-items:flex-end;justify-content:center}
 .cake-base{position:relative;width:240px;height:140px;background:linear-gradient(135deg,#ffd1dc,#ff9ebd 50%,#ff7b9f);border-radius:20px 20px 25px 25px;box-shadow:inset -12px 0 rgba(199,84,120,0.25),0 18px 30px rgba(168,92,129,0.25)}
 .cake-layer-top{position:absolute;top:-25px;left:-6px;width:252px;height:55px;border-radius:50%;background:#ffffff;border-bottom:8px solid #ffb7d0;box-shadow:0 5px 10px rgba(0,0,0,0.05)}
 .cake-drip{position:absolute;top:6px;left:15px;width:26px;height:36px;background:#ffffff;border-radius:0 0 14px 14px;box-shadow:45px 5px #ffffff,95px -2px #ffffff,145px 8px #ffffff,185px 3px #ffffff}
 .cake-berries{position:absolute;top:-35px;width:100%;display:flex;justify-content:center;gap:18px;font-size:1.2rem}
 
-/* Hàng nến số 45 -> 46 */
 .candle-row{position:absolute;top:-95px;left:0;width:100%;display:flex;justify-content:center;gap:14px;z-index:3}
 .candle{width:26px;height:60px;border-radius:8px 8px 4px 4px;background:repeating-linear-gradient(135deg,#fff 0 8px,#ff6b9d 8px 16px);position:relative;display:flex;justify-content:center;align-items:center;color:#802b52;font-weight:900;font-size:1rem;padding-top:22px;box-shadow:0 4px 8px rgba(158,69,99,0.25)}
 .flame{position:absolute;top:-24px;width:16px;height:22px;background:radial-gradient(ellipse at 50% 70%,#fffad1 0 25%,#ffb037 55%,#ff523d 80%);border-radius:60% 40% 55% 45%;transform:rotate(5deg);animation:flicker .6s infinite alternate;transition:all 0.3s}
 .flame.out{transform:scale(0);opacity:0}
-
 .cake-note{font-family:'Playfair Display',serif;font-style:italic;font-size:1.1rem;margin:15px 0;color:#8c4a6b}
-
 .action-box{background:#fff0f6;border:2px dashed #ff94b8;border-radius:18px;padding:15px;max-width:360px;margin:0 auto 20px}
 .action-text{font-size:0.98rem;font-weight:700;color:#b0527c;margin-bottom:10px}
+
 .bouquet-box{background:linear-gradient(135deg,#fff0f3,#ffe4ec);border:2px solid #ffb3c9;border-radius:20px;padding:18px;max-width:450px;margin:20px auto;box-shadow:0 8px 25px rgba(255,111,159,0.15);text-align:center}
 .bouquet-icon{font-size:3.5rem;animation:bob 2.5s ease-in-out infinite;margin-bottom:6px}
 .bouquet-title{font-family:'Playfair Display',serif;font-size:1.25rem;color:#a64f7b;font-weight:bold;margin-bottom:6px}
 .bouquet-desc{font-size:0.92rem;color:#8c5c7d;line-height:1.5}
 
-/* TRANG 3: TRÁI TIM ĐIỀU ƯỚC */
-.wishes-screen{padding:40px 15px;text-align:center;max-width:700px;margin:0 auto}
-.wishes-screen h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4.5vw,2.5rem);color:#a64f7b;margin:0 0 8px}
-.wishes-screen p{font-size:0.95rem;color:#7a5270;margin-bottom:25px}
+/* TRANG 3: TRÁI TIM ĐIỀU ƯỚC CẢI TIẾN */
+.wishes-screen{padding:40px 15px;text-align:center;max-width:750px;margin:0 auto;animation:fadeIn 0.5s ease}
+.wishes-screen h2{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,2.8rem);color:#a64f7b;margin:0 0 8px}
+.wishes-screen p{font-size:1rem;color:#7a5270;margin-bottom:30px}
 
-.heart-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;justify-items:center}
+/* GRID THẺ HÌNH TRÁI TIM */
+.heart-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:25px 15px;justify-items:center;padding:10px 0}
 .heart-card{
   width: 100%;
-  max-width: 240px;
+  max-width: 220px;
+  aspect-ratio: 1 / 0.95;
   background: linear-gradient(135deg, #ffffff, #fff0f5);
   border: 2px solid #ffb3c9;
-  border-radius: 24px;
-  padding: 20px 12px;
+  border-radius: 50% 50% 18px 18px; /* Bo tròn kiểu dáng trái tim cách điệu */
+  padding: 25px 15px 15px;
   text-align: center;
   box-shadow: 0 10px 25px rgba(255, 111, 159, 0.18);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .heart-card:hover{
-  transform: translateY(-6px) scale(1.02);
+  transform: translateY(-8px) scale(1.05);
   border-color: #ff6f9f;
-  box-shadow: 0 15px 30px rgba(255, 111, 159, 0.3);
+  background: linear-gradient(135deg, #ffffff, #ffe4ee);
+  box-shadow: 0 18px 35px rgba(255, 111, 159, 0.35);
+}
+.heart-card:active{
+  transform: scale(0.95);
 }
 .heart-shape-icon{
   font-size: 2.8rem;
@@ -87,52 +93,69 @@ button{font:inherit;cursor:pointer;border:0}
 }
 .heart-card strong{
   display: block;
-  font-size: 1rem;
+  font-size: 1.05rem;
   color: #a64f7b;
   font-weight: 700;
   margin-bottom: 4px;
 }
 .heart-card small{
   display: block;
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   color: #926b88;
   line-height: 1.3;
 }
+
+/* Thẻ đặc biệt "Lời con gửi Út" */
 .heart-card.special-heart{
   grid-column: span 2;
   max-width: 320px;
+  aspect-ratio: auto;
+  border-radius: 28px;
+  padding: 20px;
   background: linear-gradient(135deg, #ffe0eb, #f3d7f7);
   border-color: #ff85b3;
   box-shadow: 0 12px 30px rgba(255, 111, 159, 0.28);
 }
 
-/* TRANG CHI TIẾT TỪNG ĐIỀU ƯỚC / THƯ */
+/* TRANG CHI TIẾT TỪNG ĐIỀU ƯỚC */
 .wish-page-screen{position:fixed;inset:0;background:linear-gradient(145deg,#fff5f7,#fff8ec 55%,#f4eaff);z-index:50;display:flex;align-items:center;justify-content:center;padding:20px 15px;overflow-y:auto;animation:fadeIn .3s ease}
 .wish-page-container{max-width:580px;width:100%;background:#ffffffdc;backdrop-filter:blur(10px);border:2px solid #ffb3c9;border-radius:28px;padding:24px 20px;text-align:center;box-shadow:0 15px 45px rgba(183,108,142,0.2);animation:slideUp .35s ease}
 .wish-page-container h3{font-family:'Playfair Display',serif;font-size:1.6rem;color:#a64f7b;margin:0 0 14px;line-height:1.3}
 .page-photo-box{width:100%;height:220px;border-radius:18px;overflow:hidden;margin-bottom:16px;box-shadow:0 6px 18px rgba(0,0,0,0.1);background:#ffe0ea}
 .page-photo-box img{width:100%;height:100%;object-fit:cover}
 .wish-page-container .page-text{font-size:1rem;line-height:1.8;color:var(--ink);margin:0 0 18px;text-align:left;padding:0 4px;white-space:pre-line}
-
 .highlight-quote{background:linear-gradient(135deg,#fff0f5,#ffe4ee);border-left:4px solid #ff6f9f;border-radius:14px;padding:14px 16px;margin:15px 0;font-weight:700;color:#923d66;text-align:left;line-height:1.75;font-size:0.98rem}
-
 .quick-nav{border-top:2px dashed #ffb3c9;padding-top:16px;margin-top:12px;text-align:left}
 .quick-nav-title{font-size:0.82rem;font-weight:700;color:#b0527c;margin-bottom:10px;text-transform:uppercase;letter-spacing:1px}
 .quick-nav-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
 .quick-nav-btn{background:#fff0f5;border:1px solid #ffb3c9;border-radius:12px;padding:9px;text-align:center;font-size:0.85rem;font-weight:700;color:#a64f7b;cursor:pointer;transition:.2s}
 .quick-nav-btn:hover{background:#ffe3ec;transform:translateY(-2px)}
-.quick-nav-btn.special-btn{grid-column: span 2; background: linear-gradient(135deg, #ffe0eb, #f4d9f7); color: #8e3f68; border-color: #ff9ec3}
-
+.quick-nav-btn.special-btn{grid-column:span 2;background:linear-gradient(135deg,#ffe0eb,#f4d9f7);color:#8e3f68;border-color:#ff9ec3}
 .home-btn-big{display:block;width:100%;background:linear-gradient(135deg,#ff699b,#bd7ad7);color:white;border-radius:999px;padding:12px;font-weight:800;font-size:0.95rem;text-align:center;margin-top:12px;box-shadow:0 6px 15px rgba(219,126,168,0.3);transition:.2s}
 .home-btn-big:hover{transform:translateY(-2px)}
 
+/* HIỆU ỨNG TRÁI TIM BÙNG NỔ KHI CLICK */
+.heart-burst{
+  position: fixed;
+  pointer-events: none;
+  font-size: 1.5rem;
+  z-index: 99;
+  animation: floatHeart 0.8s ease-out forwards;
+}
+
+@keyframes floatHeart {
+  0% { transform: translate(0, 0) scale(0.5); opacity: 1; }
+  100% { transform: translate(var(--dx), var(--dy)) scale(1.4); opacity: 0; }
+}
+
 @keyframes bob{50%{transform:translateY(-10px) rotate(2deg)}}
 @keyframes flicker{to{transform:rotate(-8deg) scale(.9);filter:drop-shadow(0 0 12px #ffcb57)}}
-@keyframes pulseHeart{0%{transform:scale(1)}100%{transform:scale(1.08)}}
+@keyframes pulseHeart{0%{transform:scale(1)}100%{transform:scale(1.1)}}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 @keyframes slideUp{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:translateY(0)}}
 @keyframes fallDown{0%{transform:translateY(-10vh) rotate(0deg);opacity:1}100%{transform:translateY(105vh) rotate(360deg);opacity:0.8}}
 @keyframes burst{0%{transform:translate(0,0) scale(1);opacity:1}100%{transform:translate(var(--x),var(--y)) scale(.2);opacity:0}}
+
 .rose-fall{position:fixed;top:-50px;z-index:1;pointer-events:none;animation:fallDown linear infinite}
 .firework{position:fixed;width:5px;height:5px;border-radius:50%;pointer-events:none;z-index:5;box-shadow:0 0 8px currentColor;animation:burst 1.1s ease-out forwards}
 .music-control{position:fixed;top:12px;right:12px;z-index:100;background:white;border:2px solid #ffb3c9;border-radius:999px;padding:6px 12px;font-size:0.8rem;font-weight:700;color:#a64f7b;box-shadow:0 4px 12px rgba(0,0,0,0.1);display:flex;align-items:center;gap:4px}
@@ -144,7 +167,6 @@ footer{font-size:0.78rem;color:#b58ca7;padding:20px 10px;text-align:center}
 <audio id="bgMusic" loop>
   <source src="nhac.mp3" type="audio/mpeg">
 </audio>
-
 <button class="music-control" id="musicToggle">🎵 <span id="musicStatus">Bật nhạc</span></button>
 
 <!-- TRANG 1: MỞ QUÀ -->
@@ -159,7 +181,7 @@ footer{font-size:0.78rem;color:#b58ca7;padding:20px 10px;text-align:center}
   </div>
 </section>
 
-<!-- TRANG 2: BÁNH KEM & THỔI NẾN (BẮT ĐẦU SỐ 45) -->
+<!-- TRANG 2: BÁNH KEM & THỔI NẾN -->
 <section class="screen celebration hidden" id="celebration">
   <div class="wrap">
     <div class="section-tag" id="birthdayDate"></div>
@@ -193,7 +215,7 @@ footer{font-size:0.78rem;color:#b58ca7;padding:20px 10px;text-align:center}
   </div>
 </section>
 
-<!-- TRANG 3: TRÁI TIM ĐIỀU ƯỚC -->
+<!-- TRANG 3: TRÁI TIM ĐIỀU ƯỚC (TÁCH BIỆT THÀNH TRANG RIÊNG) -->
 <section class="screen hidden" id="wishesScreen">
   <div class="wishes-screen">
     <h2>Trái Tim Điều Ước 💖</h2>
@@ -202,13 +224,13 @@ footer{font-size:0.78rem;color:#b58ca7;padding:20px 10px;text-align:center}
     <div class="heart-grid" id="heartGrid"></div>
     
     <div style="margin-top:30px">
-      <button class="main-btn" id="backToCakeBtn">🎂 Quay lại thổi nến bánh kem</button>
+      <button class="main-btn" id="backToCakeBtn">🎂 Quay lại trang thổi nến</button>
     </div>
     <footer id="footerText2"></footer>
   </div>
 </section>
 
-<!-- TRANG CHI TIẾT TỪNG ĐIỀU ƯỚC / THƯ -->
+<!-- TRANG CHI TIẾT TỪNG ĐIỀU ƯỚC -->
 <div class="wish-page-screen hidden" id="wishPageScreen">
   <div class="wish-page-container">
     <h3 id="pageWishTitle"></h3>
@@ -222,7 +244,7 @@ footer{font-size:0.78rem;color:#b58ca7;padding:20px 10px;text-align:center}
     <div class="quick-nav">
       <div class="quick-nav-title">🌸 Chọn tiếp trái tim điều ước khác:</div>
       <div class="quick-nav-grid" id="quickNavGrid"></div>
-      <button class="home-btn-big" id="homeBtn">💖 Quay về trang danh sách Trái Tim Điều Ước</button>
+      <button class="home-btn-big" id="homeBtn">💖 Quay về danh sách Trái Tim Điều Ước</button>
     </div>
   </div>
 </div>
@@ -274,12 +296,20 @@ const intro=$('intro'), celebration=$('celebration'), wishesScreen=$('wishesScre
 let blown = false;
 
 function fillText(id, value){ $(id).textContent=value ?? ''; }
-fillText('introEyebrow',CONFIG.introEyebrow); fillText('introTitle',CONFIG.introTitle); $('introTitle').style.whiteSpace='pre-line';
-fillText('introText',CONFIG.introText); fillText('introTiny',CONFIG.introTiny); fillText('birthdayDate',CONFIG.birthdayDate); fillText('birthdayTitle',CONFIG.birthdayTitle); fillText('birthdayIntro',CONFIG.birthdayIntro);
-fillText('candle1',CONFIG.ageBefore[0]); fillText('candle2',CONFIG.ageBefore[1]);
-fillText('cakeNote',CONFIG.cakeNoteBefore); fillText('footerText1',CONFIG.footerText); fillText('footerText2',CONFIG.footerText);
+fillText('introEyebrow',CONFIG.introEyebrow); 
+fillText('introTitle',CONFIG.introTitle); $('introTitle').style.whiteSpace='pre-line';
+fillText('introText',CONFIG.introText); 
+fillText('introTiny',CONFIG.introTiny); 
+fillText('birthdayDate',CONFIG.birthdayDate); 
+fillText('birthdayTitle',CONFIG.birthdayTitle); 
+fillText('birthdayIntro',CONFIG.birthdayIntro);
+fillText('candle1',CONFIG.ageBefore[0]); 
+fillText('candle2',CONFIG.ageBefore[1]);
+fillText('cakeNote',CONFIG.cakeNoteBefore); 
+fillText('footerText1',CONFIG.footerText); 
+fillText('footerText2',CONFIG.footerText);
 
-// Tạo lưới các thẻ Trái Tim ở Trang 3
+// Tạo danh sách thẻ Trái Tim ở Trang 3
 const heartGrid=$('heartGrid');
 CONFIG.wishes.forEach(w=>{
   const b=document.createElement('div');
@@ -288,11 +318,15 @@ CONFIG.wishes.forEach(w=>{
   b.querySelector('.heart-shape-icon').textContent=w.icon;
   b.querySelector('strong').textContent=w.cardTitle;
   b.querySelector('small').textContent=w.short;
-  b.addEventListener('click',()=>openWishPage(w.id));
+  
+  b.addEventListener('click',(e)=>{
+    triggerHeartBurst(e);
+    setTimeout(() => openWishPage(w.id), 300);
+  });
   heartGrid.appendChild(b);
 });
 
-// Tạo danh sách các nút chuyển tiếp trái tim trong từng trang chi tiết
+// Điều hướng nhanh trong trang chi tiết
 const quickNavGrid = $('quickNavGrid');
 CONFIG.wishes.forEach(w=>{
   const btn = document.createElement('div');
@@ -363,32 +397,53 @@ $('openBtn').addEventListener('click',()=>{
   }).catch(e => console.log("Autoplay blocked"));
 });
 
-// Thổi nến: số 5 chuyển thành số 6, tắt lửa, nổ pháo hoa rồi chuyển sang trang Trái Tim
+// Thổi nến: Chuyển hoàn toàn sang trang điều ước
 $('blowBtn').addEventListener('click',()=>{
   if(!blown){
     blown=true;
-    // Tắt ngọn lửa
     $('flame1').classList.add('out');$('flame2').classList.add('out');
     
-    // Chuyển số 5 thành số 6
     fillText('candle2', CONFIG.ageAfter[1]);
     fillText('cakeNote', CONFIG.cakeNoteAfter);
-    $('blowBtn').textContent = 'Tuổi mới rực rỡ nha Út! 🎉';
     
-    fireworks(15);
-    roses(25);
+    fireworks(12);
+    roses(20);
     
-    // Tự động sang trang Trái Tim Điều Ước sau 1.5 giây
     setTimeout(()=>{
       celebration.classList.add('hidden');
       wishesScreen.classList.remove('hidden');
       window.scrollTo({top:0,behavior:'smooth'});
-    }, 1500);
+    }, 1200);
   } else {
-    fireworks(8);
-    roses(15);
+    celebration.classList.add('hidden');
+    wishesScreen.classList.remove('hidden');
+    window.scrollTo({top:0,behavior:'smooth'});
   }
 });
+
+/* Hiệu ứng nổ trái tim xung quanh vị trí click */
+function triggerHeartBurst(e){
+  const hearts = ['💖', '💗', '💕', '✨', '🌸'];
+  const rect = e.currentTarget.getBoundingClientRect();
+  const centerX = rect.left + rect.width / 2;
+  const centerY = rect.top + rect.height / 2;
+
+  for(let i = 0; i < 10; i++){
+    const el = document.createElement('div');
+    el.className = 'heart-burst';
+    el.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+    el.style.left = centerX + 'px';
+    el.style.top = centerY + 'px';
+    
+    const angle = (Math.PI * 2 / 10) * i;
+    const dist = 60 + Math.random() * 50;
+    el.style.setProperty('--dx', Math.cos(angle) * dist + 'px');
+    el.style.setProperty('--dy', Math.sin(angle) * dist + 'px');
+    
+    document.body.appendChild(el);
+    setTimeout(() => el.remove(), 800);
+  }
+}
 
 function startRoses(){
   setInterval(()=>{
