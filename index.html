@@ -126,11 +126,26 @@ button{font:inherit;cursor:pointer;border:0}
   margin-bottom: 12px;
   scroll-behavior: smooth;
 }
-.page-scroll-content::-webkit-scrollbar { width: 6px; }
-.page-scroll-content::-webkit-scrollbar-thumb { background: #ffb3c9; border-radius: 10px; }
-
-.page-photo-box{width:100%;height:150px;border-radius:14px;overflow:hidden;margin-bottom:12px;box-shadow:0 6px 18px rgba(0,0,0,0.1);background:#ffe0ea}
-.page-photo-box img{width:100%;height:100%;object-fit:cover}
+/* KHUNG ẢNH CHUẨN 1:1 VÀ HIỂN THỊ FULL BỨC ẢNH */
+.page-photo-box{
+  width: 100%;
+  max-width: 280px;
+  aspect-ratio: 1 / 1;
+  border-radius: 18px;
+  overflow: hidden;
+  margin: 0 auto 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  background: #ffe0ea;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.page-photo-box img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Giúp hiển thị trọn vẹn 100% bức ảnh không bị cắt */
+  border-radius: 18px;
+}
 
 .wish-page-container .page-text{font-size:0.95rem;line-height:1.75;color:var(--ink);margin:0 0 14px;padding:0 4px;white-space:pre-line}
 .highlight-quote{background:linear-gradient(135deg,#fff0f5,#ffe4ee);border-left:4px solid #ff6f9f;border-radius:14px;padding:12px 14px;margin:12px 0;font-weight:700;color:#923d66;line-height:1.65;font-size:0.92rem}
