@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Món quà sinh nhật lãng mạn dành cho Út 🌹💗</title>
+<title>Món quà sinh nhật dành cho Út 🌹💗</title>
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,12 +50,12 @@ button{font:inherit;cursor:pointer;border:0}
 .bouquet-title{font-family:'Playfair Display',serif;font-size:1.25rem;color:#a64f7b;font-weight:bold;margin-bottom:6px}
 .bouquet-desc{font-size:0.92rem;color:#8c5c7d;line-height:1.5}
 
-/* TRANG 3: TRÁI TIM ĐIỀU ƯỚC CẢI TIẾN */
+/* TRANG TRÁI TIM ĐIỀU ƯỚC RIÊNG BIỆT */
 .wishes-screen{padding:40px 15px;text-align:center;max-width:750px;margin:0 auto;animation:fadeIn 0.5s ease}
 .wishes-screen h2{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,2.8rem);color:#a64f7b;margin:0 0 8px}
 .wishes-screen p{font-size:1rem;color:#7a5270;margin-bottom:30px}
 
-/* GRID THẺ HÌNH TRÁI TIM */
+/* LƯỚI CARD TRÁI TIM */
 .heart-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:25px 15px;justify-items:center;padding:10px 0}
 .heart-card{
   width: 100%;
@@ -63,7 +63,7 @@ button{font:inherit;cursor:pointer;border:0}
   aspect-ratio: 1 / 0.95;
   background: linear-gradient(135deg, #ffffff, #fff0f5);
   border: 2px solid #ffb3c9;
-  border-radius: 50% 50% 18px 18px; /* Bo tròn kiểu dáng trái tim cách điệu */
+  border-radius: 50% 50% 18px 18px;
   padding: 25px 15px 15px;
   text-align: center;
   box-shadow: 0 10px 25px rgba(255, 111, 159, 0.18);
@@ -80,9 +80,6 @@ button{font:inherit;cursor:pointer;border:0}
   border-color: #ff6f9f;
   background: linear-gradient(135deg, #ffffff, #ffe4ee);
   box-shadow: 0 18px 35px rgba(255, 111, 159, 0.35);
-}
-.heart-card:active{
-  transform: scale(0.95);
 }
 .heart-shape-icon{
   font-size: 2.8rem;
@@ -105,7 +102,6 @@ button{font:inherit;cursor:pointer;border:0}
   line-height: 1.3;
 }
 
-/* Thẻ đặc biệt "Lời con gửi Út" */
 .heart-card.special-heart{
   grid-column: span 2;
   max-width: 320px;
@@ -255,7 +251,7 @@ const CONFIG = {
   introTitle: 'ÚT ƠI CON CÓ\nMÓN QUÀ TẶNG CHO ÚT',
   introText: 'Hôm nay là ngày đặc biệt của Út. Con gửi tặng Út bó hoa 999 đóa hồng thắm thiết và những lời chúc ngọt ngào nhất — mình cùng mở nha! 🌹💗',
   introTiny: 'Dành riêng cho Út trong ngày sinh nhật tuổi 46',
-  birthdayDate: 'Happy Birthday · 19 tháng 10',
+  birthdayDate: 'Happy Birthday · 22 tháng 10',
   birthdayTitle: 'Chúc mừng sinh nhật Út! 🌹',
   birthdayIntro: 'Chúc Út tuổi mới luôn rực rỡ, bình an và hạnh phúc viên mãn. Bây giờ Út nhắm mắt, ước một điều ước rồi cùng thổi nến nha!',
   ageBefore: '45',
@@ -293,7 +289,6 @@ Con mong Út biết rằng Út đã hy sinh và lo lắng cho gia đình mình n
 
 const $ = id => document.getElementById(id);
 const intro=$('intro'), celebration=$('celebration'), wishesScreen=$('wishesScreen');
-let blown = false;
 
 function fillText(id, value){ $(id).textContent=value ?? ''; }
 fillText('introEyebrow',CONFIG.introEyebrow); 
@@ -397,28 +392,25 @@ $('openBtn').addEventListener('click',()=>{
   }).catch(e => console.log("Autoplay blocked"));
 });
 
-// Thổi nến: Chuyển hoàn toàn sang trang điều ước
+// SỬA LỖI: Thổi nến xong BẮT BUỘC ẩn trang bánh kem và mở trang điều ước
 $('blowBtn').addEventListener('click',()=>{
-  if(!blown){
-    blown=true;
-    $('flame1').classList.add('out');$('flame2').classList.add('out');
-    
-    fillText('candle2', CONFIG.ageAfter[1]);
-    fillText('cakeNote', CONFIG.cakeNoteAfter);
-    
-    fireworks(12);
-    roses(20);
-    
-    setTimeout(()=>{
-      celebration.classList.add('hidden');
-      wishesScreen.classList.remove('hidden');
-      window.scrollTo({top:0,behavior:'smooth'});
-    }, 1200);
-  } else {
+  // 1. Tắt ngọn lửa & đổi số tuổi
+  if($('flame1'))$('flame1').classList.add('out');
+  if($('flame2'))$('flame2').classList.add('out');
+  
+  fillText('candle2', CONFIG.ageAfter[1]);
+  fillText('cakeNote', CONFIG.cakeNoteAfter);
+  
+  // 2. Phun hoa & pháo hoa
+  fireworks(12);
+  roses(20);
+  
+  // 3. Tự động chuyển hoàn toàn sang trang điều ước sau 1.2s
+  setTimeout(()=>{
     celebration.classList.add('hidden');
     wishesScreen.classList.remove('hidden');
     window.scrollTo({top:0,behavior:'smooth'});
-  }
+  }, 1200);
 });
 
 /* Hiệu ứng nổ trái tim xung quanh vị trí click */
