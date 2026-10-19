@@ -53,35 +53,14 @@ button{font:inherit;cursor:pointer;border:0}
 .main-btn:hover{transform:translateY(-3px);box-shadow:0 12px 25px rgba(219,126,168,0.5)}
 .hidden{display:none!important}
 
-/* TRANG BÁNH KEM */
-.celebration{display:block;padding:30px 12px}
+/* TRANG BÁNH KEM (ĐÃ BỎ HOÀN TOÀN BÓ HOA) */
+.celebration{display:block;padding:40px 12px}
 .wrap{max-width:800px;margin:auto;text-align:center;position:relative;z-index:1}
 .section-tag{font-size:.78rem;letter-spacing:2px;color:#c16b94;text-transform:uppercase;font-weight:700}
 .wrap h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4.5vw,2.8rem);margin:8px 0;color:#a64f7b;transition:color 0.8s ease}
-.sub{max-width:600px;margin:0 auto 18px;line-height:1.6;font-size:0.95rem;transition:color 0.8s ease}
+.sub{max-width:600px;margin:0 auto 25px;line-height:1.6;font-size:0.95rem;transition:color 0.8s ease}
 
-/* BÓ HOA GIF ĐẶT TRÊN TRANG BÁNH KEM - TỆP MÀU NỀN & KHÔNG KHUNG BAO */
-.bouquet-display-box {
-  width: 100%;
-  max-width: 270px;
-  margin: 15px auto 10px;
-  background: transparent;
-  display: flex;
-  justify-content: center;
-}
-.bouquet-display-box img {
-  width: 100%;
-  height: auto;
-  display: block;
-  mix-blend-mode: multiply;
-  filter: drop-shadow(0 8px 22px rgba(255, 105, 180, 0.4));
-}
-body.dark-mode .bouquet-display-box img {
-  mix-blend-mode: screen;
-  filter: drop-shadow(0 0 25px rgba(255, 111, 159, 0.8));
-}
-
-.cake-area{position:relative;margin:25px auto 20px;width:min(340px,90vw);height:260px;display:flex;align-items:flex-end;justify-content:center}
+.cake-area{position:relative;margin:40px auto 25px;width:min(340px,90vw);height:260px;display:flex;align-items:flex-end;justify-content:center}
 .cake-base{position:relative;width:240px;height:140px;background:linear-gradient(135deg,#ffd1dc,#ff9ebd 50%,#ff7b9f);border-radius:20px 20px 25px 25px;box-shadow:inset -12px 0 rgba(199,84,120,0.25),0 18px 30px rgba(168,92,129,0.25)}
 .cake-layer-top{position:absolute;top:-25px;left:-6px;width:252px;height:55px;border-radius:50%;background:#ffffff;border-bottom:8px solid #ffb7d0;box-shadow:0 5px 10px rgba(0,0,0,0.05)}
 .cake-drip{position:absolute;top:6px;left:15px;width:26px;height:36px;background:#ffffff;border-radius:0 0 14px 14px;box-shadow:45px 5px #ffffff,95px -2px #ffffff,145px 8px #ffffff,185px 3px #ffffff}
@@ -92,7 +71,7 @@ body.dark-mode .bouquet-display-box img {
 .candle{width:50px;height:65px;border-radius:10px;background:linear-gradient(135deg,#fff,#ffb7d0);position:relative;display:flex;justify-content:center;align-items:center;color:#a64f7b;font-weight:900;font-size:1.4rem;box-shadow:0 4px 10px rgba(158,69,99,0.25);border:2px solid #ff6f9f;font-family:'Playfair Display',serif;}
 .flame{position:absolute;top:-22px;width:18px;height:24px;background:radial-gradient(ellipse at 50% 70%,#fffad1 0 25%,#ffb037 55%,#ff523d 80%);border-radius:60% 40% 55% 45%;transform:rotate(5deg);animation:flicker .6s infinite alternate;transition:all 0.3s;filter:drop-shadow(0 0 16px #ffcb57);}
 
-.cake-note{font-family:'Playfair Display',serif;font-style:italic;font-size:1.1rem;margin:18px 0;color:#8c4a6b;transition:color 0.8s ease}
+.cake-note{font-family:'Playfair Display',serif;font-style:italic;font-size:1.1rem;margin:20px 0;color:#8c4a6b;transition:color 0.8s ease}
 .action-box{background:#fff0f6;border:2px dashed #ff94b8;border-radius:18px;padding:18px;max-width:380px;margin:0 auto 20px;transition:all 0.8s ease}
 .action-text{font-size:1rem;font-weight:700;color:#b0527c;margin-bottom:12px;transition:color 0.8s ease}
 
@@ -272,7 +251,7 @@ body.dark-mode .bouquet-display-box img {
 
 .home-btn-big{display:block;width:100%;background:linear-gradient(135deg,#ff4d88,#a855d8);color:white;border-radius:999px;padding:12px;font-weight:800;font-size:0.95rem;text-align:center;margin-top:12px;box-shadow:0 6px 15px rgba(219,126,168,0.3);transition:.2s}
 
-/* POPUP HỘP QUÀ BÍ MẬT CÓ CẢ NÚT ĐÓNG X VÀ BẤM RA NGOÀI ĐỂ ĐÓNG */
+/* POPUP HỘP QUÀ BÍ MẬT - THIẾT KẾ HỘP QUÀ TREO LỦNG LẲNG */
 .popup-overlay {
   position: fixed; inset: 0; background: rgba(0,0,0,0.72);
   backdrop-filter: blur(6px); z-index: 999;
@@ -282,11 +261,35 @@ body.dark-mode .bouquet-display-box img {
 .gift-trigger-box {
   background: linear-gradient(135deg, #ffffff, #fff5f8);
   border: 3px solid #ff3377; border-radius: 30px;
-  padding: 30px 20px; text-align: center; max-width: 380px; width: 100%;
+  padding: 35px 20px 25px; text-align: center; max-width: 380px; width: 100%;
   box-shadow: 0 20px 50px rgba(255, 111, 159, 0.5);
   position: relative;
-  animation: bounceHint 2s infinite ease-in-out;
 }
+
+/* KHUNG TẠO DÂY TREO VÀ HIỆU ỨNG ĐUNG ĐƯA LỦNG LẲNG */
+.hanging-gift-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  transform-origin: top center;
+  animation: swingGift 3s infinite ease-in-out;
+}
+.hanging-gift-string {
+  width: 3px;
+  height: 35px;
+  background: linear-gradient(to bottom, #ff3377, #ff94b8);
+  margin: 0 auto;
+  border-radius: 2px;
+}
+.gift-icon-big {
+  font-size: 5rem;
+  cursor: pointer;
+  filter: drop-shadow(0 12px 18px rgba(231, 76, 60, 0.45));
+  transition: transform 0.3s;
+  margin-top: -5px;
+}
+.gift-icon-big:hover { transform: scale(1.15); }
 
 /* NÚT ĐÓNG DẤU X MÀU HỒNG */
 .close-popup-btn {
@@ -306,6 +309,7 @@ body.dark-mode .bouquet-display-box img {
   justify-content: center;
   cursor: pointer;
   transition: all 0.2s;
+  z-index: 10;
 }
 .close-popup-btn:hover {
   background: #ff3377;
@@ -313,16 +317,19 @@ body.dark-mode .bouquet-display-box img {
   transform: scale(1.1);
 }
 
-.gift-icon-big {
-  font-size: 5rem; margin-bottom: 10px; cursor: pointer;
-  filter: drop-shadow(0 10px 15px rgba(231, 76, 60, 0.4));
-  transition: transform 0.3s;
-}
-.gift-icon-big:hover { transform: scale(1.15) rotate(5deg); }
-
 .heart-burst{
   position: fixed; pointer-events: none; font-size: 1.5rem; z-index: 99;
   animation: floatHeart 0.8s ease-out forwards;
+}
+
+/* HIỆU ỨNG ĐUNG ĐƯA LỦNG LẲNG CỦA HỘP QUÀ */
+@keyframes swingGift {
+  0% { transform: rotate(0deg); }
+  20% { transform: rotate(12deg); }
+  40% { transform: rotate(-10deg); }
+  60% { transform: rotate(6deg); }
+  80% { transform: rotate(-4deg); }
+  100% { transform: rotate(0deg); }
 }
 
 @keyframes floatHeart {
@@ -363,17 +370,12 @@ footer{font-size:0.78rem;color:#b58ca7;padding:20px 10px;text-align:center;trans
   </div>
 </section>
 
-<!-- TRANG 2: BÁNH KEM, CÂY NẾN & BÓ HOA GIF TỆP MÀU NỀN -->
+<!-- TRANG 2: BÁNH KEM & CÂY NẾN (BỎ BÓ HOA HOÀN TOÀN) -->
 <section class="screen celebration hidden" id="celebration">
   <div class="wrap">
     <div class="section-tag" id="birthdayDate"></div>
     <h2 id="birthdayTitle"></h2>
     <p class="sub" id="birthdayIntro"></p>
-
-    <!-- BÓ HOA GIF ĐƯỢC ĐẶT Ở ĐÂY, KHÔNG KHUNG BAO, TỆP VÀO CẢ NỀN SÁNG VÀ NỀN TỐI -->
-    <div class="bouquet-display-box">
-      <img src="z9fE49K7yvjDtbnlu6g_Kpf3xcBBg4pK_zpsd5eafefe.gif" alt="Bó hoa hồng lấp lánh">
-    </div>
 
     <div class="cake-area">
       <div class="cake-base">
@@ -435,13 +437,21 @@ footer{font-size:0.78rem;color:#b58ca7;padding:20px 10px;text-align:center;trans
   </div>
 </div>
 
-<!-- POPUP HỘP QUÀ BÍ MẬT CÓ NÚT ĐÓNG DẤU X -->
+<!-- POPUP HỘP QUÀ BÍ MẬT CÓ DÂY TREO LỦNG LẲNG & LỜI NHẮC MỚI -->
 <div class="popup-overlay hidden" id="giftPopup">
   <div class="gift-trigger-box">
     <button class="close-popup-btn" id="closePopupCrossBtn">✕</button>
-    <div class="gift-icon-big" id="giftBoxIcon">🎁</div>
+    
+    <!-- HỘP QUÀ TREO LỦNG LẲNG -->
+    <div class="hanging-gift-wrapper">
+      <div class="hanging-gift-string"></div>
+      <div class="gift-icon-big" id="giftBoxIcon">🎁</div>
+    </div>
+    
     <h3 style="color:#a64f7b; font-family:'Playfair Display',serif; margin:0 0 10px; font-weight:800;">Món Quà Bí Mật Đã Xuất Hiện!</h3>
-    <p style="font-size:0.95rem; color:#632d4e; line-height:1.5; margin-bottom:15px; font-weight:600;">Út ơi! Út đã đọc hết tất cả các điều ước rồi. Bấm vào hộp quà để mở Món Quà Bí Mật đặc biệt từ con nha! 🌸✨</p>
+    <p style="font-size:0.98rem; color:#632d4e; line-height:1.6; margin-bottom:18px; font-weight:600;">
+      Út ơi, Út đọc hết các điều ước rồi Út bấm vào hộp quà nha! 🌸✨
+    </p>
     <button class="main-btn" id="openGiftBtn">Mở Hộp Quà Bí Mật 🎁</button>
   </div>
 </div>
@@ -487,7 +497,7 @@ const CONFIG = {
       title:'Út ơi, con có một vài điều muốn gửi đến Út… ❤️', 
       text:`Vậy là đã 13 năm rồi Út chưa được trở về quê hương. Gia đình mình ai cũng nhớ thương Út nhiều lắm.
 
-Nhìn Út sớm hôm đi làm, chẳng dám cho mình nghỉ ngơi ngày nào, con thấy thương Út vô cùng. Con thương cả những lúc Út vui vẻ khi Minh Thiện biết nói, và càng thương hơn những lúc ngoại bệnh, một mình Út lo toan mọi thứ.
+Nhìn Út tần tảo, sớm hôm đi làm, chẳng dám cho mình nghỉ ngơi ngày nào, con thấy thương Út vô cùng. Con thương cả những lúc Út vui vẻ khi Minh Thiện biết nói, và càng thương hơn những lúc ngoại bệnh, một mình Út lo toan mọi thứ.
 
 Đối với con, hơn cả lòng biết ơn là sự trân trọng suốt đời. Nếu ngày đó không có Út lo cho con tiền ăn học, có lẽ con đã không có được ngày hôm nay. Vậy mà đến giờ con chưa có món quà hay cây bông nào tặng Út. Nghĩ đến điều đó, con vừa thương Út, vừa thấy mình còn thiếu sót nhiều lắm.
 
@@ -569,7 +579,7 @@ function openWishPage(id){
   roses(5);
 }
 
-// SỰ KIỆN TỰ ĐỘNG BẬT POPUP HỘP QUÀ KHI CUỘN ĐẾN CUỐI BÀI VIẾT CUỐI CÙNG
+// BẮT SỰ KIỆN TỰ ĐỘNG BẬT POPUP HỘP QUÀ KHI CUỘN ĐẾN CUỐI BÀI VIẾT CUỐI CÙNG
 const scrollContainer = $('scrollContainer');
 scrollContainer.addEventListener('scroll', () => {
   if (readWishes.size === CONFIG.wishes.length) {
