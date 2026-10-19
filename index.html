@@ -6,18 +6,18 @@
 <style>
 :root{--pink:#ff6f9f;--rose:#ffb3c9;--cream:#fff8f1;--purple:#8d6ac8;--ink:#613c61}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:'Trebuchet MS',system-ui,sans-serif;color:var(--ink);background:linear-gradient(145deg,#fff5f7,#fff8ec 55%,#f4eaff);min-height:100vh;overflow-x:hidden}button{font:inherit;cursor:pointer;border:0}.screen{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px 15px;position:relative}.intro{text-align:center;max-width:100%;z-index:2}.eyebrow{letter-spacing:3px;text-transform:uppercase;font-size:.75rem;color:#bd6791}.intro h1{font-family:Georgia,serif;font-size:clamp(2rem,6vw,3.5rem);line-height:1.2;margin:15px 0;color:#a64f7b}.intro p{font-size:1rem;line-height:1.6;max-width:500px;margin:0 auto 20px}.gift{font-size:clamp(3.5rem,12vw,6rem);animation:bob 2s ease-in-out infinite;filter:drop-shadow(0 10px 12px #d98ca355)}.main-btn{background:linear-gradient(135deg,#ff699b,#bd7ad7);color:white;border-radius:999px;padding:14px 26px;box-shadow:0 8px 20px rgba(219,126,168,0.35);font-weight:800;transition:.2s;font-size:1rem}.main-btn:hover{transform:translateY(-3px);box-shadow:0 12px 25px rgba(219,126,168,0.5)}.tiny{font-size:.8rem;color:#9e7796;margin-top:12px}.hidden{display:none!important}.celebration{display:block;padding:30px 12px}.wrap{max-width:800px;margin:auto;text-align:center;position:relative;z-index:1}.section-tag{font-size:.75rem;letter-spacing:2px;color:#c16b94;text-transform:uppercase}.wrap h2{font-family:Georgia,serif;font-size:clamp(1.8rem,4.5vw,2.8rem);margin:8px 0;color:#a64f7b}.sub{max-width:600px;margin:0 auto 18px;line-height:1.6;font-size:0.95rem}.cake-area{position:relative;margin:10px auto 15px;width:min(320px,85vw);height:280px;display:flex;align-items:flex-end;justify-content:center}.cake{position:relative;width:220px;height:130px;background:linear-gradient(90deg,#e9a0bc,#ffd4df 45%,#e78bb0);border-radius:16px 16px 22px 22px;box-shadow:inset -10px 0 #d87ba5,0 15px 25px rgba(168,92,129,0.2)}.cake:before{content:'';position:absolute;top:-20px;left:-4px;width:228px;height:45px;border-radius:50%;background:#fff0f5;border-bottom:7px solid #ffb7d0}.drips{position:absolute;top:5px;left:18px;width:24px;height:30px;background:#fff0f5;border-radius:0 0 12px 12px;box-shadow:42px 4px #fff0f5,90px -2px #fff0f5,135px 6px #fff0f5,170px 0 #fff0f5}.cake-bottom{position:absolute;bottom:-10px;left:-10px;width:240px;height:24px;border-radius:50%;background:#ffbfd2;box-shadow:0 6px 0 #df8bac}.candle-row{position:absolute;top:-80px;left:0;width:100%;display:flex;justify-content:center;gap:12px;z-index:3}.candle{width:24px;height:55px;border-radius:6px 6px 3px 3px;background:repeating-linear-gradient(135deg,#fff 0 7px,#ff79a8 7px 14px);position:relative;display:flex;justify-content:center;align-items:center;color:#a64f7b;font-weight:900;font-size:0.9rem;padding-top:20px;box-shadow:0 2px 4px rgba(158,69,99,0.2)}.flame{position:absolute;top:-22px;width:14px;height:20px;background:radial-gradient(ellipse at 50% 70%,#fff8ad 0 20%,#ffb23f 45%,#ff6c55 70%);border-radius:60% 40% 55% 45%;transform:rotate(5deg);animation:flicker .6s infinite alternate}.cake-note{font-family:Georgia,serif;font-style:italic;font-size:1rem;margin:15px 0}.action-box{background:#fff0f6;border:2px dashed #ff94b8;border-radius:16px;padding:12px;max-width:350px;margin:0 auto 20px}.action-text{font-size:0.95rem;font-weight:700;color:#b0527c;margin-bottom:8px}.bouquet-box{background:linear-gradient(135deg,#fff0f3,#ffe4ec);border:2px solid #ffb3c9;border-radius:20px;padding:18px;max-width:450px;margin:20px auto;box-shadow:0 8px 25px rgba(255,111,159,0.15);text-align:center}.bouquet-icon{font-size:3.5rem;animation:bob 2.5s ease-in-out infinite;margin-bottom:6px}.bouquet-title{font-family:Georgia,serif;font-size:1.2rem;color:#a64f7b;font-weight:bold;margin-bottom:6px}.bouquet-desc{font-size:0.9rem;color:#8c5c7d;line-height:1.5}
 
-/* Khu vực danh sách điều ước dạng lưới 2 cột */
 .wish-select-panel{background:#ffffffbf;backdrop-filter:blur(8px);border:1px solid #fff;border-radius:22px;padding:20px 14px;box-shadow:0 12px 40px rgba(183,108,142,0.12);margin:20px auto 25px}.wish-select-panel h3{font-family:Georgia,serif;font-size:1.5rem;margin:0 0 6px;color:#a64f7b}.wish-select-panel>p{margin:0 0 16px;font-size:0.95rem}.wishes-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.wish-card{background:radial-gradient(circle at 30% 30%,#ffffff,#fff0f5);border:2px solid #ffc2d6;border-radius:20px;padding:15px 10px;text-align:center;color:var(--ink);box-shadow:0 8px 20px rgba(255,111,159,0.15);cursor:pointer;transition:.25s}.wish-card:hover{transform:translateY(-5px);border-color:#ff6f9f;background:radial-gradient(circle at 30% 30%,#ffffff,#ffe3ec)}.wish-icon{font-size:2.2rem;display:block;margin-bottom:4px}.wish-card strong{display:block;font-size:0.95rem}.wish-card small{display:block;color:#a27d99;margin-top:2px;font-size:0.78rem}
 
-/* Màn hình trang riêng biệt cho từng điều ước */
 .wish-page-screen{position:fixed;inset:0;background:linear-gradient(145deg,#fff5f7,#fff8ec 55%,#f4eaff);z-index:50;display:flex;align-items:center;justify-content:center;padding:20px 15px;overflow-y:auto;animation:fadeIn .3s ease}
-.wish-page-container{max-width:550px;width:100%;background:#ffffffdc;backdrop-filter:blur(10px);border:2px solid #ffb3c9;border-radius:28px;padding:22px;text-align:center;box-shadow:0 15px 45px rgba(183,108,142,0.2);animation:slideUp .35s ease}
+.wish-page-container{max-width:550px;width:100%;background:#ffffffdc;backdrop-filter:blur(10px);border:2px solid #ffb3c9;border-radius:28px;padding:22px;text-align:center;box-shadow:0 15px 45px rgba(183,108,142,0.2);animation:slideUp .35s ease;position:relative}
 .wish-page-container h3{font-family:Georgia,serif;font-size:1.6rem;color:#a64f7b;margin:0 0 12px}
 .page-photo-box{width:100%;height:220px;border-radius:16px;overflow:hidden;margin-bottom:15px;box-shadow:0 6px 15px rgba(0,0,0,0.1);background:#ffe0ea}
 .page-photo-box img{width:100%;height:100%;object-fit:cover}
 .wish-page-container p{font-size:1rem;line-height:1.7;color:var(--ink);margin:0 0 18px;text-align:left;padding:0 5px}
 
-/* Thanh bấm chuyển nhanh qua các điều ước khác */
+.home-btn{position:absolute;top:15px;left:15px;background:#fff0f5;border:1px solid #ffb3c9;border-radius:999px;padding:6px 12px;font-size:0.75rem;font-weight:700;color:#a64f7b;cursor:pointer;transition:.2s}
+.home-btn:hover{background:#ffe3ec}
+
 .quick-nav{border-top:2px dashed #ffb3c9;padding-top:15px;margin-top:10px;text-align:left}
 .quick-nav-title{font-size:0.8rem;font-weight:700;color:#b0527c;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px}
 .quick-nav-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
@@ -102,6 +102,9 @@ footer{font-size:0.75rem;color:#b58ca7;padding:0 10px 20px}
 <!-- TRANG RIÊNG CHO TỪNG ĐIỀU ƯỚC -->
 <div class="wish-page-screen hidden" id="wishPageScreen">
   <div class="wish-page-container">
+    <!-- Nút về trang đầu góc trên bên trái -->
+    <button class="home-btn" id="homeBtn">🏠 Trang đầu</button>
+    
     <h3 id="pageWishTitle"></h3>
     <div class="page-photo-box">
       <img id="pageWishPhoto" alt="Ảnh kỷ niệm Út">
@@ -184,6 +187,12 @@ function openWishPage(id){
   window.scrollTo({top:0,behavior:'smooth'});
   roses(4);
 }
+
+// Nút bấm "Trang đầu" trong trang điều ước để quay về màn hình bánh kem/bó hoa
+$('homeBtn').addEventListener('click',()=>{
+  $('wishPageScreen').classList.add('hidden');
+  window.scrollTo({top:0,behavior:'smooth'});
+});
 
 const bgMusic = $('bgMusic');
 const musicToggle = $('musicToggle');
