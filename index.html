@@ -1,180 +1,95 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Món quà sinh nhật lãng mạn dành cho Út 🌹💗</title>
+<!-- Nạp font tiếng Việt chuẩn Google Fonts để chống lỗi phông chữ -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&family=Dancing+Script:wght@700&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap" rel="stylesheet">
+
 <style>
-:root {
-  --pink: #ff6f9f;
-  --rose: #ffb3c9;
-  --cream: #fff8f1;
-  --purple: #8d6ac8;
-  --ink: #4a2e4a;
-}
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  font-family: 'Nunito', system-ui, -apple-system, sans-serif;
-  color: var(--ink);
-  background: linear-gradient(145deg, #fff5f7, #fff8ec 55%, #f4eaff);
-  min-height: 100vh;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-}
-button { font: inherit; cursor: pointer; border: 0; }
-.screen {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px 15px;
-  position: relative;
-}
-.intro { text-align: center; max-width: 100%; z-index: 2; }
-.eyebrow { letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem; color: #bd6791; font-weight: 700; }
-.intro h1 {
-  font-family: 'Comfortaa', cursive, sans-serif;
-  font-size: clamp(1.8rem, 5.5vw, 3rem);
-  line-height: 1.3;
-  margin: 15px 0;
-  color: #a64f7b;
-  font-weight: 700;
-}
-.intro p { font-size: 1rem; line-height: 1.6; max-width: 500px; margin: 0 auto 20px; }
-.gift { font-size: clamp(3.5rem, 12vw, 5.5rem); animation: bob 2s ease-in-out infinite; filter: drop-shadow(0 10px 12px #d98ca355); }
-.main-btn {
-  background: linear-gradient(135deg, #ff699b, #bd7ad7);
-  color: white;
-  border-radius: 999px;
-  padding: 14px 28px;
-  box-shadow: 0 8px 20px rgba(219, 126, 168, 0.35);
-  font-weight: 800;
-  transition: .2s;
-  font-size: 1rem;
-}
-.main-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 25px rgba(219, 126, 168, 0.5); }
-.tiny { font-size: 0.85rem; color: #9e7796; margin-top: 12px; }
-.hidden { display: none !important; }
-.celebration { display: block; padding: 30px 12px; }
-.wrap { max-width: 800px; margin: auto; text-align: center; position: relative; z-index: 1; }
-.section-tag { font-size: 0.8rem; letter-spacing: 2px; color: #c16b94; text-transform: uppercase; font-weight: 700; }
-.wrap h2 {
-  font-family: 'Comfortaa', cursive, sans-serif;
-  font-size: clamp(1.8rem, 4.5vw, 2.8rem);
-  margin: 8px 0;
-  color: #a64f7b;
-}
-.sub { max-width: 600px; margin: 0 auto 18px; line-height: 1.6; font-size: 0.98rem; }
-.cake-area { position: relative; margin: 10px auto 15px; width: min(320px, 85vw); height: 280px; display: flex; align-items: flex-end; justify-content: center; }
-.cake { position: relative; width: 220px; height: 130px; background: linear-gradient(90deg, #e9a0bc, #ffd4df 45%, #e78bb0); border-radius: 16px 16px 22px 22px; box-shadow: inset -10px 0 #d87ba5, 0 15px 25px rgba(168, 92, 129, 0.2); }
-.cake:before { content: ''; position: absolute; top: -20px; left: -4px; width: 228px; height: 45px; border-radius: 50%; background: #fff0f5; border-bottom: 7px solid #ffb7d0; }
-.drips { position: absolute; top: 5px; left: 18px; width: 24px; height: 30px; background: #fff0f5; border-radius: 0 0 12px 12px; box-shadow: 42px 4px #fff0f5, 90px -2px #fff0f5, 135px 6px #fff0f5, 170px 0 #fff0f5; }
-.cake-bottom { position: absolute; bottom: -10px; left: -10px; width: 240px; height: 24px; border-radius: 50%; background: #ffbfd2; box-shadow: 0 6px 0 #df8bac; }
-.candle-row { position: absolute; top: -80px; left: 0; width: 100%; display: flex; justify-content: center; gap: 12px; z-index: 3; }
-.candle { width: 24px; height: 55px; border-radius: 6px 6px 3px 3px; background: repeating-linear-gradient(135deg, #fff 0 7px, #ff79a8 7px 14px); position: relative; display: flex; justify-content: center; align-items: center; color: #a64f7b; font-weight: 900; font-size: 0.9rem; padding-top: 20px; box-shadow: 0 2px 4px rgba(158, 69, 99, 0.2); }
-.flame { position: absolute; top: -22px; width: 14px; height: 20px; background: radial-gradient(ellipse at 50% 70%, #fff8ad 0 20%, #ffb23f 45%, #ff6c55 70%); border-radius: 60% 40% 55% 45%; transform: rotate(5deg); animation: flicker .6s infinite alternate; }
-.cake-note { font-family: 'Comfortaa', cursive, sans-serif; font-style: italic; font-size: 1rem; margin: 15px 0; }
-.action-box { background: #fff0f6; border: 2px dashed #ff94b8; border-radius: 16px; padding: 12px; max-width: 350px; margin: 0 auto 20px; }
-.action-text { font-size: 0.95rem; font-weight: 700; color: #b0527c; margin-bottom: 8px; }
-.bouquet-box { background: linear-gradient(135deg, #fff0f3, #ffe4ec); border: 2px solid #ffb3c9; border-radius: 20px; padding: 18px; max-width: 450px; margin: 20px auto; box-shadow: 0 8px 25px rgba(255, 111, 159, 0.15); text-align: center; }
-.bouquet-icon { font-size: 3.5rem; animation: bob 2.5s ease-in-out infinite; margin-bottom: 6px; }
-.bouquet-title { font-family: 'Comfortaa', cursive, sans-serif; font-size: 1.2rem; color: #a64f7b; font-weight: bold; margin-bottom: 6px; }
-.bouquet-desc { font-size: 0.92rem; color: #8c5c7d; line-height: 1.5; }
+:root{--pink:#ff6f9f;--rose:#ffb3c9;--cream:#fff8f1;--purple:#8d6ac8;--ink:#4a2e4a}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Be Vietnam Pro',system-ui,sans-serif;color:var(--ink);background:linear-gradient(145deg,#fff5f7,#fff8ec 55%,#f4eaff);min-height:100vh;overflow-x:hidden}
+button{font:inherit;cursor:pointer;border:0}
+.screen{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px 15px;position:relative}
+.intro{text-align:center;max-width:100%;z-index:2}
+.eyebrow{letter-spacing:2px;text-transform:uppercase;font-size:.8rem;color:#bd6791;font-weight:700}
+.intro h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,6vw,3.2rem);line-height:1.3;margin:15px 0;color:#a64f7b;font-weight:800}
+.intro p{font-size:1rem;line-height:1.6;max-width:500px;margin:0 auto 20px}
+.gift{font-size:clamp(3.5rem,12vw,6rem);animation:bob 2s ease-in-out infinite;filter:drop-shadow(0 10px 12px #d98ca355)}
+.main-btn{background:linear-gradient(135deg,#ff699b,#bd7ad7);color:white;border-radius:999px;padding:14px 26px;box-shadow:0 8px 20px rgba(219,126,168,0.35);font-weight:800;transition:.2s;font-size:1rem}
+.main-btn:hover{transform:translateY(-3px);box-shadow:0 12px 25px rgba(219,126,168,0.5)}
+.tiny{font-size:.8rem;color:#9e7796;margin-top:12px}
+.hidden{display:none!important}
+.celebration{display:block;padding:30px 12px}
+.wrap{max-width:800px;margin:auto;text-align:center;position:relative;z-index:1}
+.section-tag{font-size:.78rem;letter-spacing:2px;color:#c16b94;text-transform:uppercase;font-weight:700}
+.wrap h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4.5vw,2.8rem);margin:8px 0;color:#a64f7b}
+.sub{max-width:600px;margin:0 auto 18px;line-height:1.6;font-size:0.95rem}
 
-/* Khu vực danh sách điều ước dạng lưới */
-.wish-select-panel { background: #ffffffbf; backdrop-filter: blur(8px); border: 1px solid #fff; border-radius: 22px; padding: 20px 14px; box-shadow: 0 12px 40px rgba(183, 108, 142, 0.12); margin: 20px auto 25px; }
-.wish-select-panel h3 { font-family: 'Comfortaa', cursive, sans-serif; font-size: 1.5rem; margin: 0 0 6px; color: #a64f7b; }
-.wish-select-panel > p { margin: 0 0 16px; font-size: 0.95rem; }
-.wishes-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
-.wish-card {
-  background: radial-gradient(circle at 30% 30%, #ffffff, #fff0f5);
-  border: 2px solid #ffc2d6;
-  border-radius: 20px;
-  padding: 16px 10px;
-  text-align: center;
-  color: var(--ink);
-  box-shadow: 0 8px 20px rgba(255, 111, 159, 0.15);
-  cursor: pointer;
-  transition: .25s;
-}
-.wish-card:hover { transform: translateY(-5px); border-color: #ff6f9f; background: radial-gradient(circle at 30% 30%, #ffffff, #ffe3ec); }
-.wish-card.special-card { grid-column: span 2; background: linear-gradient(135deg, #fff0f5, #ffe4ee); border: 2px solid #ff6f9f; }
-.wish-icon { font-size: 2.2rem; display: block; margin-bottom: 4px; }
-.wish-card strong { display: block; font-size: 0.98rem; color: #a64f7b; }
-.wish-card small { display: block; color: #a27d99; margin-top: 2px; font-size: 0.8rem; }
+.cake-area{position:relative;margin:10px auto 15px;width:min(320px,85vw);height:280px;display:flex;align-items:flex-end;justify-content:center}
+.cake{position:relative;width:220px;height:130px;background:linear-gradient(90deg,#e9a0bc,#ffd4df 45%,#e78bb0);border-radius:16px 16px 22px 22px;box-shadow:inset -10px 0 #d87ba5,0 15px 25px rgba(168,92,129,0.2)}
+.cake:before{content:'';position:absolute;top:-20px;left:-4px;width:228px;height:45px;border-radius:50%;background:#fff0f5;border-bottom:7px solid #ffb7d0}
+.drips{position:absolute;top:5px;left:18px;width:24px;height:30px;background:#fff0f5;border-radius:0 0 12px 12px;box-shadow:42px 4px #fff0f5,90px -2px #fff0f5,135px 6px #fff0f5,170px 0 #fff0f5}
+.cake-bottom{position:absolute;bottom:-10px;left:-10px;width:240px;height:24px;border-radius:50%;background:#ffbfd2;box-shadow:0 6px 0 #df8bac}
+.candle-row{position:absolute;top:-80px;left:0;width:100%;display:flex;justify-content:center;gap:12px;z-index:3}
+.candle{width:24px;height:55px;border-radius:6px 6px 3px 3px;background:repeating-linear-gradient(135deg,#fff 0 7px,#ff79a8 7px 14px);position:relative;display:flex;justify-content:center;align-items:center;color:#a64f7b;font-weight:900;font-size:0.9rem;padding-top:20px;box-shadow:0 2px 4px rgba(158,69,99,0.2)}
+.flame{position:absolute;top:-22px;width:14px;height:20px;background:radial-gradient(ellipse at 50% 70%,#fff8ad 0 20%,#ffb23f 45%,#ff6c55 70%);border-radius:60% 40% 55% 45%;transform:rotate(5deg);animation:flicker .6s infinite alternate}
+.cake-note{font-family:'Playfair Display',serif;font-style:italic;font-size:1.05rem;margin:15px 0;color:#8c4a6b}
 
-/* Trang riêng biệt cho từng điều ước */
-.wish-page-screen {
-  position: fixed;
-  inset: 0;
-  background: linear-gradient(145deg, #fff5f7, #fff8ec 55%, #f4eaff);
-  z-index: 50;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px 15px;
-  overflow-y: auto;
-  animation: fadeIn .3s ease;
-}
-.wish-page-container {
-  max-width: 580px;
-  width: 100%;
-  background: #ffffffdc;
-  backdrop-filter: blur(10px);
-  border: 2px solid #ffb3c9;
-  border-radius: 28px;
-  padding: 24px 20px;
-  text-align: center;
-  box-shadow: 0 15px 45px rgba(183, 108, 142, 0.2);
-  animation: slideUp .35s ease;
-}
-.wish-page-container h3 { font-family: 'Comfortaa', cursive, sans-serif; font-size: 1.55rem; color: #a64f7b; margin: 0 0 14px; line-height: 1.3; }
-.page-photo-box { width: 100%; height: 230px; border-radius: 18px; overflow: hidden; margin-bottom: 16px; box-shadow: 0 6px 18px rgba(0,0,0,0.1); background: #ffe0ea; }
-.page-photo-box img { width: 100%; height: 100%; object-fit: cover; }
-.wish-page-container .text-content { font-size: 1.02rem; line-height: 1.85; color: #4a2e4a; margin: 0 0 18px; text-align: left; white-space: pre-line; }
+.action-box{background:#fff0f6;border:2px dashed #ff94b8;border-radius:16px;padding:12px;max-width:350px;margin:0 auto 20px}
+.action-text{font-size:0.95rem;font-weight:700;color:#b0527c;margin-bottom:8px}
+.bouquet-box{background:linear-gradient(135deg,#fff0f3,#ffe4ec);border:2px solid #ffb3c9;border-radius:20px;padding:18px;max-width:450px;margin:20px auto;box-shadow:0 8px 25px rgba(255,111,159,0.15);text-align:center}
+.bouquet-icon{font-size:3.5rem;animation:bob 2.5s ease-in-out infinite;margin-bottom:6px}
+.bouquet-title{font-family:'Playfair Display',serif;font-size:1.25rem;color:#a64f7b;font-weight:bold;margin-bottom:6px}
+.bouquet-desc{font-size:0.92rem;color:#8c5c7d;line-height:1.5}
 
-/* Khung highlight đoạn chúc ở thư */
-.letter-highlight-box {
-  background: linear-gradient(135deg, #fff0f5, #ffe4ee);
-  border-left: 4px solid #ff6f9f;
-  border-radius: 14px;
-  padding: 14px 16px;
-  margin-top: 15px;
-  font-weight: 700;
-  color: #923d66;
-  text-align: left;
-  line-height: 1.7;
-}
+/* Bảng danh sách điều ước dạng thẻ chọn */
+.wish-select-panel{background:#ffffffbf;backdrop-filter:blur(8px);border:1px solid #fff;border-radius:22px;padding:20px 14px;box-shadow:0 12px 40px rgba(183,108,142,0.12);margin:20px auto 25px}
+.wish-select-panel h3{font-family:'Playfair Display',serif;font-size:1.55rem;margin:0 0 6px;color:#a64f7b}
+.wish-select-panel>p{margin:0 0 16px;font-size:0.95rem}
+.wishes-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
 
-.signature-tag { text-align: right; font-weight: 800; color: #a64f7b; margin-top: 15px; font-size: 1.05rem; }
+.wish-card{background:radial-gradient(circle at 30% 30%,#ffffff,#fff0f5);border:2px solid #ffc2d6;border-radius:20px;padding:15px 10px;text-align:center;color:var(--ink);box-shadow:0 8px 20px rgba(255,111,159,0.15);cursor:pointer;transition:.25s}
+.wish-card:hover{transform:translateY(-5px);border-color:#ff6f9f;background:radial-gradient(circle at 30% 30%,#ffffff,#ffe3ec)}
+.wish-card.special-card{grid-column: span 2; background: linear-gradient(135deg, #fff0f5, #ffe3ee); border-color: #ff85b3; box-shadow: 0 8px 22px rgba(255,111,159,0.25)}
+.wish-icon{font-size:2.2rem;display:block;margin-bottom:4px}
+.wish-card strong{display:block;font-size:0.98rem;font-weight:700}
+.wish-card small{display:block;color:#a27d99;margin-top:2px;font-size:0.8rem}
 
-.quick-nav { border-top: 2px dashed #ffb3c9; padding-top: 15px; margin-top: 15px; text-align: left; }
-.quick-nav-title { font-size: 0.82rem; font-weight: 700; color: #b0527c; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
-.quick-nav-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
-.quick-nav-btn { background: #fff0f5; border: 1px solid #ffb3c9; border-radius: 12px; padding: 10px 6px; text-align: center; font-size: 0.85rem; font-weight: 700; color: #a64f7b; cursor: pointer; transition: .2s; }
-.quick-nav-btn:hover { background: #ffe3ec; transform: translateY(-2px); }
+/* Trang màn hình riêng biệt hiển thị từng điều ước/bức thư */
+.wish-page-screen{position:fixed;inset:0;background:linear-gradient(145deg,#fff5f7,#fff8ec 55%,#f4eaff);z-index:50;display:flex;align-items:center;justify-content:center;padding:20px 15px;overflow-y:auto;animation:fadeIn .3s ease}
+.wish-page-container{max-width:580px;width:100%;background:#ffffffdc;backdrop-filter:blur(10px);border:2px solid #ffb3c9;border-radius:28px;padding:24px 20px;text-align:center;box-shadow:0 15px 45px rgba(183,108,142,0.2);animation:slideUp .35s ease}
+.wish-page-container h3{font-family:'Playfair Display',serif;font-size:1.65rem;color:#a64f7b;margin:0 0 14px;line-height:1.3}
+.page-photo-box{width:100%;height:230px;border-radius:18px;overflow:hidden;margin-bottom:16px;box-shadow:0 6px 18px rgba(0,0,0,0.1);background:#ffe0ea}
+.page-photo-box img{width:100%;height:100%;object-fit:cover}
+.wish-page-container .page-text{font-size:1rem;line-height:1.8;color:var(--ink);margin:0 0 18px;text-align:left;padding:0 4px;white-space:pre-line}
 
-.home-btn-big { display: block; width: 100%; background: linear-gradient(135deg, #ff699b, #bd7ad7); color: white; border-radius: 999px; padding: 13px; font-weight: 800; font-size: 0.95rem; text-align: center; margin-top: 14px; box-shadow: 0 6px 15px rgba(219, 126, 168, 0.3); transition: .2s; }
-.home-btn-big:hover { transform: translateY(-2px); }
+/* Khung trích dẫn nhấn mạnh ở trang thư */
+.highlight-quote{background:linear-gradient(135deg,#fff0f5,#ffe4ee);border-left:4px solid #ff6f9f;border-radius:14px;padding:14px 16px;margin:15px 0;font-weight:700;color:#923d66;text-align:left;line-height:1.75;font-size:0.98rem}
 
-.last-message { font-family: 'Comfortaa', cursive, sans-serif; font-size: clamp(1.1rem, 2.8vw, 1.35rem); line-height: 1.6; max-width: 700px; margin: 25px auto 12px; color: #a64f7b; padding: 0 10px; }
-.signature { font-weight: 800; margin-bottom: 25px; }
-.rose-fall { position: fixed; top: -50px; z-index: 1; pointer-events: none; animation: fallDown linear infinite; }
-.firework { position: fixed; width: 5px; height: 5px; border-radius: 50%; pointer-events: none; z-index: 5; box-shadow: 0 0 8px currentColor; animation: burst 1.1s ease-out forwards; }
-.music-control { position: fixed; top: 12px; right: 12px; z-index: 100; background: white; border: 2px solid #ffb3c9; border-radius: 999px; padding: 6px 12px; font-size: 0.8rem; font-weight: 700; color: #a64f7b; box-shadow: 0 4px 12px rgba(0,0,0,0.1); display: flex; align-items: center; gap: 4px; }
+.quick-nav{border-top:2px dashed #ffb3c9;padding-top:16px;margin-top:12px;text-align:left}
+.quick-nav-title{font-size:0.82rem;font-weight:700;color:#b0527c;margin-bottom:10px;text-transform:uppercase;letter-spacing:1px}
+.quick-nav-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.quick-nav-btn{background:#fff0f5;border:1px solid #ffb3c9;border-radius:12px;padding:9px;text-align:center;font-size:0.85rem;font-weight:700;color:#a64f7b;cursor:pointer;transition:.2s}
+.quick-nav-btn:hover{background:#ffe3ec;transform:translateY(-2px)}
+.quick-nav-btn.special-btn{grid-column: span 2; background: linear-gradient(135deg, #ffe0eb, #f4d9f7); color: #8e3f68; border-color: #ff9ec3}
 
-@keyframes bob { 50% { transform: translateY(-10px) rotate(2deg); } }
-@keyframes flicker { to { transform: rotate(-8deg) scale(.9); filter: drop-shadow(0 0 12px #ffcb57); } }
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-@keyframes slideUp { from { opacity: 0; transform: translateY(25px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes fallDown { 0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; } 100% { transform: translateY(105vh) rotate(360deg); opacity: 0.8; } }
-@keyframes burst { 0% { transform: translate(0,0) scale(1); opacity: 1; } 100% { transform: translate(var(--x),var(--y)) scale(.2); opacity: 0; } }
-footer { font-size: 0.78rem; color: #b58ca7; padding: 0 10px 20px; }
+.home-btn-big{display:block;width:100%;background:linear-gradient(135deg,#ff699b,#bd7ad7);color:white;border-radius:999px;padding:12px;font-weight:800;font-size:0.95rem;text-align:center;margin-top:12px;box-shadow:0 6px 15px rgba(219,126,168,0.3);transition:.2s}
+.home-btn-big:hover{transform:translateY(-2px)}
+
+.last-message{font-family:'Playfair Display',serif;font-size:clamp(1.1rem,2.8vw,1.35rem);line-height:1.6;max-width:700px;margin:25px auto 12px;color:#a64f7b;padding:0 10px}.signature{font-weight:800;margin-bottom:25px;font-size:1.05rem}.rose-fall{position:fixed;top:-50px;z-index:1;pointer-events:none;animation:fallDown linear infinite}.firework{position:fixed;width:5px;height:5px;border-radius:50%;pointer-events:none;z-index:5;box-shadow:0 0 8px currentColor;animation:burst 1.1s ease-out forwards}.music-control{position:fixed;top:12px;right:12px;z-index:100;background:white;border:2px solid #ffb3c9;border-radius:999px;padding:6px 12px;font-size:0.8rem;font-weight:700;color:#a64f7b;box-shadow:0 4px 12px rgba(0,0,0,0.1);display:flex;align-items:center;gap:4px}
+
+@keyframes bob{50%{transform:translateY(-10px) rotate(2deg)}}
+@keyframes flicker{to{transform:rotate(-8deg) scale(.9);filter:drop-shadow(0 0 12px #ffcb57)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes slideUp{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fallDown{0%{transform:translateY(-10vh) rotate(0deg);opacity:1}100%{transform:translateY(105vh) rotate(360deg);opacity:0.8}}
+@keyframes burst{0%{transform:translate(0,0) scale(1);opacity:1}100%{transform:translate(var(--x),var(--y)) scale(.2);opacity:0}}
+footer{font-size:0.78rem;color:#b58ca7;padding:0 10px 20px}
 </style>
 </head>
 <body>
@@ -226,6 +141,7 @@ footer { font-size: 0.78rem; color: #b58ca7; padding: 0 10px 20px; }
       <button class="main-btn" id="blowBtn">Thổi nến ngay ✨</button>
     </div>
 
+    <!-- KHU VỰC CHỌN TRANG ĐIỀU ƯỚC VÀ THƯ -->
     <div class="wish-select-panel">
       <h3 id="wishSectionTitle"></h3>
       <p id="wishSectionIntro"></p>
@@ -242,21 +158,21 @@ footer { font-size: 0.78rem; color: #b58ca7; padding: 0 10px 20px; }
   </div>
 </section>
 
-<!-- MÀN HÌNH MỞ TRANG RIÊNG CHO TỪNG ĐIỀU ƯỚC VÀ LỜI CHÚC TÂM SỰ -->
+<!-- TRANG MÀN HÌNH RIÊNG CHO TỪNG ĐIỀU ƯỚC HOẶC BỨC THƯ -->
 <div class="wish-page-screen hidden" id="wishPageScreen">
   <div class="wish-page-container">
     <h3 id="pageWishTitle"></h3>
-    <div class="page-photo-box">
+    <div class="page-photo-box" id="photoBoxContainer">
       <img id="pageWishPhoto" alt="Ảnh kỷ niệm Út">
     </div>
-    <div class="text-content" id="pageWishText"></div>
-    <div class="letter-highlight-box hidden" id="pageHighlight"></div>
-    <div class="signature-tag hidden" id="pageSignature">Con thương Út nhiều lắm! ❤️</div>
+    
+    <div class="page-text" id="pageWishText"></div>
+    <div class="highlight-quote hidden" id="pageQuote"></div>
     
     <div class="quick-nav">
-      <div class="quick-nav-title">🌸 Xem tiếp các lời chúc khác:</div>
+      <div class="quick-nav-title">🌸 Chuyển sang trang khác:</div>
       <div class="quick-nav-grid" id="quickNavGrid"></div>
-      <button class="home-btn-big" id="homeBtn">🏠 Quay về trang chính (Bánh kem & Bó hoa)</button>
+      <button class="home-btn-big" id="homeBtn">🏠 Quay về trang đầu (Bánh kem & Bó hoa)</button>
     </div>
   </div>
 </div>
@@ -274,40 +190,24 @@ const CONFIG = {
   ageAfter: '46',
   cakeNoteBefore: 'Một điều ước thật đẹp cùng bó hoa ngập tràn yêu thương… 🌷',
   cakeNoteAfter: 'Chúc mừng Út tuổi 46 — điều ước nào cũng thành hiện thực! ✨',
-  wishSectionTitle: 'Út chọn điều ước nha… 🌹',
-  wishSectionIntro: 'Út bấm vào từng ô bên dưới để mở ra từng trang lời chúc riêng nha.',
+  wishSectionTitle: 'Út chọn điều ước & lời chúc nha… 🌹',
+  wishSectionIntro: 'Út bấm vào từng ô bên dưới để lật mở từng trang riêng biệt nha.',
+
   lastMessage: '“Cảm ơn Út vì tất cả những hy sinh lặng thầm. Chúc Út tuổi 46 luôn rạng rỡ và hạnh phúc!”',
   signature: 'Con thương Út nhiều lắm! 💐',
   footerText: 'Món quà nhỏ được làm bằng tất cả tình yêu dành cho Út.',
   
-  // DANH SÁCH TẤT CẢ CÁC TRANG LỜI CHÚC VÀ BỨC THƯ TÂM SỰ RIÊNG
+  // DANH SÁCH 4 ĐIỀU ƯỚC + 1 TRANG BỨC THƯ TÂM SỰ TỔNG HỢP CỦA CON
   wishes: [
+    { id:'family', icon:'🏡', cardTitle:'Gia đình', short:'Luôn sum vầy, bình an', title:'Điều ước về gia đình 🏡', text:'Con mong gia đình mình luôn bình an, thương yêu nhau và có thật nhiều dịp quây quần bên nhau. Mong nhà mình lúc nào cũng đầy ắp tiếng cười, hạnh phúc đong đầy. ❤️', image:'images/gia-dinh.jpg' },
+    { id:'love', icon:'💗', cardTitle:'Tình yêu', short:'Luôn được yêu thương', title:'Điều ước về tình yêu 💗', text:'Con mong Út luôn được yêu thương, trân trọng và quan tâm bằng những điều chân thành nhất. Mong những ngày phía trước của Út ngập tràn niềm vui và sự ngọt ngào. 💞', image:'images/tinh-yeu.jpg' },
+    { id:'health', icon:'🌿', cardTitle:'Sức khỏe', short:'Khỏe mạnh, an vui', title:'Điều ước về sức khỏe 🌿', text:'Tuổi mới, con chỉ mong Út luôn khỏe mạnh, an nhiên, mỗi ngày thức dậy đều thấy lòng nhẹ nhàng và tận hưởng trọn vẹn niềm vui cuộc sống. 🌷', image:'images/suc-khoe.jpg' },
+    { id:'children', icon:'👨‍👩‍👧‍👦', cardTitle:'Con cái', short:'Thuận hòa, hạnh phúc', title:'Điều ước về con cái 👨‍👩‍👧‍👦', text:'Con mong các con luôn ngoan ngoãn, khỏe mạnh, biết yêu thương và làm cho Út tự hào mỗi ngày. Tình cảm gia đình mình sẽ mãi bền chặt và gắn kết. 🫶', image:'images/con-cai.jpg' },
     { 
-      id:'family', icon:'🏡', cardTitle:'Gia đình', short:'Luôn sum vầy, bình an', 
-      title:'Điều ước về gia đình 🏡', 
-      text:'Con mong gia đình mình luôn bình an, thương yêu nhau và có thật nhiều dịp quây quần bên nhau. Mong nhà mình lúc nào cũng đầy ắp tiếng cười, hạnh phúc đong đầy. ❤️', 
-      image:'images/gia-dinh.jpg' 
-    },
-    { 
-      id:'love', icon:'💗', cardTitle:'Tình yêu', short:'Luôn được yêu thương', 
-      title:'Điều ước về tình yêu 💗', 
-      text:'Con mong Út luôn được yêu thương, trân trọng và quan tâm bằng những điều chân thành nhất. Mong những ngày phía trước của Út ngập tràn niềm vui và sự ngọt ngào. 💞', 
-      image:'images/tinh-yeu.jpg' 
-    },
-    { 
-      id:'health', icon:'🌿', cardTitle:'Sức khỏe', short:'Khỏe mạnh, an vui', 
-      title:'Điều ước về sức khỏe 🌿', 
-      text:'Tuổi mới, con chỉ mong Út luôn khỏe mạnh, an nhiên, mỗi ngày thức dậy đều thấy lòng nhẹ nhàng và tận hưởng trọn vẹn niềm vui cuộc sống. 🌷', 
-      image:'images/suc-khoe.jpg' 
-    },
-    { 
-      id:'children', icon:'👨‍👩‍👧‍👦', cardTitle:'Con cái', short:'Thuận hòa, hạnh phúc', 
-      title:'Điều ước về con cái 👨‍👩‍👧‍👦', 
-      text:'Con mong các con luôn ngoan ngoãn, khỏe mạnh, biết yêu thương và làm cho Út tự hào mỗi ngày. Tình cảm gia đình mình sẽ mãi bền chặt và gắn kết. 🫶', 
-      image:'images/con-cai.jpg' 
-    },
-    { 
-      id:'letter', icon:'💌', cardTitle:'Lời con gửi Út', short:'Đoạn tâm sự riêng gửi Út', 
+      id:'letter', 
+      icon:'💌', 
+      cardTitle:'Lời con gửi Út', 
+      short:'Những dòng tâm sự từ đáy lòng', 
       title:'Út ơi, con có một vài điều muốn gửi đến Út… ❤️', 
       text:`Vậy là đã 13 năm rồi Út chưa được trở về quê hương. Gia đình mình ai cũng nhớ thương Út nhiều lắm.
 
@@ -318,8 +218,8 @@ Nhìn Út tần tảo, sớm hôm đi làm, chẳng dám cho mình nghỉ ngơi 
 Thấy bạn bè tổ chức sinh nhật cho Út, con vui lắm. Con vui vì dù ở nơi xa quê hương, Út vẫn có những người bạn yêu thương, quan tâm và dành cho Út những điều tốt đẹp. Con chỉ mong từ nay về sau, cuộc sống sẽ dịu dàng với Út hơn một chút. Mong Út luôn vui vẻ, bình an, hạnh phúc; có một người thật lòng yêu thương, quan tâm và chăm sóc cho Út cùng Minh Thiện. Mong Út không còn phải chịu nhiều vất vả, không còn những nỗi buồn phải giữ trong lòng, và cũng có thể sống cho bản thân mình nhiều hơn một chút.
 
 Con mong Út biết rằng Út đã hy sinh và lo lắng cho gia đình mình nhiều đến nhường nào. Những điều Út làm, con luôn ghi nhớ trong lòng. Có thể bây giờ con chưa làm được gì nhiều cho Út, nhưng con thật lòng biết ơn và thương Út rất nhiều.`,
-      highlight: `✨ Chúc Út tuổi mới thật nhiều niềm vui, sức khỏe, bình an và hạnh phúc. Mong một ngày không xa, Út sẽ được trở về quê hương, được đoàn tụ với gia đình và nhận lại thật nhiều yêu thương sau những năm tháng vất vả nơi xứ người.`,
-      image:'images/letter.jpg',
+      quote: `✨ Chúc Út tuổi mới thật nhiều niềm vui, sức khỏe, bình an và hạnh phúc. Mong một ngày không xa, Út sẽ được trở về quê hương, được đoàn tụ với gia đình và nhận lại thật nhiều yêu thương sau những năm tháng vất vả nơi xứ người.\n\nCon thương Út nhiều lắm! ❤️`,
+      image:'images/gia-dinh.jpg',
       isSpecial: true
     }
   ]
@@ -337,7 +237,7 @@ $('candle1').innerHTML='<span class="flame"></span>'+((CONFIG.ageBefore+'')[0]||
 fillText('cakeNote',CONFIG.cakeNoteBefore); fillText('wishSectionTitle',CONFIG.wishSectionTitle); fillText('wishSectionIntro',CONFIG.wishSectionIntro); 
 fillText('lastMessage',CONFIG.lastMessage); fillText('signature',CONFIG.signature); fillText('footerText',CONFIG.footerText);
 
-// Render danh sách các ô chọn ở trang chính
+// Tạo danh sách thẻ bấm ở trang chính
 const cards=$('wishCards');
 CONFIG.wishes.forEach(w=>{
   const b=document.createElement('div');
@@ -350,11 +250,11 @@ CONFIG.wishes.forEach(w=>{
   cards.appendChild(b);
 });
 
-// Render các nút chuyển nhanh
+// Tạo danh sách các nút chuyển nhanh trong từng trang riêng
 const quickNavGrid = $('quickNavGrid');
 CONFIG.wishes.forEach(w=>{
   const btn = document.createElement('div');
-  btn.className = 'quick-nav-btn';
+  btn.className = 'quick-nav-btn' + (w.isSpecial ? ' special-btn' : '');
   btn.textContent = w.icon + ' ' + w.cardTitle;
   btn.addEventListener('click', () => openWishPage(w.id));
   quickNavGrid.appendChild(btn);
@@ -364,19 +264,19 @@ function openWishPage(id){
   const w=CONFIG.wishes.find(x=>x.id===id);
   if(!w)return;
   fillText('pageWishTitle',w.title);
-  $('pageWishText').textContent = w.text;
+  fillText('pageWishText',w.text);
   $('pageWishPhoto').src = w.image;
   
-  if(w.highlight){
-    $('pageHighlight').textContent = w.highlight;
-    $('pageHighlight').classList.remove('hidden');$('pageSignature').classList.remove('hidden');
-  } else {
-    $('pageHighlight').classList.add('hidden');$('pageSignature').classList.add('hidden');
+  if(w.quote){
+    fillText('pageQuote', w.quote);
+    $('pageQuote').classList.remove('hidden');
+  }else{
+    $('pageQuote').classList.add('hidden');
   }
 
   $('wishPageScreen').classList.remove('hidden');
   window.scrollTo({top:0,behavior:'smooth'});
-  roses(4);
+  roses(5);
 }
 
 $('homeBtn').addEventListener('click',()=>{$('wishPageScreen').classList.add('hidden');
