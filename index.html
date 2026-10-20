@@ -7,41 +7,29 @@
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500;1,700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --pink: #ff6f9f;
-  --rose: #ffb3c9;
-  --cream: #fff8f1;
-  --purple: #8d6ac8;
-  --ink: #2d152b;
+  --bg-wine: #3d0c11;
+  --bg-wine-dark: #240508;
+  --wine-card: rgba(65, 15, 21, 0.85);
+  --gold-accent: #f3e5ab;
+  --text-light: #fce4ec;
+  --pink-glow: #ff5c8d;
 }
+
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
   font-family: 'Be Vietnam Pro', system-ui, sans-serif;
-  color: var(--ink);
-  background: linear-gradient(145deg, #fff5f7, #fff8ec 55%, #f4eaff);
+  color: var(--text-light);
+  background: linear-gradient(135deg, var(--bg-wine-dark), var(--bg-wine) 60%, #1a0204);
   min-height: 100vh;
   overflow-x: hidden;
   transition: background 1.2s ease, color 0.8s ease;
 }
-
-/* CHẾ ĐỘ PHÒNG TỐI KHI THẮP NẾN */
-body.dark-mode {
-  background: linear-gradient(145deg, #1f1124, #2a152d 55%, #180a1c);
-  color: #ffe6f0;
-}
-body.dark-mode .wrap h2, 
-body.dark-mode .cake-note { color: #ffb3d1; }
-body.dark-mode .sub, body.dark-mode footer { color: #e0b0cc; }
-body.dark-mode .action-box {
-  background: rgba(60, 22, 50, 0.85);
-  border-color: #ff6f9f;
-}
-body.dark-mode .action-text { color: #ffd1e4; }
 
 button { font: inherit; cursor: pointer; border: 0; }
 .screen {
@@ -54,32 +42,33 @@ button { font: inherit; cursor: pointer; border: 0; }
 }
 
 .intro { text-align: center; max-width: 100%; z-index: 2; }
-.eyebrow { letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem; color: #bd6791; font-weight: 700; }
-.intro h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 6vw, 3.2rem); line-height: 1.3; margin: 15px 0; color: #a64f7b; font-weight: 800; }
-.intro p { font-size: 1rem; line-height: 1.6; max-width: 500px; margin: 0 auto 20px; }
-.gift { font-size: clamp(3.5rem, 12vw, 6rem); animation: bob 2s ease-in-out infinite; filter: drop-shadow(0 10px 12px #d98ca355); }
+.eyebrow { letter-spacing: 3px; text-transform: uppercase; font-size: 0.8rem; color: var(--gold-accent); font-weight: 700; opacity: 0.9; }
+.intro h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 6vw, 3.5rem); line-height: 1.3; margin: 15px 0; color: #fff; font-weight: 800; text-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+.intro p { font-size: 1.05rem; line-height: 1.6; max-width: 500px; margin: 0 auto 25px; color: #f3d1d8; }
+.gift { font-size: clamp(4rem, 12vw, 6.5rem); animation: bob 2s ease-in-out infinite; filter: drop-shadow(0 12px 18px rgba(0,0,0,0.5)); }
 
 .main-btn {
-  background: linear-gradient(135deg, #ff699b, #bd7ad7);
-  color: white;
+  background: linear-gradient(135deg, #d4af37, #aa771c);
+  color: #240508;
   border-radius: 999px;
-  padding: 14px 28px;
-  box-shadow: 0 8px 20px rgba(219,126,168,0.35);
+  padding: 14px 32px;
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.35);
   font-weight: 800;
   transition: 0.25s;
-  font-size: 1rem;
+  font-size: 1.05rem;
+  letter-spacing: 0.5px;
 }
-.main-btn:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 12px 25px rgba(219,126,168,0.5); }
+.main-btn:hover { transform: translateY(-3px) scale(1.03); box-shadow: 0 12px 30px rgba(212, 175, 55, 0.5); background: linear-gradient(135deg, #e6c555, #bd8525); }
 .hidden { display: none !important; }
 
 /* TRANG BÁNH KEM & THỔI NẾN */
 .celebration { display: block; padding: 30px 12px; }
 .wrap { max-width: 800px; margin: auto; text-align: center; position: relative; z-index: 1; }
-.section-tag { font-size: 0.78rem; letter-spacing: 2px; color: #c16b94; text-transform: uppercase; font-weight: 700; }
-.wrap h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4.5vw, 2.8rem); margin: 8px 0; color: #a64f7b; transition: color 0.8s ease; }
-.sub { max-width: 600px; margin: 0 auto 15px; line-height: 1.6; font-size: 0.95rem; transition: color 0.8s ease; }
+.section-tag { font-size: 0.8rem; letter-spacing: 3px; color: var(--gold-accent); text-transform: uppercase; font-weight: 700; }
+.wrap h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3rem); margin: 10px 0; color: #fff; font-weight: 800; text-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+.sub { max-width: 600px; margin: 0 auto 20px; line-height: 1.6; font-size: 1rem; color: #f3d1d8; }
 
-/* BÓ HOA / ẢNH ÔM HOA TỆP MỊN VÀO NỀN */
+/* BÓ HOA / ẢNH ÔM HOA */
 .bouquet-display-box {
   width: 100%;
   max-width: 250px;
@@ -93,19 +82,15 @@ button { font: inherit; cursor: pointer; border: 0; }
   width: 100%;
   height: auto;
   display: block;
-  mix-blend-mode: multiply;
-  filter: drop-shadow(0 8px 22px rgba(255, 105, 180, 0.35));
-}
-body.dark-mode .bouquet-display-box img {
   mix-blend-mode: screen;
-  filter: drop-shadow(0 0 20px rgba(255, 111, 159, 0.6));
+  filter: drop-shadow(0 0 25px rgba(243, 229, 171, 0.4));
 }
 
-/* KHU VỰC BÁNH KEM MỚI (ĐẸP & SANG TRỌNG) */
+/* KHU VỰC BÁNH KEM HOA HỒNG */
 .cake-area {
   position: relative;
   margin: 15px auto 25px;
-  width: min(280px, 85vw);
+  width: min(290px, 85vw);
   height: 250px;
   display: flex;
   align-items: center;
@@ -115,7 +100,7 @@ body.dark-mode .bouquet-display-box img {
   position: relative;
   width: 100%;
   border-radius: 50%;
-  filter: drop-shadow(0 15px 30px rgba(168, 92, 129, 0.35));
+  filter: drop-shadow(0 15px 35px rgba(0,0,0,0.6));
 }
 .cake-image-box img {
   width: 100%;
@@ -124,7 +109,7 @@ body.dark-mode .bouquet-display-box img {
   object-fit: contain;
 }
 
-/* CÂY NẾN SỐ 45 -> 46 ĐẶT TRÊN ĐỈNH BÁNH */
+/* CÂY NẾN SỐ 45 -> 46 */
 .candle-row {
   position: absolute;
   top: 15px;
@@ -139,16 +124,16 @@ body.dark-mode .bouquet-display-box img {
   width: 45px;
   height: 60px;
   border-radius: 8px;
-  background: linear-gradient(135deg, #fff, #ffb7d0);
+  background: linear-gradient(135deg, #fff, #f3e5ab);
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #a64f7b;
+  color: #3d0c11;
   font-weight: 900;
   font-size: 1.3rem;
-  box-shadow: 0 4px 10px rgba(158,69,99,0.3);
-  border: 2px solid #ff6f9f;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  border: 2px solid #d4af37;
   font-family: 'Playfair Display', serif;
 }
 .flame {
@@ -161,18 +146,18 @@ body.dark-mode .bouquet-display-box img {
   transform: rotate(5deg);
   animation: flicker 0.6s infinite alternate;
   transition: all 0.3s;
-  filter: drop-shadow(0 0 14px #ffcb57);
+  filter: drop-shadow(0 0 16px #ffcb57);
 }
 
-.cake-note { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.05rem; margin: 15px 0; color: #8c4a6b; transition: color 0.8s ease; }
-.action-box { background: #fff0f6; border: 2px dashed #ff94b8; border-radius: 18px; padding: 16px; max-width: 380px; margin: 0 auto 20px; transition: all 0.8s ease; }
-.action-text { font-size: 0.98rem; font-weight: 700; color: #b0527c; margin-bottom: 10px; transition: color 0.8s ease; }
+.cake-note { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.1rem; margin: 15px 0; color: var(--gold-accent); }
+.action-box { background: rgba(55, 10, 15, 0.7); border: 2px dashed rgba(212, 175, 55, 0.5); border-radius: 20px; padding: 18px; max-width: 400px; margin: 0 auto 20px; backdrop-filter: blur(5px); }
+.action-text { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 12px; }
 
-/* TRANG TÂM SỰ TRẢI FULL MÀN HÌNH ĐIỆN THOẠI (KHÔNG KHUNG) */
+/* TRANG TÂM SỰ TRẢI FULL MÀN HÌNH (SANG TRỌNG) */
 .wish-page-screen {
   position: fixed;
   inset: 0;
-  background: linear-gradient(145deg, #fff5f7, #fff8ec 55%, #f4eaff);
+  background: linear-gradient(135deg, var(--bg-wine-dark), var(--bg-wine) 60%, #1a0204);
   z-index: 50;
   display: flex;
   align-items: center;
@@ -181,7 +166,7 @@ body.dark-mode .bouquet-display-box img {
   overflow-y: auto;
 }
 .wish-page-container {
-  max-width: 650px;
+  max-width: 680px;
   width: 100%;
   background: transparent;
   padding: 10px 5px;
@@ -192,25 +177,26 @@ body.dark-mode .bouquet-display-box img {
 }
 .wish-page-container h3 {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(1.4rem, 4vw, 1.8rem);
-  color: #8a2b53;
-  margin: 0 0 18px;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  color: var(--gold-accent);
+  margin: 0 0 20px;
   line-height: 1.4;
-  font-weight: 800;
-  padding-right: 70px;
+  font-weight: 700;
+  padding-right: 75px;
   text-align: left;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
 .page-scroll-content {
   max-height: 68vh;
   overflow-y: auto;
-  padding-right: 6px;
+  padding-right: 8px;
   text-align: left;
   margin-bottom: 15px;
   scroll-behavior: smooth;
 }
 .page-scroll-content::-webkit-scrollbar { width: 5px; }
-.page-scroll-content::-webkit-scrollbar-thumb { background: #ff85b3; border-radius: 10px; }
+.page-scroll-content::-webkit-scrollbar-thumb { background: #d4af37; border-radius: 10px; }
 
 .page-photo-box {
   width: 100%;
@@ -219,11 +205,12 @@ body.dark-mode .bouquet-display-box img {
   border-radius: 20px;
   overflow: hidden;
   margin: 0 auto 15px;
-  box-shadow: 0 8px 22px rgba(183, 108, 142, 0.2);
-  background: #ffe0ea;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  background: #240508;
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 2px solid rgba(212, 175, 55, 0.3);
 }
 .page-photo-box img {
   width: 100%;
@@ -232,9 +219,9 @@ body.dark-mode .bouquet-display-box img {
   border-radius: 20px;
 }
 
-.scroll-hint { font-size: 0.85rem; font-weight: 800; color: #a8386a; margin-bottom: 15px; text-align: center; animation: bounceHint 1.8s infinite ease-in-out; }
-.wish-page-container .page-text { font-size: 1.02rem; line-height: 1.8; color: #2d152b; margin: 0 0 15px; padding: 0 4px; white-space: pre-line; font-weight: 500; }
-.highlight-quote { background: rgba(255, 255, 255, 0.7); border-left: 4px solid #ff3377; border-radius: 14px; padding: 14px 16px; margin: 15px 0; font-weight: 700; color: #7a1d47; line-height: 1.7; font-size: 0.98rem; box-shadow: 0 4px 15px rgba(255, 111, 159, 0.15); }
+.scroll-hint { font-size: 0.85rem; font-weight: 700; color: var(--gold-accent); margin-bottom: 15px; text-align: center; animation: bounceHint 1.8s infinite ease-in-out; opacity: 0.9; }
+.wish-page-container .page-text { font-size: 1.05rem; line-height: 1.85; color: #fce4ec; margin: 0 0 15px; padding: 0 4px; white-space: pre-line; font-weight: 400; }
+.highlight-quote { background: rgba(55, 10, 15, 0.8); border-left: 4px solid var(--gold-accent); border-radius: 14px; padding: 16px; margin: 15px 0; font-weight: 500; color: #fff; line-height: 1.7; font-size: 1rem; box-shadow: 0 6px 20px rgba(0,0,0,0.3); font-family: 'Playfair Display', serif; font-style: italic; }
 
 /* HỘP QUÀ BONG BÓNG LƠ LỬNG GÓC PHẢI */
 .bubble-gift-wrapper {
@@ -247,11 +234,11 @@ body.dark-mode .bouquet-display-box img {
   z-index: 20;
 }
 .floating-bubble-gift {
-  width: 60px;
-  height: 60px;
-  background: radial-gradient(circle at 30% 30%, #ff94b8, #ff3377);
+  width: 62px;
+  height: 62px;
+  background: radial-gradient(circle at 30% 30%, #ffdf73, #d4af37);
   border-radius: 50%;
-  box-shadow: 0 8px 22px rgba(255, 51, 119, 0.45);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -264,17 +251,17 @@ body.dark-mode .bouquet-display-box img {
 .bubble-gift-tag {
   font-size: 0.7rem;
   font-weight: 800;
-  color: #a64f7b;
-  background: #fff0f5;
-  border: 1px solid #ff85b3;
-  padding: 2px 6px;
+  color: #3d0c11;
+  background: var(--gold-accent);
+  padding: 2px 8px;
   border-radius: 10px;
-  margin-top: 4px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  margin-top: 5px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
   white-space: nowrap;
 }
 
-.home-btn-big { display: block; width: 100%; background: linear-gradient(135deg, #ff4d88, #a855d8); color: white; border-radius: 999px; padding: 14px; font-weight: 800; font-size: 1rem; text-align: center; margin-top: 15px; box-shadow: 0 8px 20px rgba(219,126,168,0.35); transition: 0.2s; }
+.home-btn-big { display: block; width: 100%; background: linear-gradient(135deg, #d4af37, #aa771c); color: #240508; border-radius: 999px; padding: 14px; font-weight: 800; font-size: 1.05rem; text-align: center; margin-top: 15px; box-shadow: 0 8px 20px rgba(212, 175, 55, 0.35); transition: 0.2s; }
+.home-btn-big:hover { background: linear-gradient(135deg, #e6c555, #bd8525); }
 
 @keyframes floatBubble { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-8px) scale(1.05); } }
 @keyframes bounceHint { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(8px); } }
@@ -287,11 +274,11 @@ body.dark-mode .bouquet-display-box img {
 
 .rose-fall { position: fixed; top: -50px; z-index: 1; pointer-events: none; animation: fallDown linear infinite; }
 .firework { position: fixed; width: 5px; height: 5px; border-radius: 50%; pointer-events: none; z-index: 5; box-shadow: 0 0 8px currentColor; animation: burst 1.1s ease-out forwards; }
-.music-control { position: fixed; top: 12px; right: 12px; z-index: 100; background: white; border: 2px solid #ffb3c9; border-radius: 999px; padding: 6px 12px; font-size: 0.8rem; font-weight: 700; color: #a64f7b; box-shadow: 0 4px 12px rgba(0,0,0,0.1); display: flex; align-items: center; gap: 4px; }
-footer { font-size: 0.78rem; color: #b58ca7; padding: 20px 10px; text-align: center; transition: color 0.8s ease; }
+.music-control { position: fixed; top: 12px; right: 12px; z-index: 100; background: rgba(55, 10, 15, 0.85); border: 2px solid var(--gold-accent); border-radius: 999px; padding: 6px 14px; font-size: 0.85rem; font-weight: 700; color: var(--gold-accent); box-shadow: 0 4px 15px rgba(0,0,0,0.3); display: flex; align-items: center; gap: 6px; backdrop-filter: blur(5px); }
+footer { font-size: 0.8rem; color: #d4a5b0; padding: 20px 10px; text-align: center; }
 </style>
 </head>
-<body class="dark-mode">
+<body>
 
 <audio id="bgMusic" loop>
   <source src="nhac.mp3" type="audio/mpeg">
@@ -316,14 +303,14 @@ footer { font-size: 0.78rem; color: #b58ca7; padding: 20px 10px; text-align: cen
     <h2 id="birthdayTitle"></h2>
     <p class="sub" id="birthdayIntro"></p>
 
-    <!-- BÓ HOA / ẢNH ÔM HOA TỆP NỀN -->
+    <!-- ẢNH BÓ HOA -->
     <div class="bouquet-display-box hidden" id="bouquetBox">
       <img src="omhoa.png" alt="Bó hoa tặng Út">
     </div>
 
     <div class="cake-area">
       <div class="cake-image-box">
-        <!-- ẢNH BÁNH KEM HOA HỒNG ĐỎ SANG TRỌNG -->
+        <!-- ẢNH BÁNH KEM HOA HỒNG ĐỎ -->
         <img src="banhkem.jpg" alt="Bánh kem hoa hồng sinh nhật">
         <div class="candle-row">
           <div class="candle"><span class="flame" id="mainFlame"></span><span id="candleAge">45</span></div>
@@ -335,7 +322,7 @@ footer { font-size: 0.78rem; color: #b58ca7; padding: 20px 10px; text-align: cen
     <div class="action-box">
       <div class="action-text" id="actionText">🎂 Út thổi nến sang tuổi mới đi út!</div>
       <button class="main-btn" id="blowBtn">Thổi nến ngay ✨</button>
-      <button class="main-btn hidden" id="wishesBtn" style="background:linear-gradient(135deg,#ff6599,#a855d8); padding:16px 30px; font-size:1.05rem;">Đọc tâm sự & Nhận quà bí mật ✨</button>
+      <button class="main-btn hidden" id="wishesBtn" style="padding:16px 32px; font-size:1.05rem;">Đọc tâm sự & Nhận quà bí mật ✨</button>
     </div>
     <footer id="footerText1"></footer>
   </div>
@@ -423,7 +410,6 @@ $('bubbleGiftBtn').addEventListener('click', openSecretFamilyGift);
 
 $('homeBtn').addEventListener('click', ()=>{$('wishPageScreen').classList.add('hidden');
   celebration.classList.remove('hidden');
-  document.body.classList.add('dark-mode');
   window.scrollTo({top:0,behavior:'smooth'});
 });
 
@@ -436,12 +422,12 @@ musicToggle.addEventListener('click', () => {
   if (isMusicPlaying) {
     bgMusic.pause();
     musicStatus.textContent = 'Bật nhạc';
-    musicToggle.style.borderColor = '#ffb3c9';
+    musicToggle.style.borderColor = '#d4af37';
   } else {
     bgMusic.play().then(() => {
       isMusicPlaying = true;
       musicStatus.textContent = 'Tắt nhạc';
-      musicToggle.style.borderColor = '#ff6f9f';
+      musicToggle.style.borderColor = '#ff5c8d';
     }).catch(e => console.log("Audio error:", e));
   }
   isMusicPlaying = !isMusicPlaying;
@@ -450,7 +436,6 @@ musicToggle.addEventListener('click', () => {
 $('openBtn').addEventListener('click',()=>{
   intro.classList.add('hidden');
   celebration.classList.remove('hidden');
-  document.body.classList.add('dark-mode');
   window.scrollTo({top:0,behavior:'smooth'});
   startRoses();
   fireworks(6);
@@ -468,8 +453,6 @@ $('blowBtn').addEventListener('click',()=>{
   
   $('bouquetBox').classList.remove('hidden');$('actionText').textContent = 'Tuổi 46 rực rỡ và đong đầy yêu thương! 🎉';
   $('blowBtn').classList.add('hidden');$('wishesBtn').classList.remove('hidden'); 
-  
-  document.body.classList.remove('dark-mode');
   
   fireworks(25);
   roses(35);
@@ -518,7 +501,7 @@ function fireworks(n){
         p.className='firework';
         p.style.left=x+'vw';
         p.style.top=y+'vh';
-        p.style.color=['#ff6f9f','#ffca68','#ff4d6d','#ff758f'][Math.floor(Math.random()*4)];
+        p.style.color=['#d4af37','#ff5c8d','#ffca68','#ffffff'][Math.floor(Math.random()*4)];
         const a=(Math.PI*2*i)/28,r=45+Math.random()*85;
         p.style.setProperty('--x',Math.cos(a)*r+'px');
         p.style.setProperty('--y',Math.sin(a)*r+'px');
