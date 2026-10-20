@@ -53,14 +53,14 @@ button{font:inherit;cursor:pointer;border:0}
 .main-btn:hover{transform:translateY(-3px);box-shadow:0 12px 25px rgba(219,126,168,0.5)}
 .hidden{display:none!important}
 
-/* TRANG BÁNH KEM */
+/* TRANG 2: BÁNH KEM & THỔI NẾN */
 .celebration{display:block;padding:30px 12px}
 .wrap{max-width:800px;margin:auto;text-align:center;position:relative;z-index:1}
 .section-tag{font-size:.78rem;letter-spacing:2px;color:#c16b94;text-transform:uppercase;font-weight:700}
 .wrap h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4.5vw,2.8rem);margin:8px 0;color:#a64f7b;transition:color 0.8s ease}
 .sub{max-width:600px;margin:0 auto 15px;line-height:1.6;font-size:0.95rem;transition:color 0.8s ease}
 
-/* BÓ HOA GIF TỆP MÀU NỀN - BAN ĐẦU ẨN, CHỈ HIỆN KHI THỔI NẾN SANG TUỔI 46 */
+/* ẢNH NGƯỜI ÔM BÓ HOA (ĐÃ XÓA NỀN TRẮNG, TỆP MỊN VÀO MÀU NỀN) */
 .bouquet-display-box {
   width: 100%;
   max-width: 260px;
@@ -74,11 +74,15 @@ button{font:inherit;cursor:pointer;border:0}
   width: 100%;
   height: auto;
   display: block;
-  mix-blend-mode: multiply;
-  filter: drop-shadow(0 8px 22px rgba(255, 105, 180, 0.45));
+  mix-blend-mode: multiply; /* Tệp hoàn toàn vào nền sáng */
+  filter: drop-shadow(0 8px 22px rgba(255, 105, 180, 0.4));
+}
+body.dark-mode .bouquet-display-box img {
+  mix-blend-mode: screen; /* Tệp hoàn toàn vào nền tối */
+  filter: drop-shadow(0 0 20px rgba(255, 111, 159, 0.6));
 }
 
-.cake-area{position:relative;margin:15px auto 20px;width:min(340px,90vw);height:250px;display:flex;align-items:flex-end;justify-content:center}
+.cake-area{position:relative;margin:15px auto 20px;width:min(340px,90vw);height:240px;display:flex;align-items:flex-end;justify-content:center}
 .cake-base{position:relative;width:240px;height:140px;background:linear-gradient(135deg,#ffd1dc,#ff9ebd 50%,#ff7b9f);border-radius:20px 20px 25px 25px;box-shadow:inset -12px 0 rgba(199,84,120,0.25),0 18px 30px rgba(168,92,129,0.25)}
 .cake-layer-top{position:absolute;top:-25px;left:-6px;width:252px;height:55px;border-radius:50%;background:#ffffff;border-bottom:8px solid #ffb7d0;box-shadow:0 5px 10px rgba(0,0,0,0.05)}
 .cake-drip{position:absolute;top:6px;left:15px;width:26px;height:36px;background:#ffffff;border-radius:0 0 14px 14px;box-shadow:45px 5px #ffffff,95px -2px #ffffff,145px 8px #ffffff,185px 3px #ffffff}
@@ -93,121 +97,13 @@ button{font:inherit;cursor:pointer;border:0}
 .action-box{background:#fff0f6;border:2px dashed #ff94b8;border-radius:18px;padding:16px;max-width:380px;margin:0 auto 20px;transition:all 0.8s ease}
 .action-text{font-size:0.98rem;font-weight:700;color:#b0527c;margin-bottom:10px;transition:color 0.8s ease}
 
-/* TRANG ĐIỀU ƯỚC & LỜI TÂM SỰ */
-.wishes-screen{padding:30px 15px;text-align:center;max-width:680px;margin:0 auto;animation:fadeIn 0.5s ease}
-.wishes-screen h2{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(2rem,5vw,2.6rem);
-  color:#8a2b53;
-  font-weight: 800;
-  margin:10px 0 6px;
-}
-.wishes-screen p.sub-wish-desc{
-  font-size:1rem;
-  color:#5a2343;
-  font-weight: 600;
-  margin-bottom:20px;
-  line-height: 1.5;
-}
-
-/* HỘP QUÀ TREO LỦNG LẲNG HIỆN XUYÊN SUỐT TRÊN TRANG ĐIỀU ƯỚC */
-.hanging-gift-container {
-  margin: 15px auto 25px;
-  text-align: center;
-  background: linear-gradient(135deg, #ffffff, #fff0f5);
-  border: 2px dashed #ff6599;
-  border-radius: 25px;
-  padding: 20px 15px;
-  max-width: 360px;
-  box-shadow: 0 10px 25px rgba(255, 111, 159, 0.2);
-}
-.hanging-gift-wrapper {
-  position: relative;
-  display: inline-block;
-  transform-origin: top center;
-  animation: swingGift 3s infinite ease-in-out;
-}
-.hanging-gift-string {
-  width: 3px;
-  height: 30px;
-  background: linear-gradient(to bottom, #ff3377, #ff94b8);
-  margin: 0 auto;
-  border-radius: 2px;
-}
-.gift-icon-big {
-  font-size: 4.5rem;
-  cursor: pointer;
-  filter: drop-shadow(0 10px 15px rgba(231, 76, 60, 0.4));
-  transition: transform 0.3s;
-  margin-top: -5px;
-}
-.gift-icon-big:hover { transform: scale(1.15); }
-.hanging-gift-note {
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: #8a2b53;
-  margin-top: 10px;
-  line-height: 1.5;
-}
-
-.heart-grid{display:flex;justify-content:center;padding:10px 0}
-.heart-card{
-  width: 100%;
-  max-width: 320px;
-  aspect-ratio: 1 / 0.68;
-  background: linear-gradient(135deg, #ffe0eb, #f3d7f7);
-  border: 2px solid #ff6599;
-  border-radius: 35px 35px 20px 20px;
-  padding: 22px;
-  text-align: center;
-  box-shadow: 0 12px 28px rgba(255, 111, 159, 0.28);
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.heart-card:hover{
-  transform: translateY(-6px) scale(1.04);
-  border-color: #ff3377;
-  box-shadow: 0 16px 35px rgba(255, 111, 159, 0.4);
-}
-.heart-card.read-card {
-  background: linear-gradient(135deg, #fffdf0, #ffeaa7) !important;
-  border-color: #f1c40f !important;
-}
-.heart-card.read-card strong { color: #9a7d0a !important; }
-
-.heart-shape-icon{
-  font-size: 2.5rem;
-  display: block;
-  margin-bottom: 6px;
-  filter: drop-shadow(0 4px 8px rgba(255, 111, 159, 0.3));
-  animation: pulseHeart 2s infinite alternate;
-}
-.heart-card strong{
-  display: block;
-  font-size: 1.15rem;
-  color: #8a2b53;
-  font-weight: 800;
-  margin-bottom: 4px;
-}
-.heart-card small{
-  display: block;
-  font-size: 0.85rem;
-  color: #632d4e;
-  font-weight: 600;
-  line-height: 1.3;
-}
-
-/* TRANG CHI TIẾT LỜI TÂM SỰ */
+/* TRANG TÂM SỰ & HỘP QUÀ BONG BÓNG LƠ LỬNG */
 .wish-page-screen{position:fixed;inset:0;background:linear-gradient(145deg,#fff5f7,#fff8ec 55%,#f4eaff);z-index:50;display:flex;align-items:center;justify-content:center;padding:15px;overflow-y:auto}
-.wish-page-container{max-width:580px;width:100%;background:#fffffffa;backdrop-filter:blur(10px);border:2px solid #ff85b3;border-radius:28px;padding:22px;text-align:center;box-shadow:0 15px 45px rgba(183,108,142,0.25);animation:slideUp .35s ease;margin:auto;}
+.wish-page-container{max-width:580px;width:100%;background:#fffffffa;backdrop-filter:blur(10px);border:2px solid #ff85b3;border-radius:28px;padding:22px;text-align:center;box-shadow:0 15px 45px rgba(183,108,142,0.25);animation:slideUp .35s ease;margin:auto;position:relative;}
 .wish-page-container h3{font-family:'Playfair Display',serif;font-size:1.45rem;color:#8a2b53;margin:0 0 12px;line-height:1.3;font-weight:800}
 
 .page-scroll-content{
-  max-height: 54vh;
+  max-height: 52vh;
   overflow-y: auto;
   padding-right: 8px;
   text-align: left;
@@ -219,7 +115,7 @@ button{font:inherit;cursor:pointer;border:0}
 
 .page-photo-box{
   width: 100%;
-  max-width: 280px;
+  max-width: 260px;
   aspect-ratio: 1 / 1;
   border-radius: 18px;
   overflow: hidden;
@@ -249,31 +145,42 @@ button{font:inherit;cursor:pointer;border:0}
 .wish-page-container .page-text{font-size:0.98rem;line-height:1.75;color:#2d152b;margin:0 0 14px;padding:0 4px;white-space:pre-line;font-weight:500;}
 .highlight-quote{background:linear-gradient(135deg,#fff0f5,#ffe4ee);border-left:4px solid #ff3377;border-radius:14px;padding:12px 14px;margin:12px 0;font-weight:700;color:#7a1d47;line-height:1.65;font-size:0.95rem}
 
+/* HỘP QUÀ DẠNG BONG BÓNG LƠ LỬNG KẾ BÊN */
+.floating-bubble-gift {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 65px;
+  height: 65px;
+  background: radial-gradient(circle at 30% 30%, #ff94b8, #ff3377);
+  border-radius: 50%;
+  box-shadow: 0 8px 20px rgba(255, 51, 119, 0.4), inset -4px -4px 10px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20;
+  animation: floatBubble 3s infinite ease-in-out;
+  transition: transform 0.3s;
+}
+.floating-bubble-gift span {
+  font-size: 2rem;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+.floating-bubble-gift:hover {
+  transform: scale(1.15);
+}
+
 .home-btn-big{display:block;width:100%;background:linear-gradient(135deg,#ff4d88,#a855d8);color:white;border-radius:999px;padding:12px;font-weight:800;font-size:0.95rem;text-align:center;margin-top:12px;box-shadow:0 6px 15px rgba(219,126,168,0.3);transition:.2s}
 
-.heart-burst{
-  position: fixed; pointer-events: none; font-size: 1.5rem; z-index: 99;
-  animation: floatHeart 0.8s ease-out forwards;
-}
-
-@keyframes swingGift {
-  0% { transform: rotate(0deg); }
-  20% { transform: rotate(12deg); }
-  40% { transform: rotate(-10deg); }
-  60% { transform: rotate(6deg); }
-  80% { transform: rotate(-4deg); }
-  100% { transform: rotate(0deg); }
-}
-
-@keyframes floatHeart {
-  0% { transform: translate(0, 0) scale(0.5); opacity: 1; }
-  100% { transform: translate(var(--dx), var(--dy)) scale(1.4); opacity: 0; }
+@keyframes floatBubble {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-8px) scale(1.05); }
 }
 
 @keyframes bounceHint { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(8px); } }
 @keyframes bob{50%{transform:translateY(-10px) rotate(2deg)}}
 @keyframes flicker{to{transform:rotate(-8deg) scale(.9);filter:drop-shadow(0 0 16px #ffcb57)}}
-@keyframes pulseHeart{0%{transform:scale(1)}100%{transform:scale(1.1)}}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 @keyframes slideUp{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:translateY(0)}}
 @keyframes fallDown{0%{transform:translateY(-10vh) rotate(0deg);opacity:1}100%{transform:translateY(105vh) rotate(360deg);opacity:0.8}}
@@ -303,16 +210,17 @@ footer{font-size:0.78rem;color:#b58ca7;padding:20px 10px;text-align:center;trans
   </div>
 </section>
 
-<!-- TRANG 2: BÁNH KEM & THỔI NẾN (BÓ HOA BAN ĐẦU ẨN, CHỈ HIỆN KHI THỔI NẾN SANG TUỔI 46) -->
+<!-- TRANG 2: BÁNH KEM & THỔI NẾN -->
 <section class="screen celebration hidden" id="celebration">
   <div class="wrap">
     <div class="section-tag" id="birthdayDate"></div>
     <h2 id="birthdayTitle"></h2>
     <p class="sub" id="birthdayIntro"></p>
 
-    <!-- BÓ HOA GIF TỆP MÀU NỀN (BAN ĐẦU KHÔNG CÓ, CHỈ XUẤT HIỆN KHI BẤM THỔI NẾN SANG TUỔI 46) -->
+    <!-- ẢNH NGƯỜI ÔM BÓ HOA (TỆP HOÀN TOÀN VÀO MÀU NỀN, CHỈ HIỆN KHI THỔI NẾN) -->
     <div class="bouquet-display-box hidden" id="bouquetBox">
-      <img src="z9fE49K7yvjDtbnlu6g_Kpf3xcBBg4pK_zpsd5eafefe.gif" alt="Bó hoa hồng lấp lánh">
+      <!-- Lưu ý: Út thay tên file ảnh người đang ôm bó hoa vào đây (ví dụ: omhoa.png) -->
+      <img src="omhoa.png" alt="Người ôm bó hoa sinh nhật">
     </div>
 
     <div class="cake-area">
@@ -336,45 +244,36 @@ footer{font-size:0.78rem;color:#b58ca7;padding:20px 10px;text-align:center;trans
   </div>
 </section>
 
-<!-- TRANG 3: TRÁI TIM ĐIỀU ƯỚC & LỜI TÂM SỰ -->
-<section class="screen hidden" id="wishesScreen">
-  <div class="wishes-screen">
-    <h2>Trái Tim Điều Ước 💖</h2>
-    <p class="sub-wish-desc">Út bấm vào trái tim bên dưới để mở ra Lời tâm sự từ đáy lòng nha! 🌹✨</p>
-    
-    <!-- HỘP QUÀ TREO LỦNG LẲNG HIỆN XUYÊN SUỐT TRÊN TRANG NÀY -->
-    <div class="hanging-gift-container">
-      <div class="hanging-gift-wrapper">
-        <div class="hanging-gift-string"></div>
-        <div class="gift-icon-big" id="giftBoxIcon">🎁</div>
-      </div>
-      <div class="hanging-gift-note">Út đọc xong các điều ước rồi bấm vào món quà này nha! 🌸✨</div>
-    </div>
-
-    <div class="heart-grid" id="heartGrid"></div>
-    
-    <div style="margin-top:30px">
-      <button class="main-btn" id="backToCakeBtn">🎂 Quay lại trang thổi nến</button>
-    </div>
-    <footer id="footerText2"></footer>
-  </div>
-</section>
-
-<!-- TRANG CHI TIẾT LỜI TÂM SỰ -->
+<!-- TRANG CHI TIẾT TÂM SỰ & HỘP QUÀ BONG BÓNG LƠ LỬNG -->
 <div class="wish-page-screen hidden" id="wishPageScreen">
   <div class="wish-page-container">
-    <h3 id="pageWishTitle"></h3>
+    <!-- HỘP QUÀ BONG BÓNG LƠ LỬNG KẾ BÊN TIÊU ĐỀ -->
+    <div class="floating-bubble-gift" id="bubbleGiftBtn" title="Món quà đặc biệt từ gia đình 🎁">
+      <span>🎁</span>
+    </div>
+
+    <h3 id="pageWishTitle">Út ơi, con có một vài điều muốn gửi đến Út… ❤️</h3>
     
     <div class="page-scroll-content" id="scrollContainer">
       <div class="page-photo-box">
-        <img id="pageWishPhoto" alt="Ảnh kỷ niệm Út">
+        <img id="pageWishPhoto" src="giau.jpg" alt="Ảnh kỷ niệm Út">
       </div>
       <div class="scroll-hint">Út vuốt xuống để đọc tiếp tâm sự của con nha 👇</div>
-      <div class="page-text" id="pageWishText"></div>
-      <div class="highlight-quote hidden" id="pageQuote"></div>
+      <div class="page-text" id="pageWishText">
+        Vậy là đã 13 năm rồi Út chưa được trở về quê hương. Gia đình mình ai cũng nhớ thương Út nhiều lắm.
+
+Nhìn Út tần tảo, sớm hôm đi làm, chẳng dám cho mình nghỉ ngơi ngày nào, con thấy thương Út vô cùng. Con thương cả những lúc Út vui vẻ khi Minh Thiện biết nói, và càng thương hơn những lúc ngoại bệnh, một mình Út lo toan mọi thứ.
+
+Đối với con, hơn cả lòng biết ơn là sự trân trọng suốt đời. Nếu ngày đó không có Út lo cho con tiền ăn học, có lẽ con đã không có được ngày hôm nay. Vậy mà đến giờ con chưa có món quà hay cây bông nào tặng Út. Nghĩ đến điều đó, con vừa thương Út, vừa thấy mình còn thiếu sót nhiều lắm.
+
+Con chỉ mong từ nay về sau, cuộc sống sẽ dịu dàng với Út hơn. Mong Út luôn bình an, hạnh phúc, không còn phải chịu nhiều vất vả hay giữ những nỗi buồn trong lòng, và biết sống cho bản thân mình nhiều hơn một chút.
+      </div>
+      <div class="highlight-quote" id="pageQuote">
+        ✨ Chúc Út tuổi mới thật nhiều niềm vui, sức khỏe và hạnh phúc. Mong một ngày không xa, Út và Minh Thiện sẽ được trở về quê hương, đoàn tụ cùng gia đình sau những năm tháng vất vả nơi xứ người.<br><br>Con thương Út nhiều lắm! ❤️
+      </div>
     </div>
     
-    <button class="home-btn-big" id="homeBtn">💖 Quay về danh sách Trái Tim Điều ƯỚC</button>
+    <button class="home-btn-big" id="homeBtn">🎂 Quay lại trang thổi nến</button>
   </div>
 </div>
 
@@ -390,34 +289,12 @@ const CONFIG = {
   ageAfter: '46',
   cakeNoteBefore: 'Một điều ước thật đẹp cùng nhiều yêu thương… 🌷',
   cakeNoteAfter: 'Chúc mừng Út bước sang tuổi 46 rực rỡ — điều ước nào cũng thành hiện thực! ✨',
-  footerText: 'Món quà nhỏ được làm bằng tất cả tình yêu dành cho Út',
-
-  wishes: [
-    { 
-      id:'letter', 
-      icon:'💌', 
-      cardTitle:'Lời con gửi Út', 
-      short:'Những dòng tâm sự từ đáy lòng', 
-      title:'Út ơi, con có một vài điều muốn gửi đến Út… ❤️', 
-      text:`Vậy là đã 13 năm rồi Út chưa được trở về quê hương. Gia đình mình ai cũng nhớ thương Út nhiều lắm.
-
-Nhìn Út tần tảo, sớm hôm đi làm, chẳng dám cho mình nghỉ ngơi ngày nào, con thấy thương Út vô cùng. Con thương cả những lúc Út vui vẻ khi Minh Thiện biết nói, và càng thương hơn những lúc ngoại bệnh, một mình Út lo toan mọi thứ.
-
-Đối với con, hơn cả lòng biết ơn là sự trân trọng suốt đời. Nếu ngày đó không có Út lo cho con tiền ăn học, có lẽ con đã không có được ngày hôm nay. Vậy mà đến giờ con chưa có món quà hay cây bông nào tặng Út. Nghĩ đến điều đó, con vừa thương Út, vừa thấy mình còn thiếu sót nhiều lắm.
-
-Con chỉ mong từ nay về sau, cuộc sống sẽ dịu dàng với Út hơn. Mong Út luôn bình an, hạnh phúc, không còn phải chịu nhiều vất vả hay giữ những nỗi buồn trong lòng, và biết sống cho bản thân mình nhiều hơn một chút.`,
-      quote: `✨ Chúc Út tuổi mới thật nhiều niềm vui, sức khỏe và hạnh phúc. Mong một ngày không xa, Út và Minh Thiện sẽ được trở về quê hương, đoàn tụ cùng gia đình sau những năm tháng vất vả nơi xứ người.\n\nCon thương Út nhiều lắm! ❤️`,
-      image:'giau.jpg',
-      isSpecial: true
-    }
-  ]
+  footerText: 'Món quà nhỏ được làm bằng tất cả tình yêu dành cho Út'
 };
 
-const readWishes = new Set();
 const $ = id => document.getElementById(id);
-const intro=$('intro'), celebration=$('celebration'), wishesScreen=$('wishesScreen');
+const intro=$('intro'), celebration=$('celebration');
 
-function fillText(id, value){ $(id).textContent=value ?? ''; }
 fillText('introEyebrow',CONFIG.introEyebrow); 
 fillText('introTitle',CONFIG.introTitle); $('introTitle').style.whiteSpace='pre-line';
 fillText('introText',CONFIG.introText); 
@@ -426,58 +303,15 @@ fillText('birthdayTitle',CONFIG.birthdayTitle);
 fillText('birthdayIntro',CONFIG.birthdayIntro);
 fillText('candleAge', CONFIG.ageBefore);
 fillText('cakeNote',CONFIG.cakeNoteBefore); 
-fillText('footerText1',CONFIG.footerText); 
-fillText('footerText2',CONFIG.footerText);
+fillText('footerText1',CONFIG.footerText);
 
-const heartGrid = $('heartGrid');
+function fillText(id, value){ $(id).textContent=value ?? ''; }
 
-function renderAllHearts(){
-  heartGrid.innerHTML = '';
-  CONFIG.wishes.forEach(w => {
-    const card = document.createElement('div');
-    card.className = 'heart-card' + (readWishes.has(w.id) ? ' read-card' : '');
-    card.innerHTML = `<span class="heart-shape-icon">${readWishes.has(w.id) ? '🌟' : w.icon}</span><strong>${w.cardTitle}</strong><small>${w.short}</small>`;
-    card.addEventListener('click', (e) => {
-      triggerHeartBurst(e);
-      setTimeout(() => openWishPage(w.id), 250);
-    });
-    heartGrid.appendChild(card);
-  });
-}
-
-function openWishPage(id){
-  const w = CONFIG.wishes.find(x => x.id === id);
-  if(!w) return;
-
-  readWishes.add(w.id);
-  renderAllHearts();
-
-  fillText('pageWishTitle', w.title);
-  fillText('pageWishText', w.text);
-  $('pageWishPhoto').src = w.image;
-  
-  if(w.quote){
-    fillText('pageQuote', w.quote);
-    $('pageQuote').classList.remove('hidden');
-  } else {
-    $('pageQuote').classList.add('hidden');
-  }
-
-  $('wishPageScreen').classList.remove('hidden');
-  const scrollContainer = $('scrollContainer');
-  if(scrollContainer) scrollContainer.scrollTop = 0;
-
-  roses(5);
-}
-
-$('homeBtn').addEventListener('click', () => {$('wishPageScreen').classList.add('hidden');
-});
-
+/* KHI BẤM HỘP QUÀ BONG BÓNG: HIỆN ĐIỀU ƯỚC ĐẶC BIỆT TỪ GIA ĐÌNH */
 function openSecretFamilyGift(){
-  fillText('pageWishTitle', 'Món Quà Bí Mật Từ Gia Đình 🏡❤️ (Món quà đặc biệt)');
-  fillText('pageWishText', `Út ơi, Út đã đọc hết những dòng tâm sự từ đáy lòng của con rồi.\n\nTấm hình này là món quà đặc biệt nhất con dành tặng Út. Dù khoảng cách địa lý có xa xôi đến đâu, hình bóng của Út, Dượng Út và Minh Thiện vẫn luôn ngập tràn trong tim gia đình mình.\n\nChúc Út luôn vững chãi, bình an và hạnh phúc trọn vẹn trên hành trình phía trước! 🌸✨`);
-  $('pageWishPhoto').src = 'family.jpg'; 
-  $('pageQuote').classList.add('hidden');$('wishPageScreen').classList.remove('hidden');
+  $('pageWishTitle').textContent = 'Món Quà Bí Mật Từ Gia Đình 🏡❤️ (Điều ước đặc biệt)';
+  $('pageWishText').textContent = `Út ơi, Út đã đọc hết những dòng tâm sự từ đáy lòng của con rồi.\n\nTấm hình này là món quà đặc biệt nhất con dành tặng Út. Dù khoảng cách địa lý có xa xôi đến đâu, hình bóng của Út, Dượng Út và Minh Thiện vẫn luôn ngập tràn trong tim gia đình mình.\n\nChúc Út luôn vững chãi, bình an và hạnh phúc trọn vẹn trên hành trình phía trước! 🌸✨`;
+  $('pageWishPhoto').src = 'family.jpg';$('pageQuote').classList.add('hidden');
   
   const scrollContainer = $('scrollContainer');
   if(scrollContainer) scrollContainer.scrollTop = 0;
@@ -486,12 +320,9 @@ function openSecretFamilyGift(){
   fireworks(15);
 }
 
-$('giftBoxIcon').addEventListener('click', openSecretFamilyGift);
+$('bubbleGiftBtn').addEventListener('click', openSecretFamilyGift);
 
-renderAllHearts();
-
-$('backToCakeBtn').addEventListener('click',()=>{
-  wishesScreen.classList.add('hidden');
+$('homeBtn').addEventListener('click', ()=>{$('wishPageScreen').classList.add('hidden');
   celebration.classList.remove('hidden');
   document.body.classList.add('dark-mode');
   window.scrollTo({top:0,behavior:'smooth'});
@@ -530,13 +361,13 @@ $('openBtn').addEventListener('click',()=>{
   }).catch(e => console.log("Autoplay blocked"));
 });
 
-/* BẤM THỔI NẾN: NẾN TẮT -> SỐ 46 VÀ BÓ HOA GIF HIỆN RA NGAY TRÊN TRANG BÁNH KEM */
+/* BẤM THỔI NẾN: NẾN TẮT -> SỐ 46 VÀ ẢNH NGƯỜI ÔM BÓ HOA HIỆN RA */
 $('blowBtn').addEventListener('click',()=>{
   if($('mainFlame'))$('mainFlame').style.opacity = '0';
   fillText('candleAge', CONFIG.ageAfter);
   fillText('cakeNote', CONFIG.cakeNoteAfter);
   
-  // HIỆN BÓ HOA GIF TƯƠI THẮM
+  // HIỆN ẢNH NGƯỜI ÔM BÓ HOA TỆP VÀO NỀN
   $('bouquetBox').classList.remove('hidden');$('actionText').textContent = 'Tuổi 46 rực rỡ và đong đầy yêu thương! 🎉';
   $('blowBtn').classList.add('hidden');$('wishesBtn').classList.remove('hidden'); 
   
@@ -546,34 +377,13 @@ $('blowBtn').addEventListener('click',()=>{
   roses(35);
 });
 
+/* BẤM NÚT ĐẾN CÁC ĐIỀU ƯỚC: HIỆN TRANG TÂM SỰ CÙNG HỘP QUÀ BONG BÓNG */
 $('wishesBtn').addEventListener('click', ()=>{
   celebration.classList.add('hidden');
-  wishesScreen.classList.remove('hidden');
+  $('wishPageScreen').classList.remove('hidden');
   window.scrollTo({top:0,behavior:'smooth'});
+  roses(5);
 });
-
-function triggerHeartBurst(e){
-  const hearts = ['💖', '💗', '💕', '✨', '🌸'];
-  const rect = e.currentTarget.getBoundingClientRect();
-  const centerX = rect.left + rect.width / 2;
-  const centerY = rect.top + rect.height / 2;
-
-  for(let i = 0; i < 10; i++){
-    const el = document.createElement('div');
-    el.className = 'heart-burst';
-    el.textContent = hearts[Math.floor(Math.random() * hearts.length)];
-    el.style.left = centerX + 'px';
-    el.style.top = centerY + 'px';
-    
-    const angle = (Math.PI * 2 / 10) * i;
-    const dist = 60 + Math.random() * 50;
-    el.style.setProperty('--dx', Math.cos(angle) * dist + 'px');
-    el.style.setProperty('--dy', Math.sin(angle) * dist + 'px');
-    
-    document.body.appendChild(el);
-    setTimeout(() => el.remove(), 800);
-  }
-}
 
 function startRoses(){
   setInterval(()=>{
