@@ -29,7 +29,7 @@ body {
   transition: background 1.2s ease, color 0.8s ease;
 }
 
-/* CHẾ ĐỘ PHÒNG TỐI KHI THẮP NẾN BÁNH KEM */
+/* CHẾ ĐỘ PHÒNG TỐI KHI THẮP NẾN */
 body.dark-mode {
   background: linear-gradient(145deg, #1f1124, #2a152d 55%, #180a1c);
   color: #ffe6f0;
@@ -64,22 +64,22 @@ button { font: inherit; cursor: pointer; border: 0; }
   color: white;
   border-radius: 999px;
   padding: 14px 28px;
-  box-shadow: 0 8px 20px rgba(219, 126, 168, 0.35);
+  box-shadow: 0 8px 20px rgba(219,126,168,0.35);
   font-weight: 800;
   transition: 0.25s;
   font-size: 1rem;
 }
-.main-btn:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 12px 25px rgba(219, 126, 168, 0.5); }
+.main-btn:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 12px 25px rgba(219,126,168,0.5); }
 .hidden { display: none !important; }
 
-/* TRANG BÁNH KEM */
+/* TRANG BÁNH KEM & THỔI NẾN */
 .celebration { display: block; padding: 30px 12px; }
 .wrap { max-width: 800px; margin: auto; text-align: center; position: relative; z-index: 1; }
 .section-tag { font-size: 0.78rem; letter-spacing: 2px; color: #c16b94; text-transform: uppercase; font-weight: 700; }
 .wrap h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4.5vw, 2.8rem); margin: 8px 0; color: #a64f7b; transition: color 0.8s ease; }
 .sub { max-width: 600px; margin: 0 auto 15px; line-height: 1.6; font-size: 0.95rem; transition: color 0.8s ease; }
 
-/* BÓ HOA / ẢNH ÔM HOA TỆP NỀN HOÀN TOÀN KHÔNG CÓ VIỀN TRẮNG */
+/* BÓ HOA / ẢNH ÔM HOA TỆP MỊN VÀO NỀN */
 .bouquet-display-box {
   width: 100%;
   max-width: 250px;
@@ -101,21 +101,74 @@ body.dark-mode .bouquet-display-box img {
   filter: drop-shadow(0 0 20px rgba(255, 111, 159, 0.6));
 }
 
-.cake-area { position: relative; margin: 15px auto 20px; width: min(340px, 90vw); height: 230px; display: flex; align-items: flex-end; justify-content: center; }
-.cake-base { position: relative; width: 240px; height: 140px; background: linear-gradient(135deg, #ffd1dc, #ff9ebd 50%, #ff7b9f); border-radius: 20px 20px 25px 25px; box-shadow: inset -12px 0 rgba(199,84,120,0.25), 0 18px 30px rgba(168,92,129,0.25); }
-.cake-layer-top { position: absolute; top: -25px; left: -6px; width: 252px; height: 55px; border-radius: 50%; background: #ffffff; border-bottom: 8px solid #ffb7d0; box-shadow: 0 5px 10px rgba(0,0,0,0.05); }
-.cake-drip { position: absolute; top: 6px; left: 15px; width: 26px; height: 36px; background: #ffffff; border-radius: 0 0 14px 14px; box-shadow: 45px 5px #ffffff, 95px -2px #ffffff, 145px 8px #ffffff, 185px 3px #ffffff; }
-.cake-berries { position: absolute; top: -35px; width: 100%; display: flex; justify-content: center; gap: 18px; font-size: 1.2rem; }
+/* KHU VỰC BÁNH KEM MỚI (ĐẸP & SANG TRỌNG) */
+.cake-area {
+  position: relative;
+  margin: 15px auto 25px;
+  width: min(280px, 85vw);
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cake-image-box {
+  position: relative;
+  width: 100%;
+  border-radius: 50%;
+  filter: drop-shadow(0 15px 30px rgba(168, 92, 129, 0.35));
+}
+.cake-image-box img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
 
-.candle-row { position: absolute; top: -95px; left: 0; width: 100%; display: flex; justify-content: center; gap: 14px; z-index: 3; }
-.candle { width: 50px; height: 65px; border-radius: 10px; background: linear-gradient(135deg, #fff, #ffb7d0); position: relative; display: flex; justify-content: center; align-items: center; color: #a64f7b; font-weight: 900; font-size: 1.4rem; box-shadow: 0 4px 10px rgba(158,69,99,0.25); border: 2px solid #ff6f9f; font-family: 'Playfair Display', serif; }
-.flame { position: absolute; top: -22px; width: 18px; height: 24px; background: radial-gradient(ellipse at 50% 70%, #fffad1 0 25%, #ffb037 55%, #ff523d 80%); border-radius: 60% 40% 55% 45%; transform: rotate(5deg); animation: flicker 0.6s infinite alternate; transition: all 0.3s; filter: drop-shadow(0 0 16px #ffcb57); }
+/* CÂY NẾN SỐ 45 -> 46 ĐẶT TRÊN ĐỈNH BÁNH */
+.candle-row {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  z-index: 5;
+}
+.candle {
+  width: 45px;
+  height: 60px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #fff, #ffb7d0);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #a64f7b;
+  font-weight: 900;
+  font-size: 1.3rem;
+  box-shadow: 0 4px 10px rgba(158,69,99,0.3);
+  border: 2px solid #ff6f9f;
+  font-family: 'Playfair Display', serif;
+}
+.flame {
+  position: absolute;
+  top: -20px;
+  width: 16px;
+  height: 22px;
+  background: radial-gradient(ellipse at 50% 70%, #fffad1 0 25%, #ffb037 55%, #ff523d 80%);
+  border-radius: 60% 40% 55% 45%;
+  transform: rotate(5deg);
+  animation: flicker 0.6s infinite alternate;
+  transition: all 0.3s;
+  filter: drop-shadow(0 0 14px #ffcb57);
+}
 
 .cake-note { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.05rem; margin: 15px 0; color: #8c4a6b; transition: color 0.8s ease; }
 .action-box { background: #fff0f6; border: 2px dashed #ff94b8; border-radius: 18px; padding: 16px; max-width: 380px; margin: 0 auto 20px; transition: all 0.8s ease; }
 .action-text { font-size: 0.98rem; font-weight: 700; color: #b0527c; margin-bottom: 10px; transition: color 0.8s ease; }
 
-/* TRANG TÂM SỰ TRẢI FULL MÀN HÌNH ĐIỆN THOẠI (KHÔNG CÒN KHUNG) */
+/* TRANG TÂM SỰ TRẢI FULL MÀN HÌNH ĐIỆN THOẠI (KHÔNG KHUNG) */
 .wish-page-screen {
   position: fixed;
   inset: 0;
@@ -256,23 +309,22 @@ footer { font-size: 0.78rem; color: #b58ca7; padding: 20px 10px; text-align: cen
   </div>
 </section>
 
-<!-- TRANG 2: BÁNH KEM & THỔI NẾN -->
+<!-- TRANG 2: BÁNH KEM HOA HỒNG & THỔI NẾN -->
 <section class="screen celebration hidden" id="celebration">
   <div class="wrap">
     <div class="section-tag" id="birthdayDate"></div>
     <h2 id="birthdayTitle"></h2>
     <p class="sub" id="birthdayIntro"></p>
 
-    <!-- ẢNH ÔM BÓ HOA (TỆP MỊN VÀO NỀN) -->
+    <!-- BÓ HOA / ẢNH ÔM HOA TỆP NỀN -->
     <div class="bouquet-display-box hidden" id="bouquetBox">
       <img src="omhoa.png" alt="Bó hoa tặng Út">
     </div>
 
     <div class="cake-area">
-      <div class="cake-base">
-        <div class="cake-layer-top"></div>
-        <div class="cake-drip"></div>
-        <div class="cake-berries">🍓 · 🍒 · 🍓</div>
+      <div class="cake-image-box">
+        <!-- ẢNH BÁNH KEM HOA HỒNG ĐỎ SANG TRỌNG -->
+        <img src="banhkem.jpg" alt="Bánh kem hoa hồng sinh nhật">
         <div class="candle-row">
           <div class="candle"><span class="flame" id="mainFlame"></span><span id="candleAge">45</span></div>
         </div>
