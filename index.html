@@ -558,7 +558,7 @@ footer { font-size: 0.8rem; color: #fce4ec; padding: 20px 10px; text-align: cent
 
         Nhìn Út tần tảo, sớm hôm đi làm, chẳng dám cho mình nghỉ ngơi ngày nào, con thấy thương Út vô cùng. Con thương cả những lúc Út vui vẻ khi Minh Thiện biết nói, và càng thương hơn những lúc ngoại bệnh, một mình Út lo toan mọi thứ. Con mong sao Minh Thiện ngày càng phát triển, thông minh lanh lợi để Út được yên lòng và hạnh phúc.
 
-        Thấy bạn bè tổ chức sinh nhật cho Út, con vui lắm. Con vui vì dù ở nơi xa quê hương, Út vẫn có những người bạn yêu thương, quan tâm và dành cho Út những điều tốt đẹp. Con chỉ mong từ nay về sau, cuộc sống sẽ dịu dàng với Út hơn một chút. Mong Út luôn vui vẻ, bình an, hạnh phúc; có một người thật lòng yêu thương, quan tâm và chăm sóc cho Út cùng Minh Thiện. Mong Út không còn phải chịu nhiều vất vả, không còn những nỗi buồn phải giữ trong lòng, và cũng có thể sống cho bản thân mình nhiều hơn một chút.
+        Thấy bạn bè tổ chức sinh nhật cho Út, con vui lắm. Con vui vì dù ở nơi xa quê hương, Út vẫn có những người bạn yêu thương, quan tâm và dành cho Út những điều tốt đẹp. Con chỉ mong từ nay về sau, cuộc sống sẽ dịu dàng với Út hơn một chút. Mong Út luôn vui vẻ, bình an, hạnh phúc; có một người thật lòng yêu thương, quan tâm và chăm sóc cho Út cùng Minh Thiện. Mong Út không còn phải chịu nhiều vất vả, không còn những nỗi buồn phải giữ trong lòng.
       </div>
 
       <!-- ẢNH BẠN BÈ TỔ CHỨC SINH NHẬT -->
@@ -571,11 +571,10 @@ footer { font-size: 0.8rem; color: #fce4ec; padding: 20px 10px; text-align: cent
 
         Đối với con, hơn cả lòng biết ơn là sự trân trọng suốt đời. Nếu không có Út lo cho con tiền ăn học, có lẽ con đã không có được ngày hôm nay. Nghĩ đến điều đó, con thấy kính trọng và yêu thương Út rất nhiều.
 
-        Con chỉ mong từ nay về sau, cuộc sống sẽ dịu dàng với Út hơn. Mong Út luôn bình an, hạnh phúc, không còn phải chịu nhiều vất vả hay giữ những nỗi buồn trong lòng, có thật nhiều tiền để Út có được cuộc sống thoải mái hơn. 
       </div>
       
       <div class="highlight-quote" id="pageQuote">
-        ✨ Chúc Út tuổi mới thật nhiều niềm vui, sức khỏe và hạnh phúc. Mong một ngày không xa, Út và Minh Thiện sẽ được trở về quê hương, đoàn tụ cùng gia đình sau những năm tháng vất vả nơi xứ người.<br><br>Con thương Út nhiều lắm! ❤️
+        ✨ Chúc Út tuổi mới thật nhiều niềm vui, sức khỏe và hạnh phúc có nhiều tiền. Mong một ngày không xa, Út và Minh Thiện sẽ được trở về quê hương, đoàn tụ cùng gia đình sau những năm tháng vất vả nơi xứ người.<br><br>Con thương Út nhiều lắm! ❤️
       </div>
 
       <!-- HỘP QUÀ NẰM CHÍNH GIỮA TRANG -->
@@ -685,7 +684,7 @@ const WISH_DATA = {
   },
   2: {
     photo: 'tinhyeu.png',
-    text: "Tình cảm chân thành, sự ấm áp và thấu hiểu từ Dượng Út Viễn là một món quà vô cùng quý giá mà cuộc đời dành tặng Út. Dù khoảng cách địa lý có xa xôi, con vẫn tin rằng chân tình sẽ vượt qua tất cả. Mong một ngày không xa, hai người sẽ được sum họp một nhà, cùng nhau tận hưởng những bình dị ngọt ngào và nắm tay đi hết chặng đường còn lại!"
+    text: "Tình cảm chân thành và sự ngọt ngào, thấu hiểu của Dượng Út Viễn thật sự rất trân quý. Tuy hiện tại khoảng cách địa lý xa xôi và nhiều lý do khách quan khiến hai người chưa có cơ hội tương phùng, nhưng con mong rằng duyên số và tình cảm chân thành sẽ vượt qua mọi khoảng cách. Mong một ngày không xa, Út và Dượng sẽ được sum họp, cùng chia sẻ những ngọt ngào bình dị của cuộc sống!"
   },
   3: {
     photo: 'binhyen.jpg',
@@ -738,10 +737,12 @@ function selectWishOption(num) {
   roses(10);
 }
 
-/* HÀM HIỆU ỨNG GỬI LỜI ƯỚC ĐẾN VŨ TRỤ */
+/* HÀM HIỆU ỨNG GỬI LỜI ƯỚC ĐẾN VŨ TRỤ: PHÁO HOA, HOA HỒNG, NGÔI SAO VÀ TIỀN RƠI */
 function sendWishToUniverse() {
-  fireworks(35);
-  roses(40);
+  fireworks(45);
+  roses(50);
+  moneyRain(40);
+  starsRain(30);
   $('finalWishAlert').classList.remove('hidden');
   $('finalWishAlert').scrollIntoView({ behavior: 'smooth' });
 }
@@ -836,6 +837,34 @@ function roses(n){
     r.style.animationDuration=(3+Math.random()*4)+'s';
     document.body.appendChild(r);
     setTimeout(()=>r.remove(),7000);
+  }
+}
+
+/* HIỆU ỨNG TIỀN VÀNG RƠI */
+function moneyRain(n){
+  for(let i=0;i<n;i++){
+    const m=document.createElement('div');
+    m.className='rose-fall';
+    m.textContent=['💵', '💰', '💶', '🧧'][Math.floor(Math.random()*4)];
+    m.style.left=Math.random()*100+'vw';
+    m.style.fontSize=(22+Math.random()*26)+'px';
+    m.style.animationDuration=(2.5+Math.random()*3.5)+'s';
+    document.body.appendChild(m);
+    setTimeout(()=>m.remove(),6000);
+  }
+}
+
+/* HIỆU ỨNG NGÔI SAO LẤP LÁNH RƠI */
+function starsRain(n){
+  for(let i=0;i<n;i++){
+    const s=document.createElement('div');
+    s.className='rose-fall';
+    s.textContent=['🌟', '⭐', '💫', '✨'][Math.floor(Math.random()*4)];
+    s.style.left=Math.random()*100+'vw';
+    s.style.fontSize=(20+Math.random()*22)+'px';
+    s.style.animationDuration=(3+Math.random()*4)+'s';
+    document.body.appendChild(s);
+    setTimeout(()=>s.remove(),7000);
   }
 }
 
