@@ -238,7 +238,7 @@ button { font: inherit; cursor: pointer; border: 0; }
 .action-box { background: rgba(51, 14, 27, 0.75); border: 2px dashed rgba(245, 208, 97, 0.5); border-radius: 20px; padding: 18px; max-width: 420px; margin: 0 auto 20px; backdrop-filter: blur(5px); }
 .action-text { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 12px; }
 
-/* TRANG TÂM SỰ TRẢI FULL MÀN HÌNH */
+/* TRANG TÂM SỰ & TRANG LỰA CHỌN FULL MÀN HÌNH */
 .wish-page-screen {
   position: fixed;
   inset: 0;
@@ -306,7 +306,7 @@ button { font: inherit; cursor: pointer; border: 0; }
 .wish-page-container .page-text { font-size: 1.05rem; line-height: 1.85; color: #fff0f3; margin: 0 0 15px; padding: 0 4px; white-space: pre-line; font-weight: 400; }
 .highlight-quote { background: rgba(51, 14, 27, 0.85); border-left: 4px solid var(--gold-accent); border-radius: 14px; padding: 16px; margin: 15px 0; font-weight: 500; color: #fff; line-height: 1.7; font-size: 1rem; box-shadow: 0 6px 20px rgba(0,0,0,0.3); font-family: 'Playfair Display', serif; font-style: italic; }
 
-/* HỘP QUÀ BONG BÓNG ĐẶT CHÍNH GIỮA TRANG */
+/* HỘP QUÀ CHÍNH GIỮA TRANG */
 .center-gift-wrapper {
   display: flex;
   flex-direction: column;
@@ -347,7 +347,7 @@ button { font: inherit; cursor: pointer; border: 0; }
   animation: bounceHint 2s infinite ease-in-out;
 }
 
-/* PHẦN 3 TRÁI TIM BONG BÓNG LƠ LỬNG */
+/* PHẦN 3 TRÁI TIM BONG BÓNG TRÊN TRANG MỚI */
 .wish-balloons-wrapper {
   display: flex;
   justify-content: space-around;
@@ -372,8 +372,8 @@ button { font: inherit; cursor: pointer; border: 0; }
 }
 
 .heart-balloon {
-  width: 75px;
-  height: 75px;
+  width: 80px;
+  height: 80px;
   background: radial-gradient(circle at 30% 30%, #ff8da1, #d81b60);
   border-radius: 50% 50% 50% 0;
   transform: rotate(-45deg);
@@ -571,7 +571,7 @@ footer { font-size: 0.8rem; color: #fce4ec; padding: 20px 10px; text-align: cent
         ✨ Chúc Út tuổi mới thật nhiều niềm vui, sức khỏe và hạnh phúc. Mong một ngày không xa, Út và Minh Thiện sẽ được trở về quê hương, đoàn tụ cùng gia đình sau những năm tháng vất vả nơi xứ người.<br><br>Con thương Út nhiều lắm! ❤️
       </div>
 
-      <!-- HỘP QUÀ NẰM CHÍNH GIỮA TRANG (BẤM VÀO SẼ HIỆN RA 3 TRÁI TIM) -->
+      <!-- HỘP QUÀ NẰM CHÍNH GIỮA TRANG -> BẤM VÀO ĐỂ SANG TRANG MỚI -->
       <div class="center-gift-wrapper" id="centerGiftBox">
         <div class="floating-bubble-gift" id="bubbleGiftBtn" title="Bấm vào để mở Món Quà Bí Mật 🎁">
           <span>🎁</span>
@@ -581,45 +581,65 @@ footer { font-size: 0.8rem; color: #fce4ec; padding: 20px 10px; text-align: cent
         </div>
       </div>
 
-      <!-- PHẦN 3 TRÁI TIM BONG BÓNG LƠ LỬNG (ẨN BAN ĐẦU, HIỆN KHI BẤM NÚT QUÀ) -->
-      <div class="wish-options-container hidden" id="wishOptionsContainer">
-        
-        <div class="wish-balloons-wrapper">
-          <!-- TRÁI TIM 1 -->
-          <div class="balloon-heart-card" id="card1" onclick="selectWishOption(1)">
-            <div class="heart-balloon float-1">
-              <span class="heart-label">Ba Minh Thiện</span>
-            </div>
-          </div>
+    </div>
+    
+    <button class="home-btn-big" id="homeBtn">🎂 Quay lại trang thổi nến</button>
+  </div>
+</div>
 
-          <!-- TRÁI TIM 2 -->
-          <div class="balloon-heart-card" id="card2" onclick="selectWishOption(2)">
-            <div class="heart-balloon float-2">
-              <span class="heart-label">Dượng Út Viễn</span>
-            </div>
-          </div>
+<!-- TRANG 4: TRANG MỚI LỰA CHỌN ĐIỀU ƯỚC ĐẶC BIỆT -->
+<div class="wish-page-screen hidden" id="choicePageScreen">
+  <div class="wish-page-container">
 
-          <!-- TRÁI TIM 3 -->
-          <div class="balloon-heart-card" id="card3" onclick="selectWishOption(3)">
-            <div class="heart-balloon float-3">
-              <span class="heart-label">Không ai cả</span>
-            </div>
+    <h3>Món Quà Bí Mật: Điều Ước Đặc Biệt 🎁✨</h3>
+    
+    <div class="page-scroll-content" id="scrollContainer2">
+      <div class="page-photo-box">
+        <img src="family.jpg" alt="Hình ảnh gia đình">
+      </div>
+      
+      <div class="page-text" style="text-align: center; font-weight: 600; font-size: 1.1rem; color: var(--gold-accent);">
+        Út ơi, nếu điều ước sinh nhật được thành hiện thực, Út sẽ chọn đồng hành trọn đời cùng ai?
+      </div>
+      <div class="scroll-hint" style="margin-bottom: 20px;">
+        (Út bấm chạm vào 1 trong 3 trái tim bong bóng bên dưới để xem ảnh và lời nhắn từ con nhé 💖)
+      </div>
+
+      <!-- 3 TRÁI TIM BONG BÓNG -->
+      <div class="wish-balloons-wrapper">
+        <!-- TRÁI TIM 1 -->
+        <div class="balloon-heart-card" id="card1" onclick="selectWishOption(1)">
+          <div class="heart-balloon float-1">
+            <span class="heart-label">Ba Minh Thiện</span>
           </div>
         </div>
 
-        <!-- HỘP HIỂN THỊ ẢNH + LỜI NHẮN KHI BẤM VÀO TRÁI TIM -->
-        <div class="balloon-result-box hidden" id="resultMessageContainer">
-          <div class="result-photo-box">
-            <img id="resultPhoto" src="" alt="Hình ảnh kỷ niệm">
+        <!-- TRÁI TIM 2 -->
+        <div class="balloon-heart-card" id="card2" onclick="selectWishOption(2)">
+          <div class="heart-balloon float-2">
+            <span class="heart-label">Dượng Út Viễn</span>
           </div>
-          <div class="result-message-text" id="resultMessageText"></div>
         </div>
 
+        <!-- TRÁI TIM 3 -->
+        <div class="balloon-heart-card" id="card3" onclick="selectWishOption(3)">
+          <div class="heart-balloon float-3">
+            <span class="heart-label">Không ai cả</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- HỘP HIỂN THỊ ẢNH + LỜI NHẮN KHI BẤM VÀO TRÁI TIM -->
+      <div class="balloon-result-box hidden" id="resultMessageContainer">
+        <div class="result-photo-box">
+          <img id="resultPhoto" src="" alt="Hình ảnh kỷ niệm">
+        </div>
+        <div class="result-message-text" id="resultMessageText"></div>
       </div>
 
     </div>
     
-    <button class="home-btn-big" id="homeBtn">🎂 Quay lại trang thổi nến</button>
+    <button class="home-btn-big" id="backToWishBtn">💌 Quay lại đọc tâm sự</button>
   </div>
 </div>
 
@@ -668,20 +688,14 @@ fillText('candleAge', CONFIG.ageBefore);
 fillText('cakeNote',CONFIG.cakeNoteBefore); 
 fillText('footerText1',CONFIG.footerText);
 
-/* BẤM HỘP QUÀ BONG BÓNG LƠ LỬNG: MỞ 3 TRÁI TIM ĐIỀU ƯỚC */
-function openSecretFamilyGift(){
-  $('centerGiftBox').classList.add('hidden'); // Ẩn hộp quà chính giữa sau khi bấm
-  $('pageWishTitle').textContent = 'Món Quà Bí Mật: Điều Ước Đặc Biệt 🎁✨';
-  $('pageQuote').classList.add('hidden');
-  
-  $('wishOptionsContainer').classList.remove('hidden'); // Hiển thị 3 trái tim
-  
-  const scrollContainer = $('scrollContainer');
-  if(scrollContainer) scrollContainer.scrollTop = scrollContainer.scrollHeight; // Tự trượt xuống để Út thấy 3 trái tim
-  
+/* BẤM HỘP QUÀ CHÍNH GIỮA: SANG TRANG MỚI LỰA CHỌN ĐIỀU ƯỚC */
+$('bubbleGiftBtn').addEventListener('click', ()=>{
+  $('wishPageScreen').classList.add('hidden');
+  $('choicePageScreen').classList.remove('hidden');
+  window.scrollTo({top:0, behavior:'smooth'});
   roses(25);
   fireworks(20);
-}
+});
 
 function selectWishOption(num) {
   // Bỏ chọn bong bóng cũ
@@ -705,11 +719,15 @@ function selectWishOption(num) {
   roses(10);
 }
 
-$('bubbleGiftBtn').addEventListener('click', openSecretFamilyGift);
-
 $('homeBtn').addEventListener('click', ()=>{
   $('wishPageScreen').classList.add('hidden');
   celebration.classList.remove('hidden');
+  window.scrollTo({top:0,behavior:'smooth'});
+});
+
+$('backToWishBtn').addEventListener('click', ()=>{
+  $('choicePageScreen').classList.add('hidden');
+  $('wishPageScreen').classList.remove('hidden');
   window.scrollTo({top:0,behavior:'smooth'});
 });
 
