@@ -307,45 +307,94 @@ button { font: inherit; cursor: pointer; border: 0; }
 .wish-page-container .page-text { font-size: 1.05rem; line-height: 1.85; color: #fff0f3; margin: 0 0 15px; padding: 0 4px; white-space: pre-line; font-weight: 400; }
 .highlight-quote { background: rgba(51, 14, 27, 0.85); border-left: 4px solid var(--gold-accent); border-radius: 14px; padding: 16px; margin: 15px 0; font-weight: 500; color: #fff; line-height: 1.7; font-size: 1rem; box-shadow: 0 6px 20px rgba(0,0,0,0.3); font-family: 'Playfair Display', serif; font-style: italic; }
 
-/* PHẦN LỰA CHỌN ĐIỀU ƯỚC ĐẶC BIỆT */
-.wish-options-container {
+/* PHẦN 3 TRÁI TIM BONG BÓNG LƠ LỬNG */
+.wish-balloons-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 25px 0 15px;
+}
+
+.balloon-heart-card {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin: 18px 0;
-}
-.option-card {
-  background: rgba(51, 14, 27, 0.9);
-  border: 1.5px solid rgba(245, 208, 97, 0.4);
-  border-radius: 14px;
-  padding: 14px 16px;
+  align-items: center;
   cursor: pointer;
-  transition: all 0.3s ease;
-  text-align: left;
+  transition: transform 0.3s ease;
+  flex: 1;
+  min-width: 90px;
 }
-.option-card:hover {
-  border-color: #f5d061;
-  background: rgba(92, 29, 50, 0.95);
-  transform: translateY(-2px);
+
+.balloon-heart-card:hover {
+  transform: scale(1.1);
 }
-.option-title {
-  font-weight: 700;
-  color: var(--gold-accent);
-  font-size: 1.05rem;
+
+.heart-balloon {
+  width: 75px;
+  height: 75px;
+  background: radial-gradient(circle at 30% 30%, #ff8da1, #d81b60);
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
   display: flex;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(216, 27, 96, 0.4);
+  position: relative;
+  transition: all 0.4s ease;
 }
-.option-result-box {
-  background: rgba(245, 208, 97, 0.15);
-  border-left: 4px solid #f5d061;
-  border-radius: 10px;
-  padding: 12px;
-  margin-top: 10px;
-  font-size: 0.95rem;
-  line-height: 1.6;
+
+/* Dây bong bóng */
+.heart-balloon::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: -2px;
+  width: 2px;
+  height: 16px;
+  background: rgba(245, 208, 97, 0.7);
+  transform: rotate(45deg);
+}
+
+.heart-label {
+  transform: rotate(45deg); /* Xoay lại chữ cho thẳng */
+  font-size: 0.85rem;
+  font-weight: 800;
   color: #ffffff;
-  display: none;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+  text-align: center;
+  padding: 5px;
+}
+
+/* Animation Lơ lửng bồng bềnh */
+.float-1 { animation: floatBalloon 3s infinite ease-in-out; }
+.float-2 { animation: floatBalloon 3.6s infinite ease-in-out 0.4s; }
+.float-3 { animation: floatBalloon 3.2s infinite ease-in-out 0.8s; }
+
+/* Trạng thái khi được chọn: Đổi màu & Phát sáng */
+.balloon-heart-card.selected .heart-balloon {
+  background: radial-gradient(circle at 30% 30%, #fffad1, #f5d061);
+  box-shadow: 0 0 25px #f5d061, 0 0 10px #ff8da1;
+  transform: rotate(-45deg) scale(1.15);
+}
+.balloon-heart-card.selected .heart-label {
+  color: #330e1b;
+  text-shadow: none;
+}
+
+/* Hộp Lời Nhắn Xuất Hiện Bên Dưới */
+.balloon-result-box {
+  background: rgba(51, 14, 27, 0.95);
+  border: 2px solid var(--gold-accent);
+  border-radius: 16px;
+  padding: 16px;
+  margin-top: 15px;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: #fff0f3;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+  animation: slideUp 0.4s ease;
 }
 
 /* HỘP QUÀ BONG BÓNG LƠ LỬNG GÓC PHẢI */
@@ -388,6 +437,7 @@ button { font: inherit; cursor: pointer; border: 0; }
 .home-btn-big { display: block; width: 100%; background: linear-gradient(135deg, #f5d061, #d4af37); color: #330e1b; border-radius: 999px; padding: 14px; font-weight: 800; font-size: 1.05rem; text-align: center; margin-top: 15px; box-shadow: 0 8px 20px rgba(245, 208, 97, 0.4); transition: 0.2s; }
 .home-btn-big:hover { background: linear-gradient(135deg, #ffe082, #e6c555); }
 
+@keyframes floatBalloon { 0%, 100% { transform: translateY(0) rotate(-45deg); } 50% { transform: translateY(-12px) rotate(-42deg); } }
 @keyframes floatBubble { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-8px) scale(1.05); } }
 @keyframes bounceHint { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(8px); } }
 @keyframes bob { 50% { transform: translateY(-10px) rotate(2deg); } }
@@ -492,31 +542,37 @@ Nhìn Út tần tảo, sớm hôm đi làm, chẳng dám cho mình nghỉ ngơi 
 Con chỉ mong từ nay về sau, cuộc sống sẽ dịu dàng với Út hơn. Mong Út luôn bình an, hạnh phúc, không còn phải chịu nhiều vất vả hay giữ những nỗi buồn trong lòng, và biết sống cho bản thân mình nhiều hơn một chút.
       </div>
       
-      <!-- PHẦN LỰA CHỌN ĐIỀU ƯỚC ĐẶC BIỆT -->
+      <!-- PHẦN 3 TRÁI TIM BONG BÓNG LƠ LỬNG (ẨN BAN ĐẦU) -->
       <div class="wish-options-container hidden" id="wishOptionsContainer">
-        <!-- LỰA CHỌN 1 -->
-        <div class="option-card" onclick="selectWishOption(1)">
-          <div class="option-title">1. Ba Minh Thiện 👨‍👦</div>
-          <div class="option-result-box" id="res1">
-            Con biết ba Minh Thiện tính tình cọc cần, ít khi biết nói lời ngọt ngào hay thể hiện sự quan tâm dịu dàng, đôi lúc làm Út phải buồn và chịu nhiều tủi thân. Nhưng dù sau này ra sao, con chỉ mong Út luôn nhận được sự tôn trọng và thương yêu trọn vẹn nhất. Nếu ở lại, mong rằng thời gian sẽ giúp ba hiểu, bớt cọc cằn và biết trân trọng những vất vả, hy sinh của Út nhiều hơn!
+        
+        <div class="wish-balloons-wrapper">
+          <!-- TRÁI TIM 1 -->
+          <div class="balloon-heart-card" id="card1" onclick="selectWishOption(1)">
+            <div class="heart-balloon float-1">
+              <span class="heart-label">Ba Minh Thiện</span>
+            </div>
+          </div>
+
+          <!-- TRÁI TIM 2 -->
+          <div class="balloon-heart-card" id="card2" onclick="selectWishOption(2)">
+            <div class="heart-balloon float-2">
+              <span class="heart-label">Dượng Út Viễn</span>
+            </div>
+          </div>
+
+          <!-- TRÁI TIM 3 -->
+          <div class="balloon-heart-card" id="card3" onclick="selectWishOption(3)">
+            <div class="heart-balloon float-3">
+              <span class="heart-label">Không ai cả</span>
+            </div>
           </div>
         </div>
 
-        <!-- LỰA CHỌN 2 -->
-        <div class="option-card" onclick="selectWishOption(2)">
-          <div class="option-title">2. Dượng Út Viễn 🌹</div>
-          <div class="option-result-box" id="res2">
-            Tình cảm chân thành và sự ngọt ngào, thấu hiểu của Dượng Út Viễn thật sự rất trân quý. Tuy hiện tại khoảng cách địa lý xa xôi khiến hai người chưa có cơ hội tương phùng, nhưng con tin rằng duyên số và tình cảm chân thành sẽ vượt qua mọi khoảng cách. Mong một ngày không xa, Út và Dượng sẽ được sum họp, cùng chia sẻ những ngọt ngào bình dị của cuộc sống!
-          </div>
+        <!-- HỘP HIỂN THỊ LỜI NHẮN KHI BẤM VÀO TRÁI TIM -->
+        <div class="balloon-result-box hidden" id="resultMessageContainer">
+          <div id="resultMessageText"></div>
         </div>
 
-        <!-- LỰA CHỌN 3 -->
-        <div class="option-card" onclick="selectWishOption(3)">
-          <div class="option-title">3. Không ai cả 🌿</div>
-          <div class="option-result-box" id="res3">
-            Chọn sống độc lập cho riêng mình đôi lúc có thể làm Út cảm thấy cô đơn một chút, nhưng đổi lại là tâm hồn tự do, đầu óc nhẹ nhõm và không còn vướng bận những muộn phiền. Sau bao năm tháng vất vả lo toan cho gia đình, Út hoàn toàn có quyền chọn sự bình yên này. Dù Út lựa chọn thế nào, con và cả gia đình vẫn luôn ở bên, ủng hộ và thương Út hết lòng!
-          </div>
-        </div>
       </div>
 
       <div class="highlight-quote" id="pageQuote">
@@ -543,6 +599,12 @@ const CONFIG = {
   footerText: 'Món quà nhỏ được làm bằng tất cả tình yêu dành cho Út'
 };
 
+const WISH_MESSAGES = {
+  1: "Con biết ba Minh Thiện tính tình cọc cằn, ít khi biết nói lời ngọt ngào hay thể hiện sự quan tâm dịu dàng, đôi lúc làm Út phải buồn và chịu nhiều tủi thân. Nhưng dù sau này ra sao, con chỉ mong Út luôn nhận được sự tôn trọng và thương yêu trọn vẹn nhất. Nếu ở lại, mong rằng thời gian sẽ giúp ba hiểu, bớt cọc cằn và biết trân trọng những vất vả, hy sinh của Út nhiều hơn!",
+  2: "Tình cảm chân thành và sự ngọt ngào, thấu hiểu của Dượng Út Viễn thật sự rất trân quý. Tuy hiện tại khoảng cách địa lý xa xôi khiến hai người chưa có cơ hội tương phùng, nhưng con tin rằng duyên số và tình cảm chân thành sẽ vượt qua mọi khoảng cách. Mong một ngày không xa, Út và Dượng sẽ được sum họp, cùng chia sẻ những ngọt ngào bình dị của cuộc sống!",
+  3: "Chọn sống độc lập cho riêng mình đôi lúc có thể làm Út cảm thấy cô đơn một chút, nhưng đổi lại là tâm hồn tự do, đầu óc nhẹ nhõm và không còn vướng bận những muộn phiền. Sau bao năm tháng vất vả lo toan cho gia đình, Út hoàn toàn có quyền chọn sự bình yên này. Dù Út lựa chọn thế nào, con và cả gia đình vẫn luôn ở bên, ủng hộ và thương Út hết lòng!"
+};
+
 const $ = id => document.getElementById(id);
 const intro=$('intro'), celebration=$('celebration');
 
@@ -561,7 +623,7 @@ fillText('footerText1',CONFIG.footerText);
 function openSecretFamilyGift(){
   $('pageWishTitle').textContent = 'Món Quà Bí Mật: Điều Ước Đặc Biệt 🎁✨';
   $('pageWishPhoto').src = 'family.jpg'; 
-  $('pageQuote').classList.add('hidden');$('pageWishText').innerHTML = `<b>Út ơi, nếu điều ước sinh nhật được thực hiện, Út muốn đồng hành trọn đời cùng với ai?</b>\n\n(Út chọn 1 trong 3 lựa chọn bên dưới để xem lời nhắn gửi từ con nhé):`;
+  $('pageQuote').classList.add('hidden');$('pageWishText').innerHTML = `<b>Út ơi, nếu điều ước sinh nhật được thực hiện, Út muốn đồng hành trọn đời cùng với ai?</b>\n\n(Út bấm chạm vào 1 trong 3 trái tim bong bóng bên dưới để mở lời nhắn gửi từ con nhé 💖):`;
   
   $('wishOptionsContainer').classList.remove('hidden');
   
@@ -573,10 +635,23 @@ function openSecretFamilyGift(){
 }
 
 function selectWishOption(num) {
-  document.querySelectorAll('.option-result-box').forEach(el => el.style.display = 'none');
-  const target = $('res' + num);
-  if(target) target.style.display = 'block';
-  fireworks(8);
+  // Bỏ chọn tất cả bong bóng cũ
+  [1, 2, 3].forEach(i => {
+    $('card' + i).classList.remove('selected');
+  });
+  
+  // Highlight bong bóng được chọn (đổi màu sáng + hiệu ứng pháo hoa)
+  $('card' + num).classList.add('selected');
+  
+  // Hiển thị nội dung lời nhắn tương ứng
+  const resContainer = $('resultMessageContainer');
+  const resText = $('resultMessageText');
+  
+  resText.textContent = WISH_MESSAGES[num];
+  resContainer.classList.remove('hidden');
+  
+  fireworks(12);
+  roses(10);
 }
 
 $('bubbleGiftBtn').addEventListener('click', openSecretFamilyGift);
