@@ -282,7 +282,7 @@ button { font: inherit; cursor: pointer; border: 0; }
 .page-scroll-content::-webkit-scrollbar { width: 5px; }
 .page-scroll-content::-webkit-scrollbar-thumb { background: #f5d061; border-radius: 10px; }
 
-/* TÙY CHỈNH KHUNG ẢNH CHUNG: FULL KÍCH THƯỚC, KHÔNG VIỀN KHUNG THÔ */
+/* KHUNG ẢNH FULL KÍCH THƯỚC KHÔNG VIỀN KHUNG THÔ */
 .page-photo-box,
 .result-photo-box {
   width: 100%;
@@ -429,7 +429,7 @@ button { font: inherit; cursor: pointer; border: 0; }
   background: rgba(51, 14, 27, 0.95);
   border: 2px solid var(--gold-accent);
   border-radius: 16px;
-  padding: 16px;
+  padding: 18px 16px;
   margin-top: 15px;
   box-shadow: 0 8px 25px rgba(0,0,0,0.4);
   animation: slideUp 0.4s ease;
@@ -441,6 +441,25 @@ button { font: inherit; cursor: pointer; border: 0; }
   line-height: 1.7;
   color: #fff0f3;
   text-align: left;
+}
+
+/* KHUNG THÔNG BÁO KẾT THÚC BÙNG NỔ */
+.final-wish-alert {
+  margin-top: 18px;
+  padding: 16px 12px;
+  background: rgba(245, 208, 97, 0.15);
+  border: 2px dashed var(--gold-accent);
+  border-radius: 14px;
+  animation: slideUp 0.5s ease;
+}
+
+.final-wish-alert-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--gold-accent);
+  line-height: 1.6;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
 }
 
 .home-btn-big { display: block; width: 100%; background: linear-gradient(135deg, #f5d061, #d4af37); color: #330e1b; border-radius: 999px; padding: 14px; font-weight: 800; font-size: 1.05rem; text-align: center; margin-top: 15px; box-shadow: 0 8px 20px rgba(245, 208, 97, 0.4); transition: 0.2s; }
@@ -621,6 +640,20 @@ footer { font-size: 0.8rem; color: #fce4ec; padding: 20px 10px; text-align: cent
           <img id="resultPhoto" src="" alt="Hình ảnh kỷ niệm">
         </div>
         <div class="result-message-text" id="resultMessageText"></div>
+
+        <!-- NÚT GỬI LỜI ƯỚC KẾT THÚC BÙNG NỔ -->
+        <div style="margin-top: 22px; padding-top: 18px; border-top: 1px dashed rgba(245, 208, 97, 0.4); text-align: center;">
+          <button class="main-btn" onclick="sendWishToUniverse()" style="padding: 12px 28px; font-size: 1rem;">
+            🌟 Gửi lời ước đến vũ trụ 🌟
+          </button>
+        </div>
+
+        <!-- THÔNG BÁO CHÚC MỪNG BÙNG NỔ HIỂN THỊ KHI BẤM NÚT -->
+        <div class="final-wish-alert hidden" id="finalWishAlert">
+          <div class="final-wish-alert-text">
+            🥳✨ Điều ước của Út đã được ghi nhận!<br>Mong mọi điều tốt đẹp nhất sẽ đến với Út! ✨💖
+          </div>
+        </div>
       </div>
 
     </div>
@@ -648,11 +681,11 @@ const CONFIG = {
 const WISH_DATA = {
   1: {
     photo: 'baminhthien.jpg',
-    text: "Con hiểu rằng chặng đường qua, ba Minh Thiện đôi lúc vô tâm hay cọc cần khiến Út phải chịu nhiều tủi thân và gánh vác nhọc nhằn. Nhưng sâu thẳm trong lòng, con chỉ mong dẫu ở chốn nào hay bên ai, Út cũng luôn nhận được sự tôn trọng, chở che và trọn vẹn yêu thương. Mong rằng thời gian sẽ mang lại sự thấu hiểu, để ba Minh Thiện biết trân quý và cùng Út sẻ chia mọi gánh nặng cuộc đời."
+    text: "Con hiểu rằng chặng đường qua, ba Minh Thiện đôi lúc vô tâm hay cọc cằn khiến Út phải chịu nhiều tủi thân và gánh vác nhọc nhằn. Nhưng sâu thẳm trong lòng, con chỉ mong dẫu ở chốn nào hay bên ai, Út cũng luôn nhận được sự tôn trọng, chở che và trọn vẹn yêu thương. Mong rằng thời gian sẽ mang lại sự thấu hiểu, để ba Minh Thiện biết trân quý và cùng Út sẻ chia mọi gánh nặng cuộc đời."
   },
   2: {
     photo: 'tinhyeu.png',
-    text: "Tình cảm chân thành và sự ngọt ngào, thấu hiểu của Dượng Út Viễn thật sự rất trân quý. Tuy hiện tại khoảng cách địa lý xa xôi khiến hai người chưa có cơ hội tương phùng, nhưng con mong rằng duyên số và tình cảm chân thành sẽ vượt qua mọi khoảng cách. Mong một ngày không xa, Út và Dượng sẽ được sum họp, cùng chia sẻ những ngọt ngào bình dị của cuộc sống!"
+    text: "Tình cảm chân thành, sự ấm áp và thấu hiểu từ Dượng Út Viễn là một món quà vô cùng quý giá mà cuộc đời dành tặng Út. Dù khoảng cách địa lý có xa xôi, con vẫn tin rằng chân tình sẽ vượt qua tất cả. Mong một ngày không xa, hai người sẽ được sum họp một nhà, cùng nhau tận hưởng những bình dị ngọt ngào và nắm tay đi hết chặng đường còn lại!"
   },
   3: {
     photo: 'binhyen.jpg',
@@ -696,10 +729,21 @@ function selectWishOption(num) {
   
   resPhoto.src = WISH_DATA[num].photo;
   resText.textContent = WISH_DATA[num].text;
+  
+  // Ẩn thông báo cũ khi đổi lựa chọn
+  $('finalWishAlert').classList.add('hidden');
   resContainer.classList.remove('hidden');
   
   fireworks(12);
   roses(10);
+}
+
+/* HÀM HIỆU ỨNG GỬI LỜI ƯỚC ĐẾN VŨ TRỤ */
+function sendWishToUniverse() {
+  fireworks(35);
+  roses(40);
+  $('finalWishAlert').classList.remove('hidden');
+  $('finalWishAlert').scrollIntoView({ behavior: 'smooth' });
 }
 
 $('homeBtn').addEventListener('click', ()=>{
