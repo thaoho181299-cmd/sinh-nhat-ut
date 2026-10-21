@@ -172,7 +172,7 @@ button { font: inherit; cursor: pointer; border: 0; }
 .wrap h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3rem); margin: 10px 0; color: #fff; font-weight: 800; text-shadow: 0 4px 15px rgba(0,0,0,0.3); }
 .sub { max-width: 600px; margin: 0 auto 20px; line-height: 1.6; font-size: 1rem; color: #fce4ec; }
 
-/* BÓ HOA GIF - CẬP NHẬT CSS TRIỆT TIÊU NỀN TỐI VÀ KHUNG VUÔNG */
+/* BÓ HOA GIF - XÓA NỀN ĐEN/TỐI TRIỆT ĐỂ BẰNG CODE */
 .bouquet-display-box {
   width: 100%;
   max-width: 250px;
@@ -182,16 +182,14 @@ button { font: inherit; cursor: pointer; border: 0; }
   justify-content: center;
   align-items: center;
   animation: fadeIn 1.2s ease;
-  border-radius: 50%;
-  overflow: hidden;
 }
 
 .bouquet-display-box img {
   width: 100%;
   height: auto;
   display: block;
-  mix-blend-mode: screen; /* Tự động lọc nền tối/đen hòa vào màu rượu vang của web */
-  filter: drop-shadow(0 0 25px rgba(245, 208, 97, 0.6));
+  mix-blend-mode: screen; /* Triệt tiêu hoàn toàn nền tối/đen */
+  filter: contrast(120%) brightness(110%) drop-shadow(0 0 25px rgba(245, 208, 97, 0.6));
 }
 
 /* KHU VỰC BÁNH KEM CSS PURE */
@@ -848,10 +846,10 @@ function selectWishOption(num) {
 
 /* HÀM HIỆU ỨNG GỬI LỜI ƯỚC ĐẾN VŨ TRỤ: PHÁO HOA, HOA HỒNG, NGÔI SAO VÀ TIỀN RƠI */
 function sendWishToUniverse() {
-  fireworks(45);
+  fireworks(50);
   roses(50);
   moneyRain(40);
-  starsRain(30);
+  starsRain(40);
   $('finalWishAlert').classList.remove('hidden');
   $('finalWishAlert').scrollIntoView({ behavior: 'smooth' });
 }
