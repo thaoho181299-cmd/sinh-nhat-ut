@@ -10,12 +10,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500;1,700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg-wine: #3d0c11;
-  --bg-wine-dark: #240508;
-  --wine-card: rgba(65, 15, 21, 0.85);
-  --gold-accent: #f3e5ab;
-  --text-light: #fce4ec;
-  --pink-glow: #ff5c8d;
+  /* TÔNG HỒNG ĐẬM & VÀNG GOLD SANG TRỌNG */
+  --bg-wine: #5c1d32;       
+  --bg-wine-dark: #330e1b;  
+  --wine-card: rgba(92, 29, 50, 0.85);
+  --gold-accent: #f5d061;    
+  --text-light: #fff0f3;    
+  --pink-glow: #ff7597;     
 }
 
 * { box-sizing: border-box; }
@@ -25,7 +26,7 @@ body {
   margin: 0;
   font-family: 'Be Vietnam Pro', system-ui, sans-serif;
   color: var(--text-light);
-  background: linear-gradient(135deg, var(--bg-wine-dark), var(--bg-wine) 60%, #1a0204);
+  background: linear-gradient(135deg, var(--bg-wine-dark), var(--bg-wine) 60%, #1f0710);
   min-height: 100vh;
   overflow-x: hidden;
   transition: background 1.2s ease, color 0.8s ease;
@@ -44,21 +45,21 @@ button { font: inherit; cursor: pointer; border: 0; }
 .intro { text-align: center; max-width: 100%; z-index: 2; }
 .eyebrow { letter-spacing: 3px; text-transform: uppercase; font-size: 0.8rem; color: var(--gold-accent); font-weight: 700; opacity: 0.9; }
 .intro h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 6vw, 3.5rem); line-height: 1.3; margin: 15px 0; color: #fff; font-weight: 800; text-shadow: 0 4px 15px rgba(0,0,0,0.3); }
-.intro p { font-size: 1.05rem; line-height: 1.6; max-width: 500px; margin: 0 auto 25px; color: #f3d1d8; }
+.intro p { font-size: 1.05rem; line-height: 1.6; max-width: 500px; margin: 0 auto 25px; color: #fce4ec; }
 .gift { font-size: clamp(4rem, 12vw, 6.5rem); animation: bob 2s ease-in-out infinite; filter: drop-shadow(0 12px 18px rgba(0,0,0,0.5)); }
 
 .main-btn {
-  background: linear-gradient(135deg, #d4af37, #aa771c);
-  color: #240508;
+  background: linear-gradient(135deg, #f5d061, #d4af37);
+  color: #330e1b;
   border-radius: 999px;
   padding: 14px 32px;
-  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.35);
+  box-shadow: 0 8px 25px rgba(245, 208, 97, 0.4);
   font-weight: 800;
   transition: 0.25s;
   font-size: 1.05rem;
   letter-spacing: 0.5px;
 }
-.main-btn:hover { transform: translateY(-3px) scale(1.03); box-shadow: 0 12px 30px rgba(212, 175, 55, 0.5); background: linear-gradient(135deg, #e6c555, #bd8525); }
+.main-btn:hover { transform: translateY(-3px) scale(1.03); box-shadow: 0 12px 30px rgba(245, 208, 97, 0.6); background: linear-gradient(135deg, #ffe082, #e6c555); }
 .hidden { display: none !important; }
 
 /* TRANG BÁNH KEM & THỔI NẾN */
@@ -66,7 +67,7 @@ button { font: inherit; cursor: pointer; border: 0; }
 .wrap { max-width: 800px; margin: auto; text-align: center; position: relative; z-index: 1; }
 .section-tag { font-size: 0.8rem; letter-spacing: 3px; color: var(--gold-accent); text-transform: uppercase; font-weight: 700; }
 .wrap h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3rem); margin: 10px 0; color: #fff; font-weight: 800; text-shadow: 0 4px 15px rgba(0,0,0,0.3); }
-.sub { max-width: 600px; margin: 0 auto 20px; line-height: 1.6; font-size: 1rem; color: #f3d1d8; }
+.sub { max-width: 600px; margin: 0 auto 20px; line-height: 1.6; font-size: 1rem; color: #fce4ec; }
 
 /* BÓ HOA / ẢNH ÔM HOA */
 .bouquet-display-box {
@@ -83,7 +84,7 @@ button { font: inherit; cursor: pointer; border: 0; }
   height: auto;
   display: block;
   mix-blend-mode: screen;
-  filter: drop-shadow(0 0 25px rgba(243, 229, 171, 0.4));
+  filter: drop-shadow(0 0 25px rgba(245, 208, 97, 0.4));
 }
 
 /* KHU VỰC BÁNH KEM HOA HỒNG */
@@ -124,16 +125,16 @@ button { font: inherit; cursor: pointer; border: 0; }
   width: 45px;
   height: 60px;
   border-radius: 8px;
-  background: linear-gradient(135deg, #fff, #f3e5ab);
+  background: linear-gradient(135deg, #fff, #f5d061);
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #3d0c11;
+  color: #330e1b;
   font-weight: 900;
   font-size: 1.3rem;
   box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-  border: 2px solid #d4af37;
+  border: 2px solid #f5d061;
   font-family: 'Playfair Display', serif;
 }
 .flame {
@@ -150,14 +151,14 @@ button { font: inherit; cursor: pointer; border: 0; }
 }
 
 .cake-note { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.1rem; margin: 15px 0; color: var(--gold-accent); }
-.action-box { background: rgba(55, 10, 15, 0.7); border: 2px dashed rgba(212, 175, 55, 0.5); border-radius: 20px; padding: 18px; max-width: 400px; margin: 0 auto 20px; backdrop-filter: blur(5px); }
+.action-box { background: rgba(51, 14, 27, 0.75); border: 2px dashed rgba(245, 208, 97, 0.5); border-radius: 20px; padding: 18px; max-width: 400px; margin: 0 auto 20px; backdrop-filter: blur(5px); }
 .action-text { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 12px; }
 
-/* TRANG TÂM SỰ TRẢI FULL MÀN HÌNH (SANG TRỌNG) */
+/* TRANG TÂM SỰ TRẢI FULL MÀN HÌNH */
 .wish-page-screen {
   position: fixed;
   inset: 0;
-  background: linear-gradient(135deg, var(--bg-wine-dark), var(--bg-wine) 60%, #1a0204);
+  background: linear-gradient(135deg, var(--bg-wine-dark), var(--bg-wine) 60%, #1f0710);
   z-index: 50;
   display: flex;
   align-items: center;
@@ -196,7 +197,7 @@ button { font: inherit; cursor: pointer; border: 0; }
   scroll-behavior: smooth;
 }
 .page-scroll-content::-webkit-scrollbar { width: 5px; }
-.page-scroll-content::-webkit-scrollbar-thumb { background: #d4af37; border-radius: 10px; }
+.page-scroll-content::-webkit-scrollbar-thumb { background: #f5d061; border-radius: 10px; }
 
 .page-photo-box {
   width: 100%;
@@ -206,11 +207,11 @@ button { font: inherit; cursor: pointer; border: 0; }
   overflow: hidden;
   margin: 0 auto 15px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-  background: #240508;
+  background: #330e1b;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid rgba(212, 175, 55, 0.3);
+  border: 2px solid rgba(245, 208, 97, 0.4);
 }
 .page-photo-box img {
   width: 100%;
@@ -220,8 +221,8 @@ button { font: inherit; cursor: pointer; border: 0; }
 }
 
 .scroll-hint { font-size: 0.85rem; font-weight: 700; color: var(--gold-accent); margin-bottom: 15px; text-align: center; animation: bounceHint 1.8s infinite ease-in-out; opacity: 0.9; }
-.wish-page-container .page-text { font-size: 1.05rem; line-height: 1.85; color: #fce4ec; margin: 0 0 15px; padding: 0 4px; white-space: pre-line; font-weight: 400; }
-.highlight-quote { background: rgba(55, 10, 15, 0.8); border-left: 4px solid var(--gold-accent); border-radius: 14px; padding: 16px; margin: 15px 0; font-weight: 500; color: #fff; line-height: 1.7; font-size: 1rem; box-shadow: 0 6px 20px rgba(0,0,0,0.3); font-family: 'Playfair Display', serif; font-style: italic; }
+.wish-page-container .page-text { font-size: 1.05rem; line-height: 1.85; color: #fff0f3; margin: 0 0 15px; padding: 0 4px; white-space: pre-line; font-weight: 400; }
+.highlight-quote { background: rgba(51, 14, 27, 0.85); border-left: 4px solid var(--gold-accent); border-radius: 14px; padding: 16px; margin: 15px 0; font-weight: 500; color: #fff; line-height: 1.7; font-size: 1rem; box-shadow: 0 6px 20px rgba(0,0,0,0.3); font-family: 'Playfair Display', serif; font-style: italic; }
 
 /* HỘP QUÀ BONG BÓNG LƠ LỬNG GÓC PHẢI */
 .bubble-gift-wrapper {
@@ -236,9 +237,9 @@ button { font: inherit; cursor: pointer; border: 0; }
 .floating-bubble-gift {
   width: 62px;
   height: 62px;
-  background: radial-gradient(circle at 30% 30%, #ffdf73, #d4af37);
+  background: radial-gradient(circle at 30% 30%, #ffe082, #f5d061);
   border-radius: 50%;
-  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
+  box-shadow: 0 8px 25px rgba(245, 208, 97, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -251,7 +252,7 @@ button { font: inherit; cursor: pointer; border: 0; }
 .bubble-gift-tag {
   font-size: 0.7rem;
   font-weight: 800;
-  color: #3d0c11;
+  color: #330e1b;
   background: var(--gold-accent);
   padding: 2px 8px;
   border-radius: 10px;
@@ -260,8 +261,8 @@ button { font: inherit; cursor: pointer; border: 0; }
   white-space: nowrap;
 }
 
-.home-btn-big { display: block; width: 100%; background: linear-gradient(135deg, #d4af37, #aa771c); color: #240508; border-radius: 999px; padding: 14px; font-weight: 800; font-size: 1.05rem; text-align: center; margin-top: 15px; box-shadow: 0 8px 20px rgba(212, 175, 55, 0.35); transition: 0.2s; }
-.home-btn-big:hover { background: linear-gradient(135deg, #e6c555, #bd8525); }
+.home-btn-big { display: block; width: 100%; background: linear-gradient(135deg, #f5d061, #d4af37); color: #330e1b; border-radius: 999px; padding: 14px; font-weight: 800; font-size: 1.05rem; text-align: center; margin-top: 15px; box-shadow: 0 8px 20px rgba(245, 208, 97, 0.4); transition: 0.2s; }
+.home-btn-big:hover { background: linear-gradient(135deg, #ffe082, #e6c555); }
 
 @keyframes floatBubble { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-8px) scale(1.05); } }
 @keyframes bounceHint { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(8px); } }
@@ -274,8 +275,8 @@ button { font: inherit; cursor: pointer; border: 0; }
 
 .rose-fall { position: fixed; top: -50px; z-index: 1; pointer-events: none; animation: fallDown linear infinite; }
 .firework { position: fixed; width: 5px; height: 5px; border-radius: 50%; pointer-events: none; z-index: 5; box-shadow: 0 0 8px currentColor; animation: burst 1.1s ease-out forwards; }
-.music-control { position: fixed; top: 12px; right: 12px; z-index: 100; background: rgba(55, 10, 15, 0.85); border: 2px solid var(--gold-accent); border-radius: 999px; padding: 6px 14px; font-size: 0.85rem; font-weight: 700; color: var(--gold-accent); box-shadow: 0 4px 15px rgba(0,0,0,0.3); display: flex; align-items: center; gap: 6px; backdrop-filter: blur(5px); }
-footer { font-size: 0.8rem; color: #d4a5b0; padding: 20px 10px; text-align: center; }
+.music-control { position: fixed; top: 12px; right: 12px; z-index: 100; background: rgba(51, 14, 27, 0.85); border: 2px solid var(--gold-accent); border-radius: 999px; padding: 6px 14px; font-size: 0.85rem; font-weight: 700; color: var(--gold-accent); box-shadow: 0 4px 15px rgba(0,0,0,0.3); display: flex; align-items: center; gap: 6px; backdrop-filter: blur(5px); }
+footer { font-size: 0.8rem; color: #fce4ec; padding: 20px 10px; text-align: center; }
 </style>
 </head>
 <body>
@@ -422,12 +423,12 @@ musicToggle.addEventListener('click', () => {
   if (isMusicPlaying) {
     bgMusic.pause();
     musicStatus.textContent = 'Bật nhạc';
-    musicToggle.style.borderColor = '#d4af37';
+    musicToggle.style.borderColor = '#f5d061';
   } else {
     bgMusic.play().then(() => {
       isMusicPlaying = true;
       musicStatus.textContent = 'Tắt nhạc';
-      musicToggle.style.borderColor = '#ff5c8d';
+      musicToggle.style.borderColor = '#ff7597';
     }).catch(e => console.log("Audio error:", e));
   }
   isMusicPlaying = !isMusicPlaying;
@@ -501,7 +502,7 @@ function fireworks(n){
         p.className='firework';
         p.style.left=x+'vw';
         p.style.top=y+'vh';
-        p.style.color=['#d4af37','#ff5c8d','#ffca68','#ffffff'][Math.floor(Math.random()*4)];
+        p.style.color=['#f5d061','#ff7597','#ffca68','#ffffff'][Math.floor(Math.random()*4)];
         const a=(Math.PI*2*i)/28,r=45+Math.random()*85;
         p.style.setProperty('--x',Math.cos(a)*r+'px');
         p.style.setProperty('--y',Math.sin(a)*r+'px');
