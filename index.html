@@ -69,7 +69,7 @@ button { font: inherit; cursor: pointer; border: 0; }
 .wrap h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3rem); margin: 10px 0; color: #fff; font-weight: 800; text-shadow: 0 4px 15px rgba(0,0,0,0.3); }
 .sub { max-width: 600px; margin: 0 auto 20px; line-height: 1.6; font-size: 1rem; color: #fce4ec; }
 
-/* BÓ HOA */
+/* BÓ HOA GIF */
 .bouquet-display-box {
   width: 100%;
   max-width: 250px;
@@ -499,9 +499,9 @@ footer { font-size: 0.8rem; color: #fce4ec; padding: 20px 10px; text-align: cent
     <h2 id="birthdayTitle"></h2>
     <p class="sub" id="birthdayIntro"></p>
 
-    <!-- ẢNH BÓ HOA -->
+    <!-- BÓ HOA DẠNG GIF -->
     <div class="bouquet-display-box hidden" id="bouquetBox">
-      <img src="omhoa.png" alt="Bó hoa tặng Út">
+      <img src="z9fE49K7yvjDtbnlu6g_Kpf3xcBBg4pK_zpsd5eafefe.gif" alt="Bó hoa tặng Út">
     </div>
 
     <!-- BÁNH KEM VẼ BẰNG CSS PURE -->
@@ -571,7 +571,7 @@ footer { font-size: 0.8rem; color: #fce4ec; padding: 20px 10px; text-align: cent
         ✨ Chúc Út tuổi mới thật nhiều niềm vui, sức khỏe và hạnh phúc. Mong một ngày không xa, Út và Minh Thiện sẽ được trở về quê hương, đoàn tụ cùng gia đình sau những năm tháng vất vả nơi xứ người.<br><br>Con thương Út nhiều lắm! ❤️
       </div>
 
-      <!-- HỘP QUÀ NẰM CHÍNH GIỮA TRANG VỚI DÒNG THÔNG BÁO RÕ RÀNG -->
+      <!-- HỘP QUÀ NẰM CHÍNH GIỮA TRANG (BẤM VÀO SẼ HIỆN RA 3 TRÁI TIM) -->
       <div class="center-gift-wrapper" id="centerGiftBox">
         <div class="floating-bubble-gift" id="bubbleGiftBtn" title="Bấm vào để mở Món Quà Bí Mật 🎁">
           <span>🎁</span>
@@ -668,16 +668,16 @@ fillText('candleAge', CONFIG.ageBefore);
 fillText('cakeNote',CONFIG.cakeNoteBefore); 
 fillText('footerText1',CONFIG.footerText);
 
-/* BẤM HỘP QUÀ BONG BÓNG LƠ LỬNG: MỞ ĐIỀU ƯỚC ĐẶC BIỆT */
+/* BẤM HỘP QUÀ BONG BÓNG LƠ LỬNG: MỞ 3 TRÁI TIM ĐIỀU ƯỚC */
 function openSecretFamilyGift(){
   $('centerGiftBox').classList.add('hidden'); // Ẩn hộp quà chính giữa sau khi bấm
   $('pageWishTitle').textContent = 'Món Quà Bí Mật: Điều Ước Đặc Biệt 🎁✨';
   $('pageQuote').classList.add('hidden');
   
-  $('wishOptionsContainer').classList.remove('hidden');
+  $('wishOptionsContainer').classList.remove('hidden'); // Hiển thị 3 trái tim
   
   const scrollContainer = $('scrollContainer');
-  if(scrollContainer) scrollContainer.scrollTop = 0;
+  if(scrollContainer) scrollContainer.scrollTop = scrollContainer.scrollHeight; // Tự trượt xuống để Út thấy 3 trái tim
   
   roses(25);
   fireworks(20);
