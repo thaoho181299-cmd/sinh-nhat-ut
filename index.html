@@ -358,7 +358,7 @@ button { font: inherit; cursor: pointer; border: 0; }
 }
 
 .heart-label {
-  transform: rotate(45deg); /* Xoay lại chữ cho thẳng */
+  transform: rotate(45deg);
   font-size: 0.85rem;
   font-weight: 800;
   color: #ffffff;
@@ -367,12 +367,12 @@ button { font: inherit; cursor: pointer; border: 0; }
   padding: 5px;
 }
 
-/* Animation Lơ lửng bồng bềnh */
+/* Animation Lơ lửng */
 .float-1 { animation: floatBalloon 3s infinite ease-in-out; }
 .float-2 { animation: floatBalloon 3.6s infinite ease-in-out 0.4s; }
 .float-3 { animation: floatBalloon 3.2s infinite ease-in-out 0.8s; }
 
-/* Trạng thái khi được chọn: Đổi màu & Phát sáng */
+/* Trạng thái khi chọn: Đổi màu phát sáng */
 .balloon-heart-card.selected .heart-balloon {
   background: radial-gradient(circle at 30% 30%, #fffad1, #f5d061);
   box-shadow: 0 0 25px #f5d061, 0 0 10px #ff8da1;
@@ -383,18 +383,40 @@ button { font: inherit; cursor: pointer; border: 0; }
   text-shadow: none;
 }
 
-/* Hộp Lời Nhắn Xuất Hiện Bên Dưới */
+/* HỘP LỜI NHẮN + HÌNH ẢNH KHI BẤM VÀO TRÁI TIM */
 .balloon-result-box {
   background: rgba(51, 14, 27, 0.95);
   border: 2px solid var(--gold-accent);
   border-radius: 16px;
   padding: 16px;
   margin-top: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+  animation: slideUp 0.4s ease;
+  text-align: center;
+}
+
+.result-photo-box {
+  width: 100%;
+  max-width: 280px;
+  height: 200px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 0 auto 12px;
+  border: 2px solid rgba(245, 208, 97, 0.5);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+.result-photo-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.result-message-text {
   font-size: 0.98rem;
   line-height: 1.7;
   color: #fff0f3;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-  animation: slideUp 0.4s ease;
+  text-align: left;
 }
 
 /* HỘP QUÀ BONG BÓNG LƠ LỬNG GÓC PHẢI */
@@ -535,11 +557,11 @@ footer { font-size: 0.8rem; color: #fce4ec; padding: 20px 10px; text-align: cent
       <div class="page-text" id="pageWishText">
 Vậy là đã 13 năm rồi Út chưa được trở về quê hương. Gia đình mình ai cũng nhớ thương Út nhiều lắm.
 
-Nhìn Út tần tảo, sớm hôm đi làm, chẳng dám cho mình nghỉ ngơi ngày nào, con thấy thương Út vô cùng. Con thương cả những lúc Út vui vẻ khi Minh Thiện biết nói, và càng thương hơn những lúc ngoại bệnh, một mình Út lo toan mọi thứ.
+Nhìn Út đi làm tối ngày, chẳng dám cho mình nghỉ ngơi ngày nào, con thấy thương Út vô cùng. Con thương cả những lúc Út vui vẻ khi Minh Thiện biết nói, và càng thương hơn những lúc ngoại bệnh, một mình Út lo toan mọi thứ.Con hy vọng Minh Thiện sẽ ngày càng phát triển, thông minh lạnh lợi, để út có thể yên tâm và hạnh phúc.
 
-Đối với con, hơn cả lòng biết ơn là sự trân trọng suốt đời. Nếu ngày đó không có Út lo cho con tiền ăn học, có lẽ con đã không có được ngày hôm nay. Vậy mà đến giờ con chưa có món quà hay cây bông nào tặng Út. Nghĩ đến điều đó, con vừa thương Út, vừa thấy mình còn thiếu sót nhiều lắm.
+Đối với con, hơn cả lòng biết ơn là sự trân trọng suốt đời. Nếu không có Út lo cho con tiền ăn học, có lẽ con đã không có được ngày hôm nay. Nghĩ đến điều đó, con thấy thương út nhiều lắm.
 
-Con chỉ mong từ nay về sau, cuộc sống sẽ dịu dàng với Út hơn. Mong Út luôn bình an, hạnh phúc, không còn phải chịu nhiều vất vả hay giữ những nỗi buồn trong lòng, và biết sống cho bản thân mình nhiều hơn một chút.
+Con chỉ mong từ nay về sau, cuộc sống sẽ dịu dàng với Út hơn. Mong Út luôn bình an, hạnh phúc, không còn phải chịu nhiều vất vả hay giữ những nỗi buồn trong lòng, và có tiền thật nhiều để về Việt Nam thăm gia đình.
       </div>
       
       <!-- PHẦN 3 TRÁI TIM BONG BÓNG LƠ LỬNG (ẨN BAN ĐẦU) -->
@@ -568,9 +590,12 @@ Con chỉ mong từ nay về sau, cuộc sống sẽ dịu dàng với Út hơn.
           </div>
         </div>
 
-        <!-- HỘP HIỂN THỊ LỜI NHẮN KHI BẤM VÀO TRÁI TIM -->
+        <!-- HỘP HIỂN THỊ ẢNH + LỜI NHẮN KHI BẤM VÀO TRÁI TIM -->
         <div class="balloon-result-box hidden" id="resultMessageContainer">
-          <div id="resultMessageText"></div>
+          <div class="result-photo-box">
+            <img id="resultPhoto" src="" alt="Hình ảnh kỷ niệm">
+          </div>
+          <div class="result-message-text" id="resultMessageText"></div>
         </div>
 
       </div>
@@ -599,10 +624,20 @@ const CONFIG = {
   footerText: 'Món quà nhỏ được làm bằng tất cả tình yêu dành cho Út'
 };
 
-const WISH_MESSAGES = {
-  1: "Con biết ba Minh Thiện tính tình cọc cằn, ít khi biết nói lời ngọt ngào hay thể hiện sự quan tâm dịu dàng, đôi lúc làm Út phải buồn và chịu nhiều tủi thân. Nhưng dù sau này ra sao, con chỉ mong Út luôn nhận được sự tôn trọng và thương yêu trọn vẹn nhất. Nếu ở lại, mong rằng thời gian sẽ giúp ba hiểu, bớt cọc cằn và biết trân trọng những vất vả, hy sinh của Út nhiều hơn!",
-  2: "Tình cảm chân thành và sự ngọt ngào, thấu hiểu của Dượng Út Viễn thật sự rất trân quý. Tuy hiện tại khoảng cách địa lý xa xôi khiến hai người chưa có cơ hội tương phùng, nhưng con tin rằng duyên số và tình cảm chân thành sẽ vượt qua mọi khoảng cách. Mong một ngày không xa, Út và Dượng sẽ được sum họp, cùng chia sẻ những ngọt ngào bình dị của cuộc sống!",
-  3: "Chọn sống độc lập cho riêng mình đôi lúc có thể làm Út cảm thấy cô đơn một chút, nhưng đổi lại là tâm hồn tự do, đầu óc nhẹ nhõm và không còn vướng bận những muộn phiền. Sau bao năm tháng vất vả lo toan cho gia đình, Út hoàn toàn có quyền chọn sự bình yên này. Dù Út lựa chọn thế nào, con và cả gia đình vẫn luôn ở bên, ủng hộ và thương Út hết lòng!"
+/* DỮ LIỆU LỜI NHẮN VÀ ẢNH TƯƠNG ỨNG CHO 3 TRÁI TIM */
+const WISH_DATA = {
+  1: {
+    photo: 'baminhthien.jpg', // Thay bằng tên file ảnh của Ba Minh Thiện
+    text: "Con biết ba Minh Thiện tính tình cọc cần, ít khi biết nói lời ngọt ngào hay thể hiện sự quan tâm dịu dàng, đôi lúc làm Út phải buồn và chịu nhiều tủi thân. Nhưng dù sau này ra sao, con chỉ mong Út luôn nhận được sự tôn trọng và thương yêu trọn vẹn nhất. Nếu ở lại, mong rằng thời gian sẽ giúp ba Minh Thiện hiểu, bớt cọc cằn và biết trân trọng những vất vả, hy sinh của Út nhiều hơn!"
+  },
+  2: {
+    photo: 'duongutvien.jpg', // Thay bằng tên file ảnh của Dượng Út Viễn
+    text: "Tình cảm chân thành và sự ngọt ngào, thấu hiểu của Dượng Út Viễn thật sự rất trân quý. Tuy hiện tại khoảng cách địa lý xa xôi và nhiều vấn đề phát sinh khiến hai người chưa có cơ hội tương phùng, nhưng con mong rằng duyên số và tình cảm chân thành sẽ vượt qua mọi khoảng cách. Mong một ngày không xa, Út và Dượng sẽ được sum họp, cùng chia sẻ những ngọt ngào bình dị của cuộc sống!"
+  },
+  3: {
+    photo: 'binhyen.jpg', // Thay bằng tên file ảnh bình yên / riêng tư của Út
+    text: "Chọn sống độc lập cho riêng mình đôi lúc có thể làm Út cảm thấy cô đơn một chút, nhưng đổi lại là tâm hồn tự do, đầu óc nhẹ nhõm và không còn vướng bận những muộn phiền. Sau bao năm tháng vất vả lo toan cho gia đình, Út hoàn toàn có quyền chọn sự bình yên này. Dù Út lựa chọn thế nào, con và cả gia đình vẫn luôn ở bên, ủng hộ và thương Út hết lòng!"
+  }
 };
 
 const $ = id => document.getElementById(id);
@@ -622,8 +657,8 @@ fillText('footerText1',CONFIG.footerText);
 /* BẤM HỘP QUÀ BONG BÓNG LƠ LỬNG: MỞ ĐIỀU ƯỚC ĐẶC BIỆT */
 function openSecretFamilyGift(){
   $('pageWishTitle').textContent = 'Món Quà Bí Mật: Điều Ước Đặc Biệt 🎁✨';
-  $('pageWishPhoto').src = 'family.jpg'; 
-  $('pageQuote').classList.add('hidden');$('pageWishText').innerHTML = `<b>Út ơi, nếu điều ước sinh nhật được thực hiện, Út muốn đồng hành trọn đời cùng với ai?</b>\n\n(Út bấm chạm vào 1 trong 3 trái tim bong bóng bên dưới để mở lời nhắn gửi từ con nhé 💖):`;
+  
+  $('pageQuote').classList.add('hidden');$('pageWishText').innerHTML = `<b>Út ơi, nếu điều ước sinh nhật được thực hiện, Út muốn đồng hành trọn đời cùng với ai?</b>\n\n(Út bấm chạm vào 1 trong 3 trái tim bong bóng bên dưới để xem ảnh và lời nhắn từ con nhé 💖):`;
   
   $('wishOptionsContainer').classList.remove('hidden');
   
@@ -635,19 +670,21 @@ function openSecretFamilyGift(){
 }
 
 function selectWishOption(num) {
-  // Bỏ chọn tất cả bong bóng cũ
+  // Bỏ chọn bong bóng cũ
   [1, 2, 3].forEach(i => {
     $('card' + i).classList.remove('selected');
   });
   
-  // Highlight bong bóng được chọn (đổi màu sáng + hiệu ứng pháo hoa)
+  // Highlight trái tim được chọn
   $('card' + num).classList.add('selected');
   
-  // Hiển thị nội dung lời nhắn tương ứng
+  // Cập nhật ảnh và lời nhắn tương ứng
   const resContainer = $('resultMessageContainer');
+  const resPhoto = $('resultPhoto');
   const resText = $('resultMessageText');
   
-  resText.textContent = WISH_MESSAGES[num];
+  resPhoto.src = WISH_DATA[num].photo;
+  resText.textContent = WISH_DATA[num].text;
   resContainer.classList.remove('hidden');
   
   fireworks(12);
