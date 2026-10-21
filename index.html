@@ -238,7 +238,7 @@ button { font: inherit; cursor: pointer; border: 0; }
 .action-box { background: rgba(51, 14, 27, 0.75); border: 2px dashed rgba(245, 208, 97, 0.5); border-radius: 20px; padding: 18px; max-width: 420px; margin: 0 auto 20px; backdrop-filter: blur(5px); }
 .action-text { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 12px; }
 
-/* TRANG TÂM SỰ & TRANG LỰA CHỌN FULL MÀN HÌNH */
+/* TRANG FULL MÀN HÌNH */
 .wish-page-screen {
   position: fixed;
   inset: 0;
@@ -571,7 +571,7 @@ footer { font-size: 0.8rem; color: #fce4ec; padding: 20px 10px; text-align: cent
         ✨ Chúc Út tuổi mới thật nhiều niềm vui, sức khỏe và hạnh phúc. Mong một ngày không xa, Út và Minh Thiện sẽ được trở về quê hương, đoàn tụ cùng gia đình sau những năm tháng vất vả nơi xứ người.<br><br>Con thương Út nhiều lắm! ❤️
       </div>
 
-      <!-- HỘP QUÀ NẰM CHÍNH GIỮA TRANG -> BẤM VÀO ĐỂ SANG TRANG MỚI -->
+      <!-- HỘP QUÀ NẰM CHÍNH GIỮA TRANG -> BẤM VÀO ĐỂ MỞ TRANG MỚI -->
       <div class="center-gift-wrapper" id="centerGiftBox">
         <div class="floating-bubble-gift" id="bubbleGiftBtn" title="Bấm vào để mở Món Quà Bí Mật 🎁">
           <span>🎁</span>
@@ -587,7 +587,7 @@ footer { font-size: 0.8rem; color: #fce4ec; padding: 20px 10px; text-align: cent
   </div>
 </div>
 
-<!-- TRANG 4: TRANG MỚI LỰA CHỌN ĐIỀU ƯỚC ĐẶC BIỆT -->
+<!-- TRANG 4: TRANG MỚI LỰA CHỌN ĐIỀU ƯỚC ĐẶC BIỆT (TÁCH BIỆT NGUYÊN TRANG) -->
 <div class="wish-page-screen hidden" id="choicePageScreen">
   <div class="wish-page-container">
 
@@ -688,10 +688,10 @@ fillText('candleAge', CONFIG.ageBefore);
 fillText('cakeNote',CONFIG.cakeNoteBefore); 
 fillText('footerText1',CONFIG.footerText);
 
-/* BẤM HỘP QUÀ CHÍNH GIỮA: SANG TRANG MỚI LỰA CHỌN ĐIỀU ƯỚC */
+/* BẤM HỘP QUÀ CHÍNH GIỮA -> CHUYỂN SANG TRANG LỰA CHỌN MỚI HOÀN TOÀN */
 $('bubbleGiftBtn').addEventListener('click', ()=>{
-  $('wishPageScreen').classList.add('hidden');
-  $('choicePageScreen').classList.remove('hidden');
+  $('wishPageScreen').classList.add('hidden'); // Ẩn trang đọc tâm sự
+  $('choicePageScreen').classList.remove('hidden'); // Hiện trang điều ước mới
   window.scrollTo({top:0, behavior:'smooth'});
   roses(25);
   fireworks(20);
