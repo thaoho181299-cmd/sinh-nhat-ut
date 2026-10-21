@@ -267,8 +267,7 @@ button { font: inherit; cursor: pointer; border: 0; }
   margin: 0 0 20px;
   line-height: 1.4;
   font-weight: 700;
-  padding-right: 75px;
-  text-align: left;
+  text-align: center;
   text-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
@@ -306,6 +305,47 @@ button { font: inherit; cursor: pointer; border: 0; }
 .scroll-hint { font-size: 0.85rem; font-weight: 700; color: var(--gold-accent); margin-bottom: 15px; text-align: center; animation: bounceHint 1.8s infinite ease-in-out; opacity: 0.9; }
 .wish-page-container .page-text { font-size: 1.05rem; line-height: 1.85; color: #fff0f3; margin: 0 0 15px; padding: 0 4px; white-space: pre-line; font-weight: 400; }
 .highlight-quote { background: rgba(51, 14, 27, 0.85); border-left: 4px solid var(--gold-accent); border-radius: 14px; padding: 16px; margin: 15px 0; font-weight: 500; color: #fff; line-height: 1.7; font-size: 1rem; box-shadow: 0 6px 20px rgba(0,0,0,0.3); font-family: 'Playfair Display', serif; font-style: italic; }
+
+/* HỘP QUÀ BONG BÓNG ĐẶT CHÍNH GIỮA TRANG */
+.center-gift-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 25px auto 20px;
+  padding: 18px 15px;
+  background: rgba(51, 14, 27, 0.85);
+  border: 2px dashed rgba(245, 208, 97, 0.6);
+  border-radius: 20px;
+  max-width: 380px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.floating-bubble-gift {
+  width: 70px;
+  height: 70px;
+  background: radial-gradient(circle at 30% 30%, #ffe082, #f5d061);
+  border-radius: 50%;
+  box-shadow: 0 8px 25px rgba(245, 208, 97, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  animation: floatBubble 2.8s infinite ease-in-out;
+  transition: transform 0.3s;
+}
+.floating-bubble-gift span { font-size: 2.2rem; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3)); }
+.floating-bubble-gift:hover { transform: scale(1.15); }
+
+.center-gift-hint {
+  margin-top: 12px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--gold-accent);
+  text-align: center;
+  line-height: 1.5;
+  animation: bounceHint 2s infinite ease-in-out;
+}
 
 /* PHẦN 3 TRÁI TIM BONG BÓNG LƠ LỬNG */
 .wish-balloons-wrapper {
@@ -345,7 +385,6 @@ button { font: inherit; cursor: pointer; border: 0; }
   transition: all 0.4s ease;
 }
 
-/* Dây bong bóng */
 .heart-balloon::after {
   content: '';
   position: absolute;
@@ -367,12 +406,10 @@ button { font: inherit; cursor: pointer; border: 0; }
   padding: 5px;
 }
 
-/* Animation Lơ lửng */
 .float-1 { animation: floatBalloon 3s infinite ease-in-out; }
 .float-2 { animation: floatBalloon 3.6s infinite ease-in-out 0.4s; }
 .float-3 { animation: floatBalloon 3.2s infinite ease-in-out 0.8s; }
 
-/* Trạng thái khi chọn: Đổi màu phát sáng */
 .balloon-heart-card.selected .heart-balloon {
   background: radial-gradient(circle at 30% 30%, #fffad1, #f5d061);
   box-shadow: 0 0 25px #f5d061, 0 0 10px #ff8da1;
@@ -383,7 +420,6 @@ button { font: inherit; cursor: pointer; border: 0; }
   text-shadow: none;
 }
 
-/* HỘP LỜI NHẮN + HÌNH ẢNH KHI BẤM VÀO TRÁI TIM */
 .balloon-result-box {
   background: rgba(51, 14, 27, 0.95);
   border: 2px solid var(--gold-accent);
@@ -417,43 +453,6 @@ button { font: inherit; cursor: pointer; border: 0; }
   line-height: 1.7;
   color: #fff0f3;
   text-align: left;
-}
-
-/* HỘP QUÀ BONG BÓNG LƠ LỬNG GÓC PHẢI */
-.bubble-gift-wrapper {
-  position: absolute;
-  top: 0;
-  right: 5px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 20;
-}
-.floating-bubble-gift {
-  width: 62px;
-  height: 62px;
-  background: radial-gradient(circle at 30% 30%, #ffe082, #f5d061);
-  border-radius: 50%;
-  box-shadow: 0 8px 25px rgba(245, 208, 97, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  animation: floatBubble 2.8s infinite ease-in-out;
-  transition: transform 0.3s;
-}
-.floating-bubble-gift span { font-size: 1.9rem; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3)); }
-.floating-bubble-gift:hover { transform: scale(1.15); }
-.bubble-gift-tag {
-  font-size: 0.7rem;
-  font-weight: 800;
-  color: #330e1b;
-  background: var(--gold-accent);
-  padding: 2px 8px;
-  border-radius: 10px;
-  margin-top: 5px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-  white-space: nowrap;
 }
 
 .home-btn-big { display: block; width: 100%; background: linear-gradient(135deg, #f5d061, #d4af37); color: #330e1b; border-radius: 999px; padding: 14px; font-weight: 800; font-size: 1.05rem; text-align: center; margin-top: 15px; box-shadow: 0 8px 20px rgba(245, 208, 97, 0.4); transition: 0.2s; }
@@ -535,16 +534,9 @@ footer { font-size: 0.8rem; color: #fce4ec; padding: 20px 10px; text-align: cent
   </div>
 </section>
 
-<!-- TRANG 3: LỜI TÂM SỰ TRẢI FULL MÀN HÌNH & HỘP QUÀ BONG BÓNG -->
+<!-- TRANG 3: LỜI TÂM SỰ TRẢI FULL MÀN HÌNH -->
 <div class="wish-page-screen hidden" id="wishPageScreen">
   <div class="wish-page-container">
-    <!-- HỘP QUÀ BONG BÓNG LƠ LỬNG GÓC PHẢI -->
-    <div class="bubble-gift-wrapper">
-      <div class="floating-bubble-gift" id="bubbleGiftBtn" title="Bấm vào để mở Món Quà Bí Mật 🎁">
-        <span>🎁</span>
-      </div>
-      <div class="bubble-gift-tag">Món quà Út 🎁</div>
-    </div>
 
     <h3 id="pageWishTitle">Út ơi, con có một vài điều muốn gửi đến Út… ❤️</h3>
     
@@ -555,16 +547,41 @@ footer { font-size: 0.8rem; color: #fce4ec; padding: 20px 10px; text-align: cent
       <div class="scroll-hint" id="scrollHintText">Út vuốt xuống để đọc tiếp tâm sự của con nha 👇</div>
       
       <div class="page-text" id="pageWishText">
-Vậy là đã 13 năm rồi Út chưa được trở về quê hương. Gia đình mình ai cũng nhớ thương Út nhiều lắm.
+        Vậy là đã 13 năm rồi Út chưa được trở về quê hương. Gia đình mình ai cũng nhớ thương Út nhiều lắm.
 
-Nhìn Út đi làm tối ngày, chẳng dám cho mình nghỉ ngơi ngày nào, con thấy thương Út vô cùng. Con thương cả những lúc Út vui vẻ khi Minh Thiện biết nói, và càng thương hơn những lúc ngoại bệnh, một mình Út lo toan mọi thứ.Con hy vọng Minh Thiện sẽ ngày càng phát triển, thông minh lạnh lợi, để út có thể yên tâm và hạnh phúc.
+        Nhìn Út tần tảo, sớm hôm đi làm, chẳng dám cho mình nghỉ ngơi ngày nào, con thấy thương Út vô cùng. Con thương cả những lúc Út vui vẻ khi Minh Thiện biết nói, và càng thương hơn những lúc ngoại bệnh, một mình Út lo toan mọi thứ. Con mong sao Minh Thiện ngày càng phát triển, thông minh lanh lợi để Út được yên lòng và hạnh phúc.
 
-Đối với con, hơn cả lòng biết ơn là sự trân trọng suốt đời. Nếu không có Út lo cho con tiền ăn học, có lẽ con đã không có được ngày hôm nay. Nghĩ đến điều đó, con thấy thương út nhiều lắm.
+        Thấy bạn bè tổ chức sinh nhật cho Út, con vui lắm. Con vui vì dù ở nơi xa quê hương, Út vẫn có những người bạn yêu thương, quan tâm và dành cho Út những điều tốt đẹp. Con chỉ mong từ nay về sau, cuộc sống sẽ dịu dàng với Út hơn một chút. Mong Út luôn vui vẻ, bình an, hạnh phúc; có một người thật lòng yêu thương, quan tâm và chăm sóc cho Út cùng Minh Thiện. Mong Út không còn phải chịu nhiều vất vả, không còn những nỗi buồn phải giữ trong lòng, và cũng có thể sống cho bản thân mình nhiều hơn một chút.
+      </div>
 
-Con chỉ mong từ nay về sau, cuộc sống sẽ dịu dàng với Út hơn. Mong Út luôn bình an, hạnh phúc, không còn phải chịu nhiều vất vả hay giữ những nỗi buồn trong lòng, và có tiền thật nhiều để về Việt Nam thăm gia đình.
+      <!-- ẢNH BẠN BÈ TỔ CHỨC SINH NHẬT -->
+      <div class="page-photo-box">
+        <img src="banbe.jpg" alt="Ảnh bạn bè tổ chức sinh nhật cho Út">
+      </div>
+
+      <div class="page-text">
+        Con mong Út biết rằng Út đã hy sinh và lo lắng cho gia đình mình nhiều đến nhường nào. Những điều Út làm, con luôn ghi nhớ trong lòng. Có thể bây giờ con chưa làm được gì nhiều cho Út, nhưng con thật lòng biết ơn và thương Út rất nhiều.
+
+        Đối với con, hơn cả lòng biết ơn là sự trân trọng suốt đời. Nếu không có Út lo cho con tiền ăn học, có lẽ con đã không có được ngày hôm nay. Nghĩ đến điều đó, con thấy kính trọng và yêu thương Út rất nhiều.
+
+        Con chỉ mong từ nay về sau, cuộc sống sẽ dịu dàng với Út hơn. Mong Út luôn bình an, hạnh phúc, không còn phải chịu nhiều vất vả hay giữ những nỗi buồn trong lòng, có thật nhiều tiền để Út có được cuộc sống thoải mái hơn. 
       </div>
       
-      <!-- PHẦN 3 TRÁI TIM BONG BÓNG LƠ LỬNG (ẨN BAN ĐẦU) -->
+      <div class="highlight-quote" id="pageQuote">
+        ✨ Chúc Út tuổi mới thật nhiều niềm vui, sức khỏe và hạnh phúc. Mong một ngày không xa, Út và Minh Thiện sẽ được trở về quê hương, đoàn tụ cùng gia đình sau những năm tháng vất vả nơi xứ người.<br><br>Con thương Út nhiều lắm! ❤️
+      </div>
+
+      <!-- HỘP QUÀ NẰM CHÍNH GIỮA TRANG VỚI DÒNG THÔNG BÁO RÕ RÀNG -->
+      <div class="center-gift-wrapper" id="centerGiftBox">
+        <div class="floating-bubble-gift" id="bubbleGiftBtn" title="Bấm vào để mở Món Quà Bí Mật 🎁">
+          <span>🎁</span>
+        </div>
+        <div class="center-gift-hint">
+          Út ơi, đọc lời con nhắn xong Út bấm dô đây nha 🎁✨
+        </div>
+      </div>
+
+      <!-- PHẦN 3 TRÁI TIM BONG BÓNG LƠ LỬNG (ẨN BAN ĐẦU, HIỆN KHI BẤM NÚT QUÀ) -->
       <div class="wish-options-container hidden" id="wishOptionsContainer">
         
         <div class="wish-balloons-wrapper">
@@ -600,9 +617,6 @@ Con chỉ mong từ nay về sau, cuộc sống sẽ dịu dàng với Út hơn.
 
       </div>
 
-      <div class="highlight-quote" id="pageQuote">
-        ✨ Chúc Út tuổi mới thật nhiều niềm vui, sức khỏe và hạnh phúc. Mong một ngày không xa, Út và Minh Thiện sẽ được trở về quê hương, đoàn tụ cùng gia đình sau những năm tháng vất vả nơi xứ người.<br><br>Con thương Út nhiều lắm! ❤️
-      </div>
     </div>
     
     <button class="home-btn-big" id="homeBtn">🎂 Quay lại trang thổi nến</button>
@@ -627,15 +641,15 @@ const CONFIG = {
 /* DỮ LIỆU LỜI NHẮN VÀ ẢNH TƯƠNG ỨNG CHO 3 TRÁI TIM */
 const WISH_DATA = {
   1: {
-    photo: 'baminhthien.jpg', // Thay bằng tên file ảnh của Ba Minh Thiện
-    text: "Con biết ba Minh Thiện tính tình cọc cần, ít khi biết nói lời ngọt ngào hay thể hiện sự quan tâm dịu dàng, đôi lúc làm Út phải buồn và chịu nhiều tủi thân. Nhưng dù sau này ra sao, con chỉ mong Út luôn nhận được sự tôn trọng và thương yêu trọn vẹn nhất. Nếu ở lại, mong rằng thời gian sẽ giúp ba Minh Thiện hiểu, bớt cọc cằn và biết trân trọng những vất vả, hy sinh của Út nhiều hơn!"
+    photo: 'baminhthien.jpg',
+    text: "Con biết ba Minh Thiện tính tình cọc cằn, ít khi biết nói lời ngọt ngào hay thể hiện sự quan tâm dịu dàng, đôi lúc làm Út phải buồn và chịu nhiều tủi thân. Nhưng dù sau này ra sao, con chỉ mong Út luôn nhận được sự tôn trọng và thương yêu trọn vẹn nhất. Nếu ở lại, mong rằng thời gian sẽ giúp ba Minh Thiện hiểu, bớt cọc cằn và biết trân trọng những vất vả, hy sinh của Út nhiều hơn!"
   },
   2: {
-    photo: 'duongutvien.jpg', // Thay bằng tên file ảnh của Dượng Út Viễn
-    text: "Tình cảm chân thành và sự ngọt ngào, thấu hiểu của Dượng Út Viễn thật sự rất trân quý. Tuy hiện tại khoảng cách địa lý xa xôi và nhiều vấn đề phát sinh khiến hai người chưa có cơ hội tương phùng, nhưng con mong rằng duyên số và tình cảm chân thành sẽ vượt qua mọi khoảng cách. Mong một ngày không xa, Út và Dượng sẽ được sum họp, cùng chia sẻ những ngọt ngào bình dị của cuộc sống!"
+    photo: 'tinhyeu.png',
+    text: "Tình cảm chân thành và sự ngọt ngào, thấu hiểu của Dượng Út Viễn thật sự rất trân quý. Tuy hiện tại khoảng cách địa lý xa xôi khiến hai người chưa có cơ hội tương phùng, nhưng con mong rằng duyên số và tình cảm chân thành sẽ vượt qua mọi khoảng cách. Mong một ngày không xa, Út và Dượng sẽ được sum họp, cùng chia sẻ những ngọt ngào bình dị của cuộc sống!"
   },
   3: {
-    photo: 'binhyen.jpg', // Thay bằng tên file ảnh bình yên / riêng tư của Út
+    photo: 'binhyen.jpg',
     text: "Chọn sống độc lập cho riêng mình đôi lúc có thể làm Út cảm thấy cô đơn một chút, nhưng đổi lại là tâm hồn tự do, đầu óc nhẹ nhõm và không còn vướng bận những muộn phiền. Sau bao năm tháng vất vả lo toan cho gia đình, Út hoàn toàn có quyền chọn sự bình yên này. Dù Út lựa chọn thế nào, con và cả gia đình vẫn luôn ở bên, ủng hộ và thương Út hết lòng!"
   }
 };
@@ -656,9 +670,9 @@ fillText('footerText1',CONFIG.footerText);
 
 /* BẤM HỘP QUÀ BONG BÓNG LƠ LỬNG: MỞ ĐIỀU ƯỚC ĐẶC BIỆT */
 function openSecretFamilyGift(){
+  $('centerGiftBox').classList.add('hidden'); // Ẩn hộp quà chính giữa sau khi bấm
   $('pageWishTitle').textContent = 'Món Quà Bí Mật: Điều Ước Đặc Biệt 🎁✨';
-  
-  $('pageQuote').classList.add('hidden');$('pageWishText').innerHTML = `<b>Út ơi, nếu điều ước sinh nhật được thực hiện, Út muốn đồng hành trọn đời cùng với ai?</b>\n\n(Út bấm chạm vào 1 trong 3 trái tim bong bóng bên dưới để xem ảnh và lời nhắn từ con nhé 💖):`;
+  $('pageQuote').classList.add('hidden');
   
   $('wishOptionsContainer').classList.remove('hidden');
   
@@ -693,7 +707,8 @@ function selectWishOption(num) {
 
 $('bubbleGiftBtn').addEventListener('click', openSecretFamilyGift);
 
-$('homeBtn').addEventListener('click', ()=>{$('wishPageScreen').classList.add('hidden');
+$('homeBtn').addEventListener('click', ()=>{
+  $('wishPageScreen').classList.add('hidden');
   celebration.classList.remove('hidden');
   window.scrollTo({top:0,behavior:'smooth'});
 });
@@ -736,8 +751,10 @@ $('blowBtn').addEventListener('click',()=>{
   fillText('candleAge', CONFIG.ageAfter);
   fillText('cakeNote', CONFIG.cakeNoteAfter);
   
-  $('bouquetBox').classList.remove('hidden');$('actionText').textContent = 'Tuổi 46 rực rỡ và đong đầy yêu thương! 🎉';
-  $('blowBtn').classList.add('hidden');$('wishesBtn').classList.remove('hidden'); 
+  $('bouquetBox').classList.remove('hidden');
+  $('actionText').textContent = 'Tuổi 46 rực rỡ và đong đầy yêu thương! 🎉';
+  $('blowBtn').classList.add('hidden');
+  $('wishesBtn').classList.remove('hidden'); 
   
   fireworks(25);
   roses(35);
