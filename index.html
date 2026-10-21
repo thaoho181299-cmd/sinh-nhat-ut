@@ -11,7 +11,7 @@
 <style>
 :root {
   /* TÔNG HỒNG ĐẬM & VÀNG GOLD SANG TRỌNG */
-  --bg-wine: #5c1d32;       
+  --bg-wine: #5c1d32;        
   --bg-wine-dark: #330e1b;  
   --wine-card: rgba(92, 29, 50, 0.85);
   --gold-accent: #f5d061;    
@@ -194,7 +194,7 @@ button { font: inherit; cursor: pointer; border: 0; }
   box-shadow: inset -2px -2px 0 rgba(0,0,0,0.3);
 }
 
-/* CÂY NẾN SỐ 45 -> 46 */
+/* CÂY NẾN SỐ */
 .candle-row {
   position: absolute;
   top: -55px;
@@ -282,24 +282,31 @@ button { font: inherit; cursor: pointer; border: 0; }
 .page-scroll-content::-webkit-scrollbar { width: 5px; }
 .page-scroll-content::-webkit-scrollbar-thumb { background: #f5d061; border-radius: 10px; }
 
-.page-photo-box {
+/* TÙY CHỈNH KHUNG ẢNH CHUNG: FULL KÍCH THƯỚC, KHÔNG VIỀN KHUNG THÔ */
+.page-photo-box,
+.result-photo-box {
   width: 100%;
-  max-width: 320px;
-  border-radius: 20px;
-  overflow: hidden;
-  margin: 0 auto 15px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-  background: #330e1b;
+  max-width: 100%;
+  height: auto;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  overflow: visible;
+  margin: 15px auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid rgba(245, 208, 97, 0.4);
 }
-.page-photo-box img {
+
+.page-photo-box img,
+.result-photo-box img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
   display: block;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
 }
 
 .scroll-hint { font-size: 0.85rem; font-weight: 700; color: var(--gold-accent); margin-bottom: 15px; text-align: center; animation: bounceHint 1.8s infinite ease-in-out; opacity: 0.9; }
@@ -347,7 +354,7 @@ button { font: inherit; cursor: pointer; border: 0; }
   animation: bounceHint 2s infinite ease-in-out;
 }
 
-/* PHẦN 3 TRÁI TIM BONG BÓNG TRÊN TRANG MỚI */
+/* PHẦN 3 TRÁI TIM BONG BÓNG */
 .wish-balloons-wrapper {
   display: flex;
   justify-content: space-around;
@@ -367,9 +374,7 @@ button { font: inherit; cursor: pointer; border: 0; }
   min-width: 90px;
 }
 
-.balloon-heart-card:hover {
-  transform: scale(1.1);
-}
+.balloon-heart-card:hover { transform: scale(1.1); }
 
 .heart-balloon {
   width: 80px;
@@ -431,23 +436,6 @@ button { font: inherit; cursor: pointer; border: 0; }
   text-align: center;
 }
 
-.result-photo-box {
-  width: 100%;
-  max-width: 280px;
-  height: 200px;
-  border-radius: 12px;
-  overflow: hidden;
-  margin: 0 auto 12px;
-  border: 2px solid rgba(245, 208, 97, 0.5);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-}
-.result-photo-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
 .result-message-text {
   font-size: 0.98rem;
   line-height: 1.7;
@@ -492,14 +480,14 @@ footer { font-size: 0.8rem; color: #fce4ec; padding: 20px 10px; text-align: cent
   </div>
 </section>
 
-<!-- TRANG 2: BÁNH KEM HOA HỒNG & THỔI NẾN -->
+<!-- TRANG 2: BÁNH KEM & THỔI NẾN -->
 <section class="screen celebration hidden" id="celebration">
   <div class="wrap">
     <div class="section-tag" id="birthdayDate"></div>
     <h2 id="birthdayTitle"></h2>
     <p class="sub" id="birthdayIntro"></p>
 
-    <!-- BÓ HOA DẠNG GIF -->
+    <!-- BÓ HOA GIF -->
     <div class="bouquet-display-box hidden" id="bouquetBox">
       <img src="z9fE49K7yvjDtbnlu6g_Kpf3xcBBg4pK_zpsd5eafefe.gif" alt="Bó hoa tặng Út">
     </div>
@@ -534,7 +522,7 @@ footer { font-size: 0.8rem; color: #fce4ec; padding: 20px 10px; text-align: cent
   </div>
 </section>
 
-<!-- TRANG 3: LỜI TÂM SỰ TRẢI FULL MÀN HÌNH -->
+<!-- TRANG 3: LỜI TÂM SỰ -->
 <div class="wish-page-screen hidden" id="wishPageScreen">
   <div class="wish-page-container">
 
@@ -571,7 +559,7 @@ footer { font-size: 0.8rem; color: #fce4ec; padding: 20px 10px; text-align: cent
         ✨ Chúc Út tuổi mới thật nhiều niềm vui, sức khỏe và hạnh phúc. Mong một ngày không xa, Út và Minh Thiện sẽ được trở về quê hương, đoàn tụ cùng gia đình sau những năm tháng vất vả nơi xứ người.<br><br>Con thương Út nhiều lắm! ❤️
       </div>
 
-      <!-- HỘP QUÀ NẰM CHÍNH GIỮA TRANG -> BẤM VÀO ĐỂ MỞ TRANG MỚI -->
+      <!-- HỘP QUÀ NẰM CHÍNH GIỮA TRANG -->
       <div class="center-gift-wrapper" id="centerGiftBox">
         <div class="floating-bubble-gift" id="bubbleGiftBtn" title="Bấm vào để mở Món Quà Bí Mật 🎁">
           <span>🎁</span>
@@ -587,18 +575,16 @@ footer { font-size: 0.8rem; color: #fce4ec; padding: 20px 10px; text-align: cent
   </div>
 </div>
 
-<!-- TRANG 4: TRANG MỚI LỰA CHỌN ĐIỀU ƯỚC ĐẶC BIỆT (TÁCH BIỆT NGUYÊN TRANG) -->
+<!-- TRANG 4: MÓN QUÀ BÍ MẬT - ĐIỀU ƯỚC ĐẶC BIỆT -->
 <div class="wish-page-screen hidden" id="choicePageScreen">
   <div class="wish-page-container">
 
     <h3>Món Quà Bí Mật: Điều Ước Đặc Biệt 🎁✨</h3>
     
     <div class="page-scroll-content" id="scrollContainer2">
-      <div class="page-photo-box">
-        <img src="family.jpg" alt="Hình ảnh gia đình">
-      </div>
+      <!-- ẢNH BÊN TRÊN ĐÃ ĐƯỢC XÓA BỎ THEO YÊU CẦU -->
       
-      <div class="page-text" style="text-align: center; font-weight: 600; font-size: 1.1rem; color: var(--gold-accent);">
+      <div class="page-text" style="text-align: center; font-weight: 600; font-size: 1.1rem; color: var(--gold-accent); margin-top: 10px;">
         Út ơi, nếu điều ước sinh nhật được thành hiện thực, Út sẽ chọn đồng hành trọn đời cùng ai?
       </div>
       <div class="scroll-hint" style="margin-bottom: 20px;">
@@ -629,7 +615,7 @@ footer { font-size: 0.8rem; color: #fce4ec; padding: 20px 10px; text-align: cent
         </div>
       </div>
 
-      <!-- HỘP HIỂN THỊ ẢNH + LỜI NHẮN KHI BẤM VÀO TRÁI TIM -->
+      <!-- HỘP HIỂN THỊ ẢNH + LỜI NHẮN -->
       <div class="balloon-result-box hidden" id="resultMessageContainer">
         <div class="result-photo-box">
           <img id="resultPhoto" src="" alt="Hình ảnh kỷ niệm">
@@ -658,19 +644,19 @@ const CONFIG = {
   footerText: 'Món quà nhỏ được làm bằng tất cả tình yêu dành cho Út'
 };
 
-/* DỮ LIỆU LỜI NHẮN VÀ ẢNH TƯƠNG ỨNG CHO 3 TRÁI TIM */
+/* DỮ LIỆU LỜI NHẮN VÀ ẢNH TƯƠNG ỨNG CHO 3 TRÁI TIM ĐÃ TRAU CHUỐT */
 const WISH_DATA = {
   1: {
     photo: 'baminhthien.jpg',
-    text: "Con biết ba Minh Thiện tính tình cọc cằn, ít khi biết nói lời ngọt ngào hay thể hiện sự quan tâm dịu dàng, đôi lúc làm Út phải buồn và chịu nhiều tủi thân. Nhưng dù sau này ra sao, con chỉ mong Út luôn nhận được sự tôn trọng và thương yêu trọn vẹn nhất. Nếu ở lại, mong rằng thời gian sẽ giúp ba Minh Thiện hiểu, bớt cọc cằn và biết trân trọng những vất vả, hy sinh của Út nhiều hơn!"
+    text: "Con hiểu rằng chặng đường qua, ba Minh Thiện đôi lúc vô tâm hay cọc cằn khiến Út phải chịu nhiều tủi thân và gánh vác nhọc nhằn. Nhưng sâu thẳm trong lòng, con chỉ mong dẫu ở chốn nào hay bên ai, Út cũng luôn nhận được sự tôn trọng, chở che và trọn vẹn yêu thương. Mong rằng thời gian sẽ mang lại sự thấu hiểu, để ba Minh Thiện biết trân quý và cùng Út sẻ chia mọi gánh nặng cuộc đời."
   },
   2: {
     photo: 'tinhyeu.png',
-    text: "Tình cảm chân thành và sự ngọt ngào, thấu hiểu của Dượng Út Viễn thật sự rất trân quý. Tuy hiện tại khoảng cách địa lý xa xôi khiến hai người chưa có cơ hội tương phùng, nhưng con mong rằng duyên số và tình cảm chân thành sẽ vượt qua mọi khoảng cách. Mong một ngày không xa, Út và Dượng sẽ được sum họp, cùng chia sẻ những ngọt ngào bình dị của cuộc sống!"
+    text: "Tình cảm chân thành, sự ấm áp và thấu hiểu từ Dượng Út Viễn là một món quà vô cùng quý giá mà cuộc đời dành tặng Út. Dù khoảng cách địa lý có xa xôi, con vẫn tin rằng chân tình sẽ vượt qua tất cả. Mong một ngày không xa, hai người sẽ được sum họp một nhà, cùng nhau tận hưởng những bình dị ngọt ngào và nắm tay đi hết chặng đường còn lại!"
   },
   3: {
     photo: 'binhyen.jpg',
-    text: "Chọn sống độc lập cho riêng mình đôi lúc có thể làm Út cảm thấy cô đơn một chút, nhưng đổi lại là tâm hồn tự do, đầu óc nhẹ nhõm và không còn vướng bận những muộn phiền. Sau bao năm tháng vất vả lo toan cho gia đình, Út hoàn toàn có quyền chọn sự bình yên này. Dù Út lựa chọn thế nào, con và cả gia đình vẫn luôn ở bên, ủng hộ và thương Út hết lòng!"
+    text: "Chọn bước đi độc lập và tựa vào chính mình đôi lúc có thể mang lại chút chông chênh, cô đơn, nhưng đổi lại Út có được sự tự do, tâm hồn an yên và không còn vướng bận những muộn phiền. Sau bao năm tháng hy sinh vì gia đình, Út hoàn toàn xứng đáng được thảnh thơi sống cho chính mình. Dù Út chọn thế nào, con và mọi người vẫn luôn ở cạnh, tôn trọng và yêu thương Út hết lòng!"
   }
 };
 
@@ -688,25 +674,22 @@ fillText('candleAge', CONFIG.ageBefore);
 fillText('cakeNote',CONFIG.cakeNoteBefore); 
 fillText('footerText1',CONFIG.footerText);
 
-/* BẤM HỘP QUÀ CHÍNH GIỮA -> CHUYỂN SANG TRANG LỰA CHỌN MỚI HOÀN TOÀN */
+/* BẤM HỘP QUÀ CHÍNH GIỮA -> CHUYỂN SANG TRANG LỰA CHỌN */
 $('bubbleGiftBtn').addEventListener('click', ()=>{
-  $('wishPageScreen').classList.add('hidden'); // Ẩn trang đọc tâm sự
-  $('choicePageScreen').classList.remove('hidden'); // Hiện trang điều ước mới
+  $('wishPageScreen').classList.add('hidden');
+  $('choicePageScreen').classList.remove('hidden');
   window.scrollTo({top:0, behavior:'smooth'});
   roses(25);
   fireworks(20);
 });
 
 function selectWishOption(num) {
-  // Bỏ chọn bong bóng cũ
   [1, 2, 3].forEach(i => {
     $('card' + i).classList.remove('selected');
   });
   
-  // Highlight trái tim được chọn
   $('card' + num).classList.add('selected');
   
-  // Cập nhật ảnh và lời nhắn tương ứng
   const resContainer = $('resultMessageContainer');
   const resPhoto = $('resultPhoto');
   const resText = $('resultMessageText');
@@ -763,7 +746,7 @@ $('openBtn').addEventListener('click',()=>{
   }).catch(e => console.log("Autoplay blocked"));
 });
 
-/* BẤM THỔI NẾN: SỐ 46 VÀ ẢNH BÓ HOA HIỆN RA */
+/* BẤM THỔI NẾN */
 $('blowBtn').addEventListener('click',()=>{
   if($('mainFlame'))$('mainFlame').style.opacity = '0';
   fillText('candleAge', CONFIG.ageAfter);
@@ -778,7 +761,7 @@ $('blowBtn').addEventListener('click',()=>{
   roses(35);
 });
 
-/* BẤM NÚT ĐẾN BÀI TÂM SỰ TRẢI FULL MÀN HÌNH */
+/* BẤM NÚT ĐẾN BÀI TÂM SỰ */
 $('wishesBtn').addEventListener('click', ()=>{
   celebration.classList.add('hidden');
   $('wishPageScreen').classList.remove('hidden');
