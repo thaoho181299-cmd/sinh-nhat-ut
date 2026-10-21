@@ -69,7 +69,7 @@ button { font: inherit; cursor: pointer; border: 0; }
 .wrap h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3rem); margin: 10px 0; color: #fff; font-weight: 800; text-shadow: 0 4px 15px rgba(0,0,0,0.3); }
 .sub { max-width: 600px; margin: 0 auto 20px; line-height: 1.6; font-size: 1rem; color: #fce4ec; }
 
-/* BÓ HOA / ẢNH ÔM HOA */
+/* BÓ HOA */
 .bouquet-display-box {
   width: 100%;
   max-width: 250px;
@@ -83,48 +83,132 @@ button { font: inherit; cursor: pointer; border: 0; }
   width: 100%;
   height: auto;
   display: block;
-  mix-blend-mode: screen;
-  filter: drop-shadow(0 0 25px rgba(245, 208, 97, 0.4));
+  filter: drop-shadow(0 0 25px rgba(245, 208, 97, 0.5));
 }
 
-/* KHU VỰC BÁNH KEM HOA HỒNG */
+/* KHU VỰC BÁNH KEM CSS PURE */
 .cake-area {
   position: relative;
-  margin: 15px auto 25px;
-  width: min(290px, 85vw);
-  height: 250px;
+  margin: 30px auto 25px;
+  width: 280px;
+  height: 240px;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
 }
-.cake-image-box {
+
+.custom-cake {
   position: relative;
-  width: 100%;
-  border-radius: 50%;
-  filter: drop-shadow(0 15px 35px rgba(0,0,0,0.6));
+  width: 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.cake-image-box img {
+
+/* ĐĨA BÁNH */
+.cake-plate {
+  width: 270px;
+  height: 18px;
+  background: linear-gradient(135deg, #ffffff, #e0e0e0);
+  border-radius: 50%;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  margin-top: -8px;
+  z-index: 1;
+}
+
+/* TẦNG DƯỚI */
+.cake-layer-bottom {
+  width: 230px;
+  height: 70px;
+  background: linear-gradient(to right, #ff8da1, #ff6b8b, #ff8da1);
+  border-radius: 12px 12px 6px 6px;
+  position: relative;
+  box-shadow: inset 0 -8px 0 rgba(0,0,0,0.15);
+  z-index: 2;
+}
+.cake-layer-bottom::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 22px;
+  background: #ffffff;
+  border-radius: 12px 12px 15px 15px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* TẦNG GIỮA */
+.cake-layer-middle {
+  width: 170px;
+  height: 55px;
+  background: linear-gradient(to right, #fce4ec, #f8bbd0, #fce4ec);
+  border-radius: 10px 10px 4px 4px;
+  position: relative;
+  margin-bottom: -2px;
+  box-shadow: inset 0 -6px 0 rgba(0,0,0,0.1);
+  z-index: 3;
+}
+.cake-layer-middle::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 18px;
+  background: #ff4081;
+  border-radius: 10px 10px 12px 12px;
+}
+
+/* TẦNG TRÊN CÙNG */
+.cake-layer-top {
+  width: 110px;
+  height: 45px;
+  background: linear-gradient(to right, #ffffff, #fff0f3, #ffffff);
+  border-radius: 8px 8px 3px 3px;
+  position: relative;
+  margin-bottom: -2px;
+  z-index: 4;
+}
+.cake-layer-top::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 14px;
+  background: #f5d061;
+  border-radius: 8px 8px 10px 10px;
+}
+
+/* TRANG TRÍ CHERRY & HOA KEM */
+.cake-decorations {
+  position: absolute;
+  top: -12px;
   width: 100%;
-  height: auto;
-  display: block;
-  object-fit: contain;
+  display: flex;
+  justify-content: space-around;
+  padding: 0 10px;
+  z-index: 5;
+}
+.decor-cherry {
+  width: 14px;
+  height: 14px;
+  background: #d50000;
+  border-radius: 50%;
+  box-shadow: inset -2px -2px 0 rgba(0,0,0,0.3);
 }
 
 /* CÂY NẾN SỐ 45 -> 46 */
 .candle-row {
   position: absolute;
-  top: 15px;
+  top: -55px;
   left: 0;
   width: 100%;
   display: flex;
   justify-content: center;
-  gap: 14px;
-  z-index: 5;
+  gap: 10px;
+  z-index: 10;
 }
 .candle {
-  width: 45px;
-  height: 60px;
-  border-radius: 8px;
+  width: 36px;
+  height: 48px;
+  border-radius: 6px;
   background: linear-gradient(135deg, #fff, #f5d061);
   position: relative;
   display: flex;
@@ -132,26 +216,26 @@ button { font: inherit; cursor: pointer; border: 0; }
   align-items: center;
   color: #330e1b;
   font-weight: 900;
-  font-size: 1.3rem;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  font-size: 1.15rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   border: 2px solid #f5d061;
   font-family: 'Playfair Display', serif;
 }
 .flame {
   position: absolute;
-  top: -20px;
-  width: 16px;
-  height: 22px;
+  top: -18px;
+  width: 14px;
+  height: 20px;
   background: radial-gradient(ellipse at 50% 70%, #fffad1 0 25%, #ffb037 55%, #ff523d 80%);
   border-radius: 60% 40% 55% 45%;
   transform: rotate(5deg);
   animation: flicker 0.6s infinite alternate;
   transition: all 0.3s;
-  filter: drop-shadow(0 0 16px #ffcb57);
+  filter: drop-shadow(0 0 14px #ffcb57);
 }
 
 .cake-note { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.1rem; margin: 15px 0; color: var(--gold-accent); }
-.action-box { background: rgba(51, 14, 27, 0.75); border: 2px dashed rgba(245, 208, 97, 0.5); border-radius: 20px; padding: 18px; max-width: 400px; margin: 0 auto 20px; backdrop-filter: blur(5px); }
+.action-box { background: rgba(51, 14, 27, 0.75); border: 2px dashed rgba(245, 208, 97, 0.5); border-radius: 20px; padding: 18px; max-width: 420px; margin: 0 auto 20px; backdrop-filter: blur(5px); }
 .action-text { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 12px; }
 
 /* TRANG TÂM SỰ TRẢI FULL MÀN HÌNH */
@@ -178,7 +262,7 @@ button { font: inherit; cursor: pointer; border: 0; }
 }
 .wish-page-container h3 {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-size: clamp(1.4rem, 4vw, 1.8rem);
   color: var(--gold-accent);
   margin: 0 0 20px;
   line-height: 1.4;
@@ -201,8 +285,7 @@ button { font: inherit; cursor: pointer; border: 0; }
 
 .page-photo-box {
   width: 100%;
-  max-width: 260px;
-  aspect-ratio: 1 / 1;
+  max-width: 320px;
   border-radius: 20px;
   overflow: hidden;
   margin: 0 auto 15px;
@@ -217,12 +300,53 @@ button { font: inherit; cursor: pointer; border: 0; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 20px;
+  display: block;
 }
 
 .scroll-hint { font-size: 0.85rem; font-weight: 700; color: var(--gold-accent); margin-bottom: 15px; text-align: center; animation: bounceHint 1.8s infinite ease-in-out; opacity: 0.9; }
 .wish-page-container .page-text { font-size: 1.05rem; line-height: 1.85; color: #fff0f3; margin: 0 0 15px; padding: 0 4px; white-space: pre-line; font-weight: 400; }
 .highlight-quote { background: rgba(51, 14, 27, 0.85); border-left: 4px solid var(--gold-accent); border-radius: 14px; padding: 16px; margin: 15px 0; font-weight: 500; color: #fff; line-height: 1.7; font-size: 1rem; box-shadow: 0 6px 20px rgba(0,0,0,0.3); font-family: 'Playfair Display', serif; font-style: italic; }
+
+/* PHẦN LỰA CHỌN ĐIỀU ƯỚC ĐẶC BIỆT */
+.wish-options-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 18px 0;
+}
+.option-card {
+  background: rgba(51, 14, 27, 0.9);
+  border: 1.5px solid rgba(245, 208, 97, 0.4);
+  border-radius: 14px;
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+.option-card:hover {
+  border-color: #f5d061;
+  background: rgba(92, 29, 50, 0.95);
+  transform: translateY(-2px);
+}
+.option-title {
+  font-weight: 700;
+  color: var(--gold-accent);
+  font-size: 1.05rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.option-result-box {
+  background: rgba(245, 208, 97, 0.15);
+  border-left: 4px solid #f5d061;
+  border-radius: 10px;
+  padding: 12px;
+  margin-top: 10px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #ffffff;
+  display: none;
+}
 
 /* HỘP QUÀ BONG BÓNG LƠ LỬNG GÓC PHẢI */
 .bubble-gift-wrapper {
@@ -267,7 +391,7 @@ button { font: inherit; cursor: pointer; border: 0; }
 @keyframes floatBubble { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-8px) scale(1.05); } }
 @keyframes bounceHint { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(8px); } }
 @keyframes bob { 50% { transform: translateY(-10px) rotate(2deg); } }
-@keyframes flicker { to { transform: rotate(-8deg) scale(0.9); filter: drop-shadow(0 0 16px #ffcb57); } }
+@keyframes flicker { to { transform: rotate(-8deg) scale(0.9); filter: drop-shadow(0 0 14px #ffcb57); } }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes fallDown { 0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; } 100% { transform: translateY(105vh) rotate(360deg); opacity: 0.8; } }
@@ -309,15 +433,25 @@ footer { font-size: 0.8rem; color: #fce4ec; padding: 20px 10px; text-align: cent
       <img src="omhoa.png" alt="Bó hoa tặng Út">
     </div>
 
+    <!-- BÁNH KEM VẼ BẰNG CSS PURE -->
     <div class="cake-area">
-      <div class="cake-image-box">
-        <!-- ẢNH BÁNH KEM HOA HỒNG ĐỎ -->
-        <img src="banhkem.jpg" alt="Bánh kem hoa hồng sinh nhật">
+      <div class="custom-cake">
         <div class="candle-row">
           <div class="candle"><span class="flame" id="mainFlame"></span><span id="candleAge">45</span></div>
         </div>
+        <div class="cake-layer-top">
+          <div class="cake-decorations">
+            <div class="decor-cherry"></div>
+            <div class="decor-cherry"></div>
+            <div class="decor-cherry"></div>
+          </div>
+        </div>
+        <div class="cake-layer-middle"></div>
+        <div class="cake-layer-bottom"></div>
+        <div class="cake-plate"></div>
       </div>
     </div>
+    
     <div class="cake-note" id="cakeNote"></div>
     
     <div class="action-box">
@@ -346,7 +480,8 @@ footer { font-size: 0.8rem; color: #fce4ec; padding: 20px 10px; text-align: cent
       <div class="page-photo-box">
         <img id="pageWishPhoto" src="giau.jpg" alt="Ảnh kỷ niệm Út">
       </div>
-      <div class="scroll-hint">Út vuốt xuống để đọc tiếp tâm sự của con nha 👇</div>
+      <div class="scroll-hint" id="scrollHintText">Út vuốt xuống để đọc tiếp tâm sự của con nha 👇</div>
+      
       <div class="page-text" id="pageWishText">
 Vậy là đã 13 năm rồi Út chưa được trở về quê hương. Gia đình mình ai cũng nhớ thương Út nhiều lắm.
 
@@ -356,6 +491,34 @@ Nhìn Út tần tảo, sớm hôm đi làm, chẳng dám cho mình nghỉ ngơi 
 
 Con chỉ mong từ nay về sau, cuộc sống sẽ dịu dàng với Út hơn. Mong Út luôn bình an, hạnh phúc, không còn phải chịu nhiều vất vả hay giữ những nỗi buồn trong lòng, và biết sống cho bản thân mình nhiều hơn một chút.
       </div>
+      
+      <!-- PHẦN LỰA CHỌN ĐIỀU ƯỚC ĐẶC BIỆT -->
+      <div class="wish-options-container hidden" id="wishOptionsContainer">
+        <!-- LỰA CHỌN 1 -->
+        <div class="option-card" onclick="selectWishOption(1)">
+          <div class="option-title">1. Ba Minh Thiện 👨‍👦</div>
+          <div class="option-result-box" id="res1">
+            Con biết ba Minh Thiện tính tình cọc cần, ít khi biết nói lời ngọt ngào hay thể hiện sự quan tâm dịu dàng, đôi lúc làm Út phải buồn và chịu nhiều tủi thân. Nhưng dù sau này ra sao, con chỉ mong Út luôn nhận được sự tôn trọng và thương yêu trọn vẹn nhất. Nếu ở lại, mong rằng thời gian sẽ giúp ba hiểu, bớt cọc cằn và biết trân trọng những vất vả, hy sinh của Út nhiều hơn!
+          </div>
+        </div>
+
+        <!-- LỰA CHỌN 2 -->
+        <div class="option-card" onclick="selectWishOption(2)">
+          <div class="option-title">2. Dượng Út Viễn 🌹</div>
+          <div class="option-result-box" id="res2">
+            Tình cảm chân thành và sự ngọt ngào, thấu hiểu của Dượng Út Viễn thật sự rất trân quý. Tuy hiện tại khoảng cách địa lý xa xôi khiến hai người chưa có cơ hội tương phùng, nhưng con tin rằng duyên số và tình cảm chân thành sẽ vượt qua mọi khoảng cách. Mong một ngày không xa, Út và Dượng sẽ được sum họp, cùng chia sẻ những ngọt ngào bình dị của cuộc sống!
+          </div>
+        </div>
+
+        <!-- LỰA CHỌN 3 -->
+        <div class="option-card" onclick="selectWishOption(3)">
+          <div class="option-title">3. Không ai cả 🌿</div>
+          <div class="option-result-box" id="res3">
+            Chọn sống độc lập cho riêng mình đôi lúc có thể làm Út cảm thấy cô đơn một chút, nhưng đổi lại là tâm hồn tự do, đầu óc nhẹ nhõm và không còn vướng bận những muộn phiền. Sau bao năm tháng vất vả lo toan cho gia đình, Út hoàn toàn có quyền chọn sự bình yên này. Dù Út lựa chọn thế nào, con và cả gia đình vẫn luôn ở bên, ủng hộ và thương Út hết lòng!
+          </div>
+        </div>
+      </div>
+
       <div class="highlight-quote" id="pageQuote">
         ✨ Chúc Út tuổi mới thật nhiều niềm vui, sức khỏe và hạnh phúc. Mong một ngày không xa, Út và Minh Thiện sẽ được trở về quê hương, đoàn tụ cùng gia đình sau những năm tháng vất vả nơi xứ người.<br><br>Con thương Út nhiều lắm! ❤️
       </div>
@@ -394,17 +557,26 @@ fillText('candleAge', CONFIG.ageBefore);
 fillText('cakeNote',CONFIG.cakeNoteBefore); 
 fillText('footerText1',CONFIG.footerText);
 
-/* BẤM HỘP QUÀ BONG BÓNG LƠ LỬNG: MỞ MÓN QUÀ BÍ MẬT TỪ GIA ĐÌNH */
+/* BẤM HỘP QUÀ BONG BÓNG LƠ LỬNG: MỞ ĐIỀU ƯỚC ĐẶC BIỆT */
 function openSecretFamilyGift(){
-  $('pageWishTitle').textContent = 'Món Quà Bí Mật Từ Gia Đình 🏡❤️ (Điều ước đặc biệt)';
+  $('pageWishTitle').textContent = 'Món Quà Bí Mật: Điều Ước Đặc Biệt 🎁✨';
   $('pageWishPhoto').src = 'family.jpg'; 
-  $('pageQuote').classList.add('hidden');$('pageWishText').textContent = `Út ơi, Út đã đọc hết những dòng tâm sự từ đáy lòng của con rồi.\n\nTấm hình này là món quà đặc biệt nhất con dành tặng Út. Dù khoảng cách địa lý có xa xôi đến đâu, hình bóng của Út, Dượng Út và Minh Thiện vẫn luôn ngập tràn trong tim gia đình mình.\n\nChúc Út luôn vững chãi, bình an và hạnh phúc trọn vẹn trên hành trình phía trước! 🌸✨`;
+  $('pageQuote').classList.add('hidden');$('pageWishText').innerHTML = `<b>Út ơi, nếu điều ước sinh nhật được thực hiện, Út muốn đồng hành trọn đời cùng với ai?</b>\n\n(Út chọn 1 trong 3 lựa chọn bên dưới để xem lời nhắn gửi từ con nhé):`;
+  
+  $('wishOptionsContainer').classList.remove('hidden');
   
   const scrollContainer = $('scrollContainer');
   if(scrollContainer) scrollContainer.scrollTop = 0;
   
   roses(25);
   fireworks(20);
+}
+
+function selectWishOption(num) {
+  document.querySelectorAll('.option-result-box').forEach(el => el.style.display = 'none');
+  const target = $('res' + num);
+  if(target) target.style.display = 'block';
+  fireworks(8);
 }
 
 $('bubbleGiftBtn').addEventListener('click', openSecretFamilyGift);
